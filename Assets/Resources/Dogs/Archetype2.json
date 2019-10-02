@@ -1,0 +1,14 @@
+{
+	"Nom" : "Archetype 2",
+	"VitesseMaxDefault" : "60.0",
+	"AccelerationDefault" : "40.0",
+	"EnduranceDefault" : "30.0",
+	"ForceDefault" : "50.0",
+	"MentalDefault" : "50.0",
+	"VitesseMax" : "0.0",
+	"Acceleration" : "0.0",
+	"Endurance" : "0.0",
+	"Force" : "0.0",
+	"Mental" : "0.0",
+	"VitesseMoyenne" : "0.0"
+}
