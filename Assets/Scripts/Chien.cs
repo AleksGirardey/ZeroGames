@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class Chien {
@@ -42,6 +43,8 @@ public class Chien {
 
         // Calcul vitesse / temps
         CalculVitesseMoyenne();
+        CalculVitesseMoyenneDeuxTournant();
+        CalculVitesseMoyenneTroisTournant();
     }
 
     public void CalculVitesseMoyenne()
@@ -50,23 +53,23 @@ public class Chien {
         float EnduranceConso = 3;
         float EndurancePourc = 0.75f;
 
-        float TempsAcceleration = VitesseMax / Acceleration;
-        float VitesseAccelerationMoy =
-            (1 / (TempsAcceleration))
+        float tempsAcceleration = VitesseMax / Acceleration;
+        float vitesseAccelerationMoy =
+            (1 / (tempsAcceleration))
             * VitesseMax
             * Mathf.Sqrt(Acceleration / VitesseMax)
-            * (2 / 3) * Mathf.Pow(TempsAcceleration, 1.5f);
+            * (2f / 3f) * Mathf.Pow(tempsAcceleration, 1.5f);
 
-        float TempsEndurance = Endurance / EnduranceConso;
-        float b = (1 / (EnduranceConso * EnduranceConso * TempsEndurance)) - (1 / TempsEndurance);
-        float VitesseEnduMoy =
-            (VitesseMax / TempsEndurance)
-            * ((2 / b) * (Mathf.Sqrt((b * TempsEndurance) + 1) - 1));
+        float tempsEndurance = Endurance / EnduranceConso;
+        float b = (1 / (EnduranceConso * EnduranceConso * tempsEndurance)) - (1 / tempsEndurance);
+        float vitesseEnduMoy =
+            (VitesseMax / tempsEndurance)
+            * ((2 / b) * (Mathf.Sqrt((b * tempsEndurance) + 1) - 1));
 
-        if (distance <= (VitesseAccelerationMoy * TempsAcceleration) + (VitesseEnduMoy * TempsEndurance))
+        if (distance <= (vitesseAccelerationMoy * tempsAcceleration) + (vitesseEnduMoy * tempsEndurance))
         {
-            float distanceRaccourci = distance - (VitesseAccelerationMoy * TempsAcceleration);
-            VitesseMoyenne = distance / ( TempsAcceleration
+            float distanceRaccourci = distance - (vitesseAccelerationMoy * tempsAcceleration);
+            VitesseMoyenne = distance / ( tempsAcceleration
                 + (-b + Mathf.Sqrt(Mathf.Pow(b, 2) + ((4 * Mathf.Pow(VitesseMax, 2)) / Mathf.Pow(distanceRaccourci, 2)))) /
                 (2 * (Mathf.Pow(VitesseMax, 2) / Mathf.Pow(distanceRaccourci, 2))));
         }
@@ -74,9 +77,9 @@ public class Chien {
         {
             VitesseMoyenne =
                 distance / 
-                (TempsAcceleration
-                + TempsEndurance
-                + ((distance - (VitesseAccelerationMoy * TempsAcceleration) - (VitesseEnduMoy * TempsEndurance)) * (VitesseMax * EndurancePourc)));
+                (tempsAcceleration
+                + tempsEndurance
+                + ((distance - (vitesseAccelerationMoy * tempsAcceleration) - (vitesseEnduMoy * tempsEndurance)) * (VitesseMax * EndurancePourc)));
         }
 
 
@@ -88,24 +91,24 @@ public class Chien {
         float EnduranceConso = 3;
         float EndurancePourc = 0.75f;
 
-        float TempsAcceleration = VitesseMax / Acceleration;
-        float VitesseAccelerationMoy =
-            (1 / (TempsAcceleration))
+        float tempsAcceleration = VitesseMax / Acceleration;
+        float vitesseAccelerationMoy =
+            (1 / (tempsAcceleration))
             * VitesseMax
             * Mathf.Sqrt(Acceleration / VitesseMax)
-            * (2 / 3) * Mathf.Pow(TempsAcceleration, 1.5f);
+            * (2f / 3f) * Mathf.Pow(tempsAcceleration, 1.5f);
 
-        float TempsEndurance = Endurance / EnduranceConso;
-        float b = (1 / (EnduranceConso * EnduranceConso * TempsEndurance)) - (1 / TempsEndurance);
-        float VitesseEnduMoy =
-            (VitesseMax / TempsEndurance)
-            * ((2 / b) * (Mathf.Sqrt((b * TempsEndurance) + 1) - 1));
+        float tempsEndurance = Endurance / EnduranceConso;
+        float b = (1 / (EnduranceConso * EnduranceConso * tempsEndurance)) - (1 / tempsEndurance);
+        float vitesseEnduMoy =
+            (VitesseMax / tempsEndurance)
+            * ((2 / b) * (Mathf.Sqrt((b * tempsEndurance) + 1) - 1));
 
-        if (distance <= (VitesseAccelerationMoy * TempsAcceleration) + (VitesseEnduMoy * TempsEndurance))
+        if (distance <= (vitesseAccelerationMoy * tempsAcceleration) + (vitesseEnduMoy * tempsEndurance))
         {
-            float distanceRaccourci = distance - (VitesseAccelerationMoy * TempsAcceleration);
+            float distanceRaccourci = distance - (vitesseAccelerationMoy * tempsAcceleration);
 
-            VitesseMoyenneDeuxTournant = distance / (TempsAcceleration
+            VitesseMoyenneDeuxTournant = distance / (tempsAcceleration
                 + (-b + Mathf.Sqrt(Mathf.Pow(b, 2) + ((4 * Mathf.Pow(VitesseMax, 2)) / Mathf.Pow(distanceRaccourci, 2)))) /
                 (2 * (Mathf.Pow(VitesseMax, 2) / Mathf.Pow(distanceRaccourci, 2))));
         }
@@ -113,9 +116,9 @@ public class Chien {
         {
             VitesseMoyenneDeuxTournant =
                 distance /
-                (TempsAcceleration
-                + TempsEndurance
-                + ((distance - (VitesseAccelerationMoy * TempsAcceleration) - (VitesseEnduMoy * TempsEndurance)) * (VitesseMax * EndurancePourc)));
+                (tempsAcceleration
+                + tempsEndurance
+                + ((distance - (vitesseAccelerationMoy * tempsAcceleration) - (vitesseEnduMoy * tempsEndurance)) * (VitesseMax * EndurancePourc)));
         }
 
 
@@ -127,23 +130,23 @@ public class Chien {
         float EnduranceConso = 3;
         float EndurancePourc = 0.75f;
 
-        float TempsAcceleration = VitesseMax / Acceleration;
-        float VitesseAccelerationMoy =
-            (1 / (TempsAcceleration))
+        float tempsAcceleration = VitesseMax / Acceleration;
+        float vitesseAccelerationMoy =
+            (1 / (tempsAcceleration))
             * VitesseMax
             * Mathf.Sqrt(Acceleration / VitesseMax)
-            * (2 / 3) * Mathf.Pow(TempsAcceleration, 1.5f);
+            * (2f / 3f) * Mathf.Pow(tempsAcceleration, 1.5f);
 
-        float TempsEndurance = Endurance / EnduranceConso;
-        float b = (1 / (EnduranceConso * EnduranceConso * TempsEndurance)) - (1 / TempsEndurance);
-        float VitesseEnduMoy =
-            (VitesseMax / TempsEndurance)
-            * ((2 / b) * (Mathf.Sqrt((b * TempsEndurance) + 1) - 1));
+        float tempsEndurance = Endurance / EnduranceConso;
+        float b = (1 / (EnduranceConso * EnduranceConso * tempsEndurance)) - (1 / tempsEndurance);
+        float vitesseEnduMoy =
+            (VitesseMax / tempsEndurance)
+            * ((2 / b) * (Mathf.Sqrt((b * tempsEndurance) + 1) - 1));
 
-        if (distance <= (VitesseAccelerationMoy * TempsAcceleration) + (VitesseEnduMoy * TempsEndurance))
+        if (distance <= (vitesseAccelerationMoy * tempsAcceleration) + (vitesseEnduMoy * tempsEndurance))
         {
-            float distanceRaccourci = distance - (VitesseAccelerationMoy * TempsAcceleration);
-            VitesseMoyenneTroisTournant = distance / (TempsAcceleration
+            float distanceRaccourci = distance - (vitesseAccelerationMoy * tempsAcceleration);
+            VitesseMoyenneTroisTournant = distance / (tempsAcceleration
                 + (-b + Mathf.Sqrt(Mathf.Pow(b, 2) + ((4 * Mathf.Pow(VitesseMax, 2)) / Mathf.Pow(distanceRaccourci, 2)))) /
                 (2 * (Mathf.Pow(VitesseMax, 2) / Mathf.Pow(distanceRaccourci, 2))));
         }
@@ -151,12 +154,51 @@ public class Chien {
         {
             VitesseMoyenneTroisTournant =
                 distance /
-                (TempsAcceleration
-                + TempsEndurance
-                + ((distance - (VitesseAccelerationMoy * TempsAcceleration) - (VitesseEnduMoy * TempsEndurance)) * (VitesseMax * EndurancePourc)));
+                (tempsAcceleration
+                + tempsEndurance
+                + ((distance - (vitesseAccelerationMoy * tempsAcceleration) - (vitesseEnduMoy * tempsEndurance)) * (VitesseMax * EndurancePourc)));
         }
-
-
     }
 
+    private class CompareOneLapClass : IComparer<Chien> {
+        public int Compare(Chien a, Chien b) {
+            if (a.VitesseMoyenne > b.VitesseMoyenne)
+                return 1;
+            if (a.VitesseMoyenne < b.VitesseMoyenne)
+                return -1;
+            return 0;
+        }
+    }
+
+    private class CompareTwoLapClass : IComparer<Chien> {
+        public int Compare(Chien a, Chien b) {
+            if (a.VitesseMoyenneDeuxTournant > b.VitesseMoyenneDeuxTournant)
+                return 1;
+            if (a.VitesseMoyenneDeuxTournant < b.VitesseMoyenneDeuxTournant)
+                return -1;
+            return 0;
+        }
+    }
+
+    private class CompareThreeLapClass : IComparer<Chien> {
+        public int Compare(Chien a, Chien b) {
+            if (a.VitesseMoyenneTroisTournant > b.VitesseMoyenneTroisTournant)
+                return 1;
+            if (a.VitesseMoyenneTroisTournant < b.VitesseMoyenneTroisTournant)
+                return -1;
+            return 0;
+        }
+    }
+
+    public static IComparer<Chien> CompareOneLap() {
+        return new CompareOneLapClass();
+    }
+
+    public static IComparer<Chien> CompareTwoLap() {
+        return new CompareTwoLapClass();
+    }
+
+    public static IComparer<Chien> CompareThreeLap() {
+        return new CompareThreeLapClass();
+    }
 }

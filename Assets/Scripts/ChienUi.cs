@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.Serialization;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
-[System.Serializable]
+[Serializable]
 public class ChienUi : MonoBehaviour {
     public Text TextDogName;
     public Slider SliderVitesseMax;
@@ -16,6 +16,8 @@ public class ChienUi : MonoBehaviour {
     public Text EnduranceFinal;
 
     public Text VitesseMoyenne;
+    public Text VitesseMoyenneTwoLaps;
+    public Text VitesseMoyenneThreeLaps;
     
     public Chien Chien;
 
@@ -40,6 +42,7 @@ public class ChienUi : MonoBehaviour {
         VitesseMaxFinal.text = "" + Chien.VitesseMax;
         VitesseMaxFinal.color = Chien.VitesseMax < Chien.VitesseMaxDefault ? Color.red : Color.green;
         CalculVitesseMoyenne();
+        GameManager.Instance.DrawScoreboards();
     }
     
     public void OnAccelerationChange(float value) {
@@ -47,6 +50,7 @@ public class ChienUi : MonoBehaviour {
         AccelerationFinal.text = "" + Chien.Acceleration;
         AccelerationFinal.color = Chien.Acceleration < Chien.AccelerationDefault ? Color.red : Color.green;
         CalculVitesseMoyenne();
+        GameManager.Instance.DrawScoreboards();
     }
     
     public void OnEnduranceChange(float value) {
@@ -54,10 +58,15 @@ public class ChienUi : MonoBehaviour {
         EnduranceFinal.text = "" + Chien.Endurance;
         EnduranceFinal.color = Chien.Endurance < Chien.EnduranceDefault ? Color.red : Color.green;
         CalculVitesseMoyenne();
+        GameManager.Instance.DrawScoreboards();
     }
 
     private void CalculVitesseMoyenne() {
         Chien.CalculVitesseMoyenne();
-        VitesseMoyenne.text = Chien.VitesseMoyenne + " km / h";
+        Chien.CalculVitesseMoyenneDeuxTournant();
+        Chien.CalculVitesseMoyenneTroisTournant();
+        VitesseMoyenne.text = "1 Lap  : " + Math.Round(Chien.VitesseMoyenne, 2) + " km / h";
+        VitesseMoyenneTwoLaps.text = "2 Laps : " + Math.Round(Chien.VitesseMoyenneDeuxTournant, 2) + " km / h";
+        VitesseMoyenneThreeLaps.text = "3 Laps : " + Math.Round(Chien.VitesseMoyenneTroisTournant, 2)+ " km / h";
     }
 }

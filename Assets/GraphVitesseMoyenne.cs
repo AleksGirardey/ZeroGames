@@ -23,7 +23,7 @@ public class GraphVitesseMoyenne : MonoBehaviour
 
     void DrawGraphic()
     {
-        GetComponent<LineRenderer>().widrhg;
+        //GetComponent<LineRenderer>().widrhg;
 
         /*GameObject Graph = this.gameObject;
         // Todo: Ajouter les fonctions qui permette de draw dans un UI le graphique de l'evolution de la vitesse sur le temps
