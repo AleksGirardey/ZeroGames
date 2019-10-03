@@ -58,6 +58,6 @@ public class ChienUi : MonoBehaviour {
 
     private void CalculVitesseMoyenne() {
         Chien.CalculVitesseMoyenne();
-        VitesseMoyenne.text = Chien.VitesseMoyenne + " m / s";
+        VitesseMoyenne.text = Chien.VitesseMoyenne + " km / h";
     }
 }
