@@ -26,9 +26,6 @@ public class GraphVitesseMoyenne : MonoBehaviour
 
     void DrawGraphic()
     {
-<<<<<<< Updated upstream
-        //GetComponent<LineRenderer>().widrhg;
-=======
         float VitesseMaxDefault = 8;
         float AccelerationDefault = 2;
         float EnduranceDefault = 100;
@@ -57,7 +54,6 @@ public class GraphVitesseMoyenne : MonoBehaviour
         GetComponent<LineRenderer>().sortingOrder = 1;
         GetComponent<LineRenderer>().material = new Material(Shader.Find("Sprites/Default"));
         GetComponent<LineRenderer>().material.color = Color.red;
->>>>>>> Stashed changes
 
         //Fait apparaitre la ligne dans la Scene.
 
@@ -92,8 +88,5 @@ public class GraphVitesseMoyenne : MonoBehaviour
 
         GetComponent<LineRenderer>().SetPositions(points);
         //Pause des points de la courbe.
-
-        
-
     }
 }

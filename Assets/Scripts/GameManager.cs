@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class GameManager : MonoBehaviour {
     
     public static GameManager Instance;
     
-    [SerializeField] private List<string> _dogsJson =  new List<string>();
+    [SerializeField] private List<TextAsset> _dogsJson =  new List<TextAsset>();
 
     private readonly List<Chien> _dogs = new List<Chien>();
     
@@ -20,9 +21,8 @@ public class GameManager : MonoBehaviour {
     private void Start() {
         StreamReader reader;
         
-        foreach (string json in _dogsJson) {
-            reader = new StreamReader("Assets/Resources/Dogs/" + json + ".json");
-            Chien newDog = JsonUtility.FromJson<Chien>(reader.ReadToEnd());
+        foreach (TextAsset json in _dogsJson) {
+            Chien newDog = JsonUtility.FromJson<Chien>(json.text);
             _dogs.Add(newDog);
             GameObject newDogUi = Instantiate(DogPrefab);
             newDogUi.transform.SetParent(DogsListUi.transform);
@@ -32,7 +32,13 @@ public class GameManager : MonoBehaviour {
 
         Instance = this;
     }
-    
+
+    private void Update() {
+        if (Input.GetKey ("escape")) {
+            Application.Quit();
+        }
+    }
+
     public void DrawScoreboards() {
         List<Chien> oneLap = new List<Chien>(_dogs);
         List<Chien> twoLaps = new List<Chien>(_dogs);
