@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PrototypeKom/MainScene_PrototypeKom.unity
     guid: 0171ed4dd27a2914a9f32e98091329fb
+  - enabled: 1
+    path: Assets/Scenes/ProtoMenu.unity
+    guid: facdee4a16863fa44a528ca2bd8081ee
+  - enabled: 1
+    path: Assets/Scenes/ProtoMenuS.unity
+    guid: 37119f1d36914514da00706b2f66bf71
   m_configObjects: {}
