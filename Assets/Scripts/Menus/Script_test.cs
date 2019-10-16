@@ -20,6 +20,8 @@ public class Script_test : MonoBehaviour
         mat2 = GetComponent<MeshRenderer>().materials[0];
 
         TEST = true;
+
+        
     }
 
     // Update is called once per frame
@@ -54,7 +56,7 @@ public class Script_test : MonoBehaviour
             fellowB.transform.position = new Vector3(fellowB.transform.position.x - 0.1f, fellowB.transform.position.y, fellowB.transform.position.z);
             yield return new WaitForSeconds(0.01f);
         }
-        Save.transform.position = new Vector3(4.7f, 0, 0) ;
+        Save.SetActive(true) ;
         
     }
 }
