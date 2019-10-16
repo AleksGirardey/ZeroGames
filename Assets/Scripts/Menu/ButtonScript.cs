@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Script_test : MonoBehaviour
+public class ButtonScript : MonoBehaviour
 {
 
     public Material mat1;
@@ -21,13 +21,7 @@ public class Script_test : MonoBehaviour
 
         TEST = true;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    private bool TEST;
+    private bool TEST; //TODO: Rename this
     private void OnMouseOver()
     {        
         GetComponent<MeshRenderer>().material = mat1;
@@ -38,15 +32,11 @@ public class Script_test : MonoBehaviour
         }
     }
 
-    private void OnMouseExit()
-    {
-
-        
+    private void OnMouseExit() {
         GetComponent<MeshRenderer>().material = mat2;
     }
 
-    private IEnumerator ClickDeplacement()
-    {
+    private IEnumerator ClickDeplacement() {
         for(int i = 0; i <=15; i += 1)
         {
             transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z);
@@ -54,7 +44,6 @@ public class Script_test : MonoBehaviour
             fellowB.transform.position = new Vector3(fellowB.transform.position.x - 0.1f, fellowB.transform.position.y, fellowB.transform.position.z);
             yield return new WaitForSeconds(0.01f);
         }
-        Save.transform.position = new Vector3(4.7f, 0, 0) ;
-        
+        Save.transform.position = new Vector3(4.7f, 0, 0);
     }
 }
