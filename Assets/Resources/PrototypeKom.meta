@@ -1,6 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 1d9c542569f3af14e850ec33d2469f15
 folderAsset: yes
+=======
+<<<<<<< HEAD:Assets/Scenes/MenuDemarrage.unity.meta
+guid: facdee4a16863fa44a528ca2bd8081ee
+=======
+guid: f6a995d3bb3a40d41bad2e6136d094a6
+folderAsset: yes
+>>>>>>> Tes4Menu:Assets/Resources/PrototypeKom.meta
+>>>>>>> Tes4Menu
 DefaultImporter:
   externalObjects: {}
   userData: 
