@@ -23,12 +23,14 @@ public class PlayButton : MonoBehaviour
 
     }
 
+    public string SceneName;
+
     private void OnMouseOver()
     {
         GetComponent<MeshRenderer>().material = mat1;
         if (Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene(1, LoadSceneMode.Single);
+            SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
         }
     }
 
