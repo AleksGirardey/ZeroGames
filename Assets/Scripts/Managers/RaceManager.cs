@@ -1,46 +1,103 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RaceManager : MonoBehaviour
 {
-    [SerializeField]
-    private Transform[] controlPoints;
 
-    private Vector3 gizmosPosition;
+    public StatsChien[] ListeDesChiens = new StatsChien[20];
 
-    private void OnDrawGizmos()
+    public DogMovement[] Chiens = new DogMovement[4];
+
+    public Text Endurance;
+    public Text VitesseMax;
+    public Text Acceleration;
+    public Text Countdown;
+
+    public LayerMask ChienLayer;
+
+    public bool RaceStarted;
+    public bool CountdownStarted;
+    public Transform StartPoint;
+    public float StartDiff;
+
+    private void Start()
     {
-        for (float t = 0; t <= 1; t += 0.05f)
+        Countdown.text = "";
+        foreach (DogMovement chien in Chiens)
         {
-            gizmosPosition = Mathf.Pow(1 - t, 3) * controlPoints[0].position +
-                3 * Mathf.Pow(1 - t, 2) * t * controlPoints[1].position +
-                3 * (1 - t) * Mathf.Pow(t, 2) * controlPoints[2].position +
-                Mathf.Pow(t, 3) * controlPoints[3].position;
+            int i = Random.Range(0, ListeDesChiens.Length);
 
-            Gizmos.DrawSphere(gizmosPosition, 0.25f);
+            chien.Endurance = ListeDesChiens[i].GetEndurance();
+            chien.VitesseMax = ListeDesChiens[i].GetVitesseMax();
+            chien.Acceleration = ListeDesChiens[i].GetAcceleration();
         }
 
-        Gizmos.DrawLine(new Vector3(controlPoints[0].position.x, controlPoints[0].position.y, controlPoints[0].position.z),
-            new Vector3(controlPoints[1].position.x, controlPoints[1].position.y, controlPoints[1].position.z));
-
-        Gizmos.DrawLine(new Vector3(controlPoints[2].position.x, controlPoints[2].position.y, controlPoints[2].position.x),
-            new Vector3(controlPoints[3].position.x, controlPoints[3].position.y, controlPoints[3].position.z));
-
-
     }
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
 
+        if (!RaceStarted) SelectChien();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void SelectChien()
     {
 
+        RaycastHit hit;
+        Transform ChienSelected = null;
+
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, ChienLayer) && !CountdownStarted) // Quand la souris passe sur un chien
+        {
+
+            ChienSelected = hit.transform;
+
+            ChienSelected.localScale = new Vector3(0.5f,0.5f,-0.5f); // On rescale le chien
+
+            Endurance.text = "endurance : " + ChienSelected.GetComponent<DogMovement>().Endurance; // Actualisation des stats
+            VitesseMax.text = "vitesse max : " + ChienSelected.GetComponent<DogMovement>().VitesseMax;
+            Acceleration.text = "accélération : " + ChienSelected.GetComponent<DogMovement>().Acceleration;
+
+            if (Input.GetMouseButtonDown(0) && !RaceStarted)
+            {
+                foreach (DogMovement dog in Chiens)
+                {
+                    dog.transform.position = StartPoint.position + new Vector3(StartDiff, 0, 0);
+                    StartDiff += 0.2f;
+                }
+                if (!CountdownStarted)
+                {
+                    StartCoroutine("RaceCountdown");
+                    CountdownStarted = true;
+                }
+                
+                
+                
+            }
+
+        }
+
+        for (int i = 0; i < Chiens.Length; i++)
+        {
+            if (Chiens[i].transform != ChienSelected && !CountdownStarted) Chiens[i].transform.localScale = new Vector3(0.2f,0.2f,-0.2f);
+        }
+
     }
+
+    IEnumerator RaceCountdown()
+    {
+        Countdown.text = "3";
+        yield return new WaitForSeconds(1f);
+        Countdown.text = "2";
+        yield return new WaitForSeconds(1f);
+        Countdown.text = "1";
+        yield return new WaitForSeconds(1f);
+        Countdown.text = "GO";
+        RaceStarted = true;
+        yield return new WaitForSeconds(1f);
+        Countdown.text = "";
+    }
+
 }
