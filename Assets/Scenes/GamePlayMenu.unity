@@ -225,11 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: Chenil
-  FontSize: 15
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &46142432
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +638,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &150075194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150075195}
+  m_Layer: 0
+  m_Name: 'TODO : Rendre selection interactive'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &150075195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150075194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1992128137}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &172737836
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,11 +882,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: Training ground
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_Training_Lands
+  value: 
 --- !u!1 &222626995
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,11 +991,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Blason]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 20
+  key: 
+  value: Devala
 --- !u!1 &242959474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,11 +1133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: Max Speed
-  FontSize: 15
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &312850904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,11 +1369,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '>'
-  FontSize: 15
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &438592164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,11 +1478,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: C
-  FontSize: 15
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &549887103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,11 +1587,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[PlayerTag]'
-  FontSize: 20
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 20
+  key: 
+  value: Hatch
 --- !u!1 &573379302
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,11 +1696,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: Acceleration
-  FontSize: 15
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &638204321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,11 +1805,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Chien B]'
-  FontSize: 25
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 30
+  key: 
+  value: NONE
 --- !u!1 &640445153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,11 +2006,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: B
-  FontSize: 15
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &758021381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,11 +2387,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: ^
-  FontSize: 50
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 40
+  key: 
+  value: /\
 --- !u!1 &900803825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,11 +2496,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: Progress
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_Training_Progression
+  value: 
 --- !u!1 &1033702943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,7 +2510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1033702944}
   m_Layer: 0
-  m_Name: Training
+  m_Name: Training_View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2623,11 +2641,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Localisation]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 30
+  key: 
+  value: Display
 --- !u!1 &1142080155
 GameObject:
   m_ObjectHideFlags: 0
@@ -2917,11 +2934,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Statistique]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_Management_Stats
+  value: 
 --- !u!1 &1247632650
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,11 +3134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Chien A]'
-  FontSize: 25
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 30
+  key: 
+  value: Banjo
 --- !u!1 &1278061194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3413,11 +3428,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Hexagone Stats]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 20
+  key: GameplayMenu_Kennel_Type
+  value: 
 --- !u!1 &1429979632
 GameObject:
   m_ObjectHideFlags: 0
@@ -3523,11 +3537,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Stats]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 20
+  key: GameplayMenu_Kennel_Stats
+  value: 
 --- !u!1 &1439777317
 GameObject:
   m_ObjectHideFlags: 0
@@ -3538,7 +3551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1439777318}
   m_Layer: 0
-  m_Name: Chenil
+  m_Name: Kennel_View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3560,7 +3573,7 @@ Transform:
   - {fileID: 1634470365}
   - {fileID: 2057084226}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459012087
 GameObject:
@@ -3683,11 +3696,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: Bets
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &1472064134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3733,7 +3745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1491315149}
   m_Layer: 0
-  m_Name: Management
+  m_Name: Management_View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3754,7 +3766,7 @@ Transform:
   - {fileID: 1619074576}
   - {fileID: 1834036686}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1547244403
 GameObject:
@@ -3771,7 +3783,7 @@ GameObject:
   - component: {fileID: 1547244408}
   - component: {fileID: 1547244409}
   m_Layer: 0
-  m_Name: Chenil_button
+  m_Name: Kennel_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3883,11 +3895,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: chenil
-  texte: ChenilZ
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_Kennel
+  value: 
 --- !u!1 &1563534840
 GameObject:
   m_ObjectHideFlags: 0
@@ -3903,7 +3914,7 @@ GameObject:
   - component: {fileID: 1563534846}
   - component: {fileID: 1563534845}
   m_Layer: 0
-  m_Name: Management_button
+  m_Name: Management_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3981,7 +3992,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1563534845
 MonoBehaviour:
@@ -3995,11 +4006,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: management
-  texte: Management
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_Management
+  value: 
 --- !u!114 &1563534846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4125,11 +4135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Description]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: GameplayMenu_Kennel_Description
+  value: 
 --- !u!1 &1619074575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,7 +4153,7 @@ GameObject:
   - component: {fileID: 1619074577}
   - component: {fileID: 1619074580}
   m_Layer: 0
-  m_Name: Bourse
+  m_Name: Stockexchange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4235,11 +4244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Bourse]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_Management_StockExchange
+  value: 
 --- !u!1 &1631122004
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,11 +4353,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Nature]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: GameplayMenu_Kennel_Nature
+  value: 
 --- !u!1 &1634470364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4455,11 +4462,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Information]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_Kennel_Informations
+  value: 
 --- !u!1 &1662296006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4565,11 +4571,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Training ground]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 30
+  key: 
+  value: Display
 --- !u!1 &1698596013
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,11 +4680,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Chien C]'
-  FontSize: 25
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 30
+  key: 
+  value: NONE
 --- !u!1 &1765119679
 GameObject:
   m_ObjectHideFlags: 0
@@ -4785,11 +4789,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Description]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &1770774349
 GameObject:
   m_ObjectHideFlags: 0
@@ -4895,11 +4898,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: A
-  FontSize: 15
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &1779805619
 GameObject:
   m_ObjectHideFlags: 0
@@ -5040,7 +5042,7 @@ GameObject:
   - component: {fileID: 1834036687}
   - component: {fileID: 1834036690}
   m_Layer: 0
-  m_Name: Historique
+  m_Name: History
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5131,11 +5133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Historique]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_Management_History
+  value: 
 --- !u!1 &1845580479
 GameObject:
   m_ObjectHideFlags: 0
@@ -5241,11 +5242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: Stamina
-  FontSize: 15
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &1899643984
 GameObject:
   m_ObjectHideFlags: 0
@@ -5351,11 +5351,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: Localisation
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_Training_Location
+  value: 
 --- !u!1 &1917339189
 GameObject:
   m_ObjectHideFlags: 0
@@ -5461,11 +5460,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: V
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 40
+  key: 
+  value: \/
 --- !u!1 &1941863613
 GameObject:
   m_ObjectHideFlags: 0
@@ -5573,7 +5571,7 @@ GameObject:
   - component: {fileID: 1966200443}
   - component: {fileID: 1966200442}
   m_Layer: 0
-  m_Name: Cynodrome_button
+  m_Name: DogTrack_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5651,7 +5649,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1966200442
 MonoBehaviour:
@@ -5665,11 +5663,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: cynodrome
-  texte: Cynodrome
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_DogTrack
+  value: 
 --- !u!114 &1966200443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5795,11 +5792,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Photo]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 20
+  key: GameplayMenu_Kennel_GreyhoundName
+  value: 
 --- !u!1 &1992128136
 GameObject:
   m_ObjectHideFlags: 0
@@ -5833,6 +5829,7 @@ Transform:
   - {fileID: 1276893961}
   - {fileID: 638204322}
   - {fileID: 1698596014}
+  - {fileID: 150075195}
   m_Father: {fileID: 1439777318}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5957,11 +5954,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: Register
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &2019349226
 GameObject:
   m_ObjectHideFlags: 0
@@ -5977,7 +5973,7 @@ GameObject:
   - component: {fileID: 2019349232}
   - component: {fileID: 2019349231}
   m_Layer: 0
-  m_Name: Training_button
+  m_Name: Training_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6055,7 +6051,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &2019349231
 MonoBehaviour:
@@ -6069,11 +6065,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: entrainement
-  texte: Training
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_Training
+  value: 
 --- !u!114 &2019349232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6199,11 +6194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[Progress]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 30
+  key: 
+  value: Display
 --- !u!1 &2057084225
 GameObject:
   m_ObjectHideFlags: 0
@@ -6309,11 +6303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: '[3D Model]'
-  FontSize: 30
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_Kennel_3DModel
+  value: 
 --- !u!1 &2063511194
 GameObject:
   m_ObjectHideFlags: 0
@@ -6324,7 +6317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2063511195}
   m_Layer: 0
-  m_Name: Cynodrome
+  m_Name: DogTrack_View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6346,7 +6339,7 @@ Transform:
   - {fileID: 242959475}
   - {fileID: 758021382}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2081426233
 GameObject:
@@ -6469,11 +6462,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
-  texte: Championship
-  FontSize: 20
-  TextManager: {fileID: 253891744345617745, guid: 67af08d234605af4e8d5cc541caccda9,
-    type: 3}
+  isLocalized: 0
+  fontSize: 0
+  key: 
+  value: 
 --- !u!1 &2140261697
 GameObject:
   m_ObjectHideFlags: 0

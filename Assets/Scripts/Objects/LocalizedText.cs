@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -6,9 +7,29 @@ using UnityEngine.UI;
 
 public class LocalizedText : MonoBehaviour {
     public string key;
+
+    private Text _text;
+    private TextMesh _textMesh;
+
+    private bool _isText;
     
     void Start() {
-        Text text = GetComponent<Text>();
-        text.text = LocalizationManager.instance.GetLocalizedValue(key);
+        _text = GetComponent<Text>();
+        if (_text != null) {
+            _isText = true;
+            _text.text = LocalizationManager.instance.GetLocalizedValue(key);
+        } else {
+            _isText = false;
+            _textMesh = GetComponent<TextMesh>();
+            _textMesh.text = LocalizationManager.instance.GetLocalizedValue(key);
+        }
+    }
+
+    //Todo : remplacer update par un catch d evenement
+    private void Update() {
+        if (_isText)
+            _text.text = LocalizationManager.instance.GetLocalizedValue(key);
+        else
+            _textMesh.text = LocalizationManager.instance.GetLocalizedValue(key);
     }
 }

@@ -1,5 +1,35 @@
 {
 	"items": [
+		{ "key":"MainMenu_Carrier", "value":"Nouvelle Carrière" },
+		{ "key":"MainMenu_OptionB", "value":"Non cliquable" },
+		{ "key":"MainMenu_OptionC", "value":"Non cliquable" },
+
+		{ "key":"MainMenu_SaveDescription_Profil", "value":"Profil" },
+		{ "key":"MainMenu_SaveDescription_Greyhound", "value":"Lévrier" },
+		{ "key":"MainMenu_SaveDescription_Played", "value":"Temps joué" },
+		{ "key":"MainMenu_SaveDescription_Play", "value":"Lancer partie" },
+		
+		{ "key":"GameplayMenu_Kennel", "value":"Chenil" },
+		{ "key":"GameplayMenu_Kennel_Type", "value":"Type" },
+		{ "key":"GameplayMenu_Kennel_GreyhoundName", "value":"Nom lévrier" },
+		{ "key":"GameplayMenu_Kennel_Stats", "value":"Statistiques" },
+		{ "key":"GameplayMenu_Kennel_Nature", "value":"Nature" },
+		{ "key":"GameplayMenu_Kennel_Description", "value":"Description" },
+		{ "key":"GameplayMenu_Kennel_Informations", "value":"Informations" },
+		{ "key":"GameplayMenu_Kennel_3DModel", "value":"Model 3D" },
+		
+		{ "key":"GameplayMenu_Management", "value":"Gestion" },		
+		{ "key":"GameplayMenu_Management_Stats", "value":"Statistiques" },
+		{ "key":"GameplayMenu_Management_StockExchange", "value":"Bourse" },
+		{ "key":"GameplayMenu_Management_History", "value":"Historique" },
+		
+		
+		{ "key":"GameplayMenu_DogTrack", "value":"Cynodrome" },
+		{ "key":"GameplayMenu_Training", "value":"Entrainement" },
+		{ "key":"GameplayMenu_Training_Lands", "value":"Terrains possédés" },
+		{ "key":"GameplayMenu_Training_Location", "value":"Lieux" },
+		{ "key":"GameplayMenu_Training_Progression", "value":"Progression"},
+
 		{ "key":"LangageSelection_English", "value":"Anglais" },
 		{ "key":"LangageSelection_French", "value":"Français" }
 	]

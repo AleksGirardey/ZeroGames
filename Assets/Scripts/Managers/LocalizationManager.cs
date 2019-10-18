@@ -10,6 +10,8 @@ public class LocalizationManager : MonoBehaviour {
     private bool _isReady = false;
     private string _missingTextString = "LocalizedTextNotFound";
     void Awake() {
+        LoadLocalizedText("localizedText_en.json");
+        
         if (instance == null) instance = this;
         else if (instance != null) Destroy(gameObject);
         

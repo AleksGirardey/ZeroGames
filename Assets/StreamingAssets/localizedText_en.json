@@ -1,5 +1,36 @@
 {
 	"items": [
+		{ "key":"MainMenu_Carrier", "value":"New Carrier" },
+		{ "key":"MainMenu_OptionB", "value":"Unclickable" },
+		{ "key":"MainMenu_OptionC", "value":"Unclickable" },
+		
+		{ "key":"MainMenu_SaveDescription_Profil", "value":"Profil" },
+		{ "key":"MainMenu_SaveDescription_Greyhound", "value":"Greyhound" },
+		{ "key":"MainMenu_SaveDescription_Played", "value":"Time played" },
+		{ "key":"MainMenu_SaveDescription_Play", "value":"Launch game" },
+		
+		{ "key":"GameplayMenu_Kennel", "value":"Kennel" },
+		{ "key":"GameplayMenu_Kennel_Type", "value":"Type" },
+		{ "key":"GameplayMenu_Kennel_GreyhoundName", "value":"Greyhound name" },
+		{ "key":"GameplayMenu_Kennel_Stats", "value":"Statistiques" },
+		{ "key":"GameplayMenu_Kennel_Nature", "value":"Nature" },
+		{ "key":"GameplayMenu_Kennel_Description", "value":"Description" },
+		{ "key":"GameplayMenu_Kennel_Informations", "value":"Informations" },
+		{ "key":"GameplayMenu_Kennel_3DModel", "value":"3D Model" },
+		
+		
+		{ "key":"GameplayMenu_Management", "value":"Management" },		
+		{ "key":"GameplayMenu_Management_Stats", "value":"Statistiques" },
+		{ "key":"GameplayMenu_Management_StockExchange", "value":"Stock exchange" },
+		{ "key":"GameplayMenu_Management_History", "value":"History" },
+		
+		{ "key":"GameplayMenu_DogTrack", "value":"Dog track" },
+		
+		{ "key":"GameplayMenu_Training", "value":"Training" },
+		{ "key":"GameplayMenu_Training_Lands", "value":"Owned lands" },
+		{ "key":"GameplayMenu_Training_Location", "value":"Location" },
+		{ "key":"GameplayMenu_Training_Progression", "value":"Progression" },
+		
 		{ "key":"LangageSelection_English", "value":"English" },
 		{ "key":"LangageSelection_French", "value":"French" }
 	]
