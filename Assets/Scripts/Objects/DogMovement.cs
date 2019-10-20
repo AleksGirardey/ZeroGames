@@ -1,178 +1,42 @@
-<<<<<<< Updated upstream
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ using UnityEngine;
 
 public class DogMovement : MonoBehaviour
 {
     [SerializeField]
-    public Transform[] routes;
-
-    private int routeToGo;
-
-    private float tParam;
-
-    private Vector3 dogPosition;
-
-    public float speedModifier;
-
-    private bool coroutineAllowed;
-
-    private Rigidbody DogPhysics;
-
-    float TimeSpent;
-
-    private StatsChien StatsChien;
-
-    public float Endurance;
-    public float Acceleration;
-    public float VitesseMax;
-    public float Vitesse;
-    private bool EnduranceConsumed;
-
-    public RaceManager RaceManager;
-
-    void Start()
-    {
-
-        DogPhysics = GetComponent<Rigidbody>();
-        routeToGo = 0;
-        tParam = 0f;
-        speedModifier = 1f;
-        coroutineAllowed = true;
-        Vitesse = 0;
-
-    }
-
-    void Update()
-    {
-        if (coroutineAllowed)
-        {
-            StartCoroutine(GoByTheRoute(routeToGo));
-        }
-
-        if (RaceManager.RaceStarted) SpeedCalc();
-    }
-
-    public void SpeedCalc()
-    {
-        if (Vitesse < VitesseMax && !EnduranceConsumed)
-        {
-            PhaseAcceleration();
-        }
-        else
-        {
-            PhaseDeceleration();
-        }
-        Vitesse = Mathf.Clamp(Vitesse, 6, VitesseMax);
-
-    }
-
-    void PhaseAcceleration()
-    {
-        Vitesse += Time.deltaTime * Acceleration;
-    }
-
-    void PhaseDeceleration()
-    {
-        EnduranceConsumed = true;
-        Vitesse -= Time.deltaTime * Acceleration * ((100 - Endurance) / 100);
-    }
-
-    private IEnumerator GoByTheRoute(int routeNumber)
-    {
-        coroutineAllowed = false;
-        Vector3 p0 = routes[routeNumber].GetChild(0).position;
-        Vector3 p1 = routes[routeNumber].GetChild(1).position;
-        Vector3 p2 = routes[routeNumber].GetChild(2).position;
-        Vector3 p3 = routes[routeNumber].GetChild(3).position;
-
-            while (tParam < 1)
-            {
-                if ((dogPosition - transform.position).magnitude < speedModifier * 3f) // CHECK SI LE CHIEN A VRAIMENT ATTEINT LE POINT
-                {
-                tParam += Time.fixedDeltaTime * speedModifier; // SI OUI, ON AUGMENTE TPARAM DONT DOGPOSITION CALCULE LE NEXT POINT
-                }
-
-                var dir = dogPosition - transform.position;
-
-                // CALCUL DU NEXT POINT
-                dogPosition = Mathf.Pow(1 - tParam, 3) * p0 +
-                3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 +
-                3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 +
-                Mathf.Pow(tParam, 3) * p3;
-
-                // AJOUT DE LA FORCE AU CHIEN
-                DogPhysics.AddForce(dir * Vitesse);
-                
-                // Affichage visuelle du next point (debug)
-                // Debug.DrawLine(transform.position, dogPosition, Color.red, 0.1f);
-
-                // Rotation du chien
-                transform.rotation = Quaternion.LookRotation(Vector3.up, dir) * Quaternion.Euler(90, 0, 0);
-
-                yield return new WaitForEndOfFrame();
-            }
-        tParam = 0f;
-
-        // SWITCH DE BEZIER CURVE
-        routeToGo += 1;
-        if (routeToGo > routes.Length - 1)
-            routeToGo = 0;
-
-        coroutineAllowed = true;
-
-    }
-
-}
-=======
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class DogMovement : MonoBehaviour
-{
-    [SerializeField]
-    public Transform[] routes;
-
-    private int routeToGo;
-
-    private float tParam;
-
-    private Vector3 dogPosition;
-
-    public float speedModifier;
-
-    private bool coroutineAllowed;
-
-    private Rigidbody DogPhysics;
-
+    public Transform[] Routes;
+    public float SpeedModifier;
     public float Endurance;
     public float Acceleration;
     public float VitesseMax;
     public float Vitesse;
     public float VitesseMoyenne;
-    private bool EnduranceConsumed;
-    private bool HasFinished;
-
     public RaceManager RaceManager;
+
+    private bool _coroutineAllowed;
+    private Rigidbody _dogPhysics;
+    private bool _enduranceConsumed;
+    private bool _hasFinished;
+    private int _routeToGo;
+    private float _tParam;
+    private Vector3 _dogPosition;
 
     void Start()
     {
-        DogPhysics = GetComponent<Rigidbody>();
-        routeToGo = 0;
-        tParam = 0f;
-        speedModifier = 1f;
-        coroutineAllowed = true;
+        _dogPhysics = GetComponent<Rigidbody>();
+        _routeToGo = 0;
+        _tParam = 0f;
+        SpeedModifier = 1f;
+        _coroutineAllowed = true;
         Vitesse = 0;
         VitesseMoyenne = VitesseMax / 2;
     }
 
     void Update()
     {
-        if (coroutineAllowed)
+        if (_coroutineAllowed)
         {
-            StartCoroutine(GoByTheRoute(routeToGo));
+            StartCoroutine(GoByTheRoute(_routeToGo));
         }
 
         if (RaceManager.RaceStarted) SpeedCalc();
@@ -180,7 +44,7 @@ public class DogMovement : MonoBehaviour
 
     public void SpeedCalc()
     {
-        if (Vitesse < VitesseMax && !EnduranceConsumed && !HasFinished)
+        if (Vitesse < VitesseMax && !_enduranceConsumed && !_hasFinished)
         {
             PhaseAcceleration();
         }
@@ -194,9 +58,9 @@ public class DogMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Finish" && RaceManager.RaceStarted)
+        if(other.CompareTag("Finish") && RaceManager.RaceStarted)
         {
-            HasFinished = true;
+            _hasFinished = true;
         }
     }
 
@@ -207,8 +71,8 @@ public class DogMovement : MonoBehaviour
 
     void PhaseDeceleration()
     {
-        EnduranceConsumed = true;
-        if (!HasFinished)
+        _enduranceConsumed = true;
+        if (!_hasFinished)
         {
             Vitesse -= Time.deltaTime * Acceleration * ((100 - Endurance) / 100);
         }
@@ -221,29 +85,29 @@ public class DogMovement : MonoBehaviour
 
     private IEnumerator GoByTheRoute(int routeNumber)
     {
-        coroutineAllowed = false;
-        Vector3 p0 = routes[routeNumber].GetChild(0).position;
-        Vector3 p1 = routes[routeNumber].GetChild(1).position;
-        Vector3 p2 = routes[routeNumber].GetChild(2).position;
-        Vector3 p3 = routes[routeNumber].GetChild(3).position;
+        _coroutineAllowed = false;
+        Vector3 p0 = Routes[routeNumber].GetChild(0).position;
+        Vector3 p1 = Routes[routeNumber].GetChild(1).position;
+        Vector3 p2 = Routes[routeNumber].GetChild(2).position;
+        Vector3 p3 = Routes[routeNumber].GetChild(3).position;
 
-            while (tParam < 1)
+            while (_tParam < 1)
             {
-                if ((dogPosition - transform.position).magnitude < speedModifier * 3f) // CHECK SI LE CHIEN A VRAIMENT ATTEINT LE POINT
+                if ((_dogPosition - transform.position).magnitude < SpeedModifier * 3f) // CHECK SI LE CHIEN A VRAIMENT ATTEINT LE POINT
                 {
-                tParam += Time.fixedDeltaTime * speedModifier; // SI OUI, ON AUGMENTE TPARAM DONC DOGPOSITION CALCULE LE NEXT POINT
+                _tParam += Time.fixedDeltaTime * SpeedModifier; // SI OUI, ON AUGMENTE TPARAM DONC DOGPOSITION CALCULE LE NEXT POINT
                 }
 
-                var dir = dogPosition - transform.position;
+                var dir = _dogPosition - transform.position;
 
                 // CALCUL DU NEXT POINT
-                dogPosition = Mathf.Pow(1 - tParam, 3) * p0 +
-                3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 +
-                3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 +
-                Mathf.Pow(tParam, 3) * p3;
+                _dogPosition = Mathf.Pow(1 - _tParam, 3) * p0 +
+                3 * Mathf.Pow(1 - _tParam, 2) * _tParam * p1 +
+                3 * (1 - _tParam) * Mathf.Pow(_tParam, 2) * p2 +
+                Mathf.Pow(_tParam, 3) * p3;
 
                 // AJOUT DE LA FORCE AU CHIEN
-                DogPhysics.AddForce(dir * Vitesse);
+                _dogPhysics.AddForce(dir * Vitesse);
                 
                 // Affichage visuelle du next point (debug)
                 // Debug.DrawLine(transform.position, dogPosition, Color.red, 0.1f);
@@ -253,16 +117,15 @@ public class DogMovement : MonoBehaviour
 
                 yield return new WaitForEndOfFrame();
             }
-        tParam = 0f;
+        _tParam = 0f;
 
         // SWITCH DE BEZIER CURVE
-        routeToGo += 1;
-        if (routeToGo > routes.Length - 1)
-            routeToGo = 0;
+        _routeToGo += 1;
+        if (_routeToGo > Routes.Length - 1)
+            _routeToGo = 0;
 
-        coroutineAllowed = true;
+        _coroutineAllowed = true;
 
     }
 
 }
->>>>>>> Stashed changes
