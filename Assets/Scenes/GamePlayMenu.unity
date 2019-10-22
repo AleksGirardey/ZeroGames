@@ -3696,9 +3696,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocalized: 0
-  fontSize: 0
-  key: 
+  isLocalized: 1
+  fontSize: 20
+  key: GameplayMenu_DogTrack_PopUp_Bet
   value: 
 --- !u!1 &1472064134
 GameObject:
@@ -4789,9 +4789,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocalized: 0
-  fontSize: 0
-  key: 
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_DogTrack_PopUp_Description
   value: 
 --- !u!1 &1770774349
 GameObject:
@@ -5847,6 +5847,7 @@ GameObject:
   - component: {fileID: 2010660538}
   - component: {fileID: 2010660541}
   - component: {fileID: 2010660542}
+  - component: {fileID: 2010660543}
   m_Layer: 0
   m_Name: Register
   m_TagString: Untagged
@@ -5954,10 +5955,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocalized: 0
-  fontSize: 0
-  key: 
+  isLocalized: 1
+  fontSize: 30
+  key: GameplayMenu_DogTrack_PopUp_Registration
   value: 
+--- !u!114 &2010660543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010660536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034e1877f38455d488480dfec45afb8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneToLoad: Race
 --- !u!1 &2019349226
 GameObject:
   m_ObjectHideFlags: 0
@@ -6462,9 +6476,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocalized: 0
-  fontSize: 0
-  key: 
+  isLocalized: 1
+  fontSize: 20
+  key: GameplayMenu_DogTrack_PopUp_Championship
   value: 
 --- !u!1 &2140261697
 GameObject:

@@ -18,4 +18,10 @@ public class GameManager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
     }
+    
+    void Update() {
+        if (Input.GetKey("escape")) {
+            Application.Quit();
+        }
+    }
 }

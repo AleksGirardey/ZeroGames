@@ -25,6 +25,11 @@
 		
 		
 		{ "key":"GameplayMenu_DogTrack", "value":"Cynodrome" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Description", "value":"Description" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Registration", "value":"Enregistrement" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Bet", "value":"Parier" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Championship", "value":"Championnat" },		
+		
 		{ "key":"GameplayMenu_Training", "value":"Entrainement" },
 		{ "key":"GameplayMenu_Training_Lands", "value":"Terrains possédés" },
 		{ "key":"GameplayMenu_Training_Location", "value":"Lieux" },

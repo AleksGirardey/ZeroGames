@@ -24,11 +24,6 @@ public class Script_test : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private bool TEST;
     private void OnMouseOver()
     {        

@@ -25,6 +25,10 @@
 		{ "key":"GameplayMenu_Management_History", "value":"History" },
 		
 		{ "key":"GameplayMenu_DogTrack", "value":"Dog track" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Description", "value":"Description" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Registration", "value":"Registration" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Bet", "value":"Bet on it" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Championship", "value":"Championship" },
 		
 		{ "key":"GameplayMenu_Training", "value":"Training" },
 		{ "key":"GameplayMenu_Training_Lands", "value":"Owned lands" },
