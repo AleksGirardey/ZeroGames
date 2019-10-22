@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Route : MonoBehaviour
+public class DrawBeziers : MonoBehaviour
 {
     [SerializeField]
-    private Transform[] controlPoints;
+    public Transform[] controlPoints;
 
     private Vector3 gizmosPosition;
 
