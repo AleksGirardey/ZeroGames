@@ -1,5 +1,15 @@
 ﻿using UnityEngine;
 
-public class Player : ScriptableObject {
-    private Stable _stable;
+[System.Serializable]
+public class Player
+{
+
+    public Kennel _kennel;
+
+    public string _profileName;
+    public string _greyhound;
+
+    public int _daysPlayed;
+    public int _money;
+
 }

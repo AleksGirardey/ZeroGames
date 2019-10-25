@@ -41,10 +41,10 @@ public class TextGameObject : MonoBehaviour {
             _localization.key = key;
         }
     }
-    
+
+    private void Update()
+    {
+        _textMesh.text = value;
+    }
+
 }
-
-
-
-
-
