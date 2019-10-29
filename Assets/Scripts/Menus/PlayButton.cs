@@ -12,22 +12,21 @@ public class PlayButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mat1 = GetComponent<MeshRenderer>().materials[1];
+        mat1 = GetComponent<MeshRenderer>().materials[1];  //Set up of the materials that will be used.
         mat2 = GetComponent<MeshRenderer>().materials[0];
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public string SceneName;
 
+    private void OnMouseEnter()
+    {
+        GetComponent<MeshRenderer>().material = mat1;  //Change the material to highlight the button.
+    }
+
     private void OnMouseOver()
     {
-        GetComponent<MeshRenderer>().material = mat1;
         if (Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
@@ -37,7 +36,7 @@ public class PlayButton : MonoBehaviour
     private void OnMouseExit()
     {
 
-        GetComponent<MeshRenderer>().material = mat2;
+        GetComponent<MeshRenderer>().material = mat2;  //Reset the material to the default one.
     }
 
    

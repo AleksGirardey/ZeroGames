@@ -20,20 +20,18 @@ public class Day_training : MonoBehaviour
 
     void Start()
     {
-        mat1 = GetComponent<MeshRenderer>().materials[0];
+        mat1 = GetComponent<MeshRenderer>().materials[0]; // Set up the material that will be used.
         mat2 = GetComponent<MeshRenderer>().materials[1];
-        
-
     }
 
     private void OnMouseOver()
     {
         if(Input.GetMouseButtonDown(0))
         {
-            Training_PopUp.transform.position = new Vector3 (transform.position.x , transform.position.y + 0.01f , transform.position.z);
-            Training_PopUp.SetActive(true);
-            Training_PopUp.GetComponent<Training_Apply>().Day = this.gameObject;
-            GetComponent<Texte>().t.gameObject.SetActive(false);
+            Training_PopUp.transform.position = new Vector3 (transform.position.x , transform.position.y + 0.01f , transform.position.z);  // Make the training choice come at the selection place.
+            Training_PopUp.SetActive(true);  // Set the training Active.
+            Training_PopUp.GetComponent<Training_Apply>().Day = this.gameObject;  // Give the training selection the good panel to affect.
+            GetComponent<Texte>().t.gameObject.SetActive(false);  // Make the day panel texte unactivated.
         }
     }
 
@@ -42,15 +40,15 @@ public class Day_training : MonoBehaviour
     {
         switch (Number)
         {
-            case 1:
+            case 1: // Change the text of the panel to the choice made by the player.
                 GetComponent<Texte>().t.gameObject.SetActive(true);
                 GetComponent<Texte>().t.GetComponent<TextMesh>().text = "Training A";                
                 if(GetComponent<MeshRenderer>().material == mat1)
                 {
-                    exhaust_giver(day);
+                    exhaust_giver(day); // Add the exhaustion.
                 }
                 GetComponent<MeshRenderer>().material = mat2;
-                TrainingType = 1;
+                TrainingType = 1;  // Set up the type of the training for later use.
                 break;
 
             case 2:
@@ -80,7 +78,7 @@ public class Day_training : MonoBehaviour
                 GetComponent<Texte>().t.GetComponent<TextMesh>().text = "No Training";
                 if (GetComponent<MeshRenderer>().material == mat2)
                 {
-                    exhaust_taker(day);
+                    exhaust_taker(day);  // Remove the exhaustion.
                 }
                 GetComponent<MeshRenderer>().material = mat1;
                 TrainingType = 4;

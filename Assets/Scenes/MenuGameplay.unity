@@ -8319,9 +8319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01333816cf47f8b43bc5239c0db15cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocalized: 0
+  isLocalized: 1
   fontSize: 30
-  key: 
+  key: GameplayMenu_Management
   value: 
 --- !u!114 &1563534846
 MonoBehaviour:
