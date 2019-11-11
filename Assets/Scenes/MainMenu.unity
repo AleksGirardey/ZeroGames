@@ -248,7 +248,6 @@ MonoBehaviour:
   fontSize: 20
   key: MainMenu_Carrier
   value: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &90789256
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +392,6 @@ MonoBehaviour:
   fontSize: 20
   key: MainMenu_SaveDescription_Play
   value: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &101171900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,7 +1239,6 @@ MonoBehaviour:
   fontSize: 20
   key: MainMenu_SaveDescription_Profil
   value: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &222824038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1646,7 +1643,6 @@ MonoBehaviour:
   fontSize: 20
   key: 
   value: Banjo
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &338486256
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2787,7 +2783,6 @@ MonoBehaviour:
   fontSize: 20
   key: MainMenu_SaveDescription_Greyhound
   value: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &819675975
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3768,7 +3763,6 @@ MonoBehaviour:
   fontSize: 20
   key: 
   value: 7500 $
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1176107112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3878,7 +3872,6 @@ MonoBehaviour:
   fontSize: 20
   key: MainMenu_SaveDescription_Profil
   value: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1177572725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4018,7 +4011,6 @@ MonoBehaviour:
   fontSize: 20
   key: 
   value: Banjo
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1241250956
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4128,7 +4120,6 @@ MonoBehaviour:
   fontSize: 20
   key: MainMenu_SaveDescription_Greyhound
   value: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1246172613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4265,7 +4256,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1250433139}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -4366,7 +4357,6 @@ MonoBehaviour:
   fontSize: 20
   key: 
   value: 23 Days
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1257901328
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4660,7 +4650,6 @@ MonoBehaviour:
   fontSize: 20
   key: MainMenu_Load
   value: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1308050439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4802,7 +4791,6 @@ MonoBehaviour:
   fontSize: 20
   key: MainMenu_SaveDescription_Played
   value: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1334682758
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4991,7 +4979,6 @@ MonoBehaviour:
   fontSize: 20
   key: MainMenu_Quit
   value: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1415369884
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5208,7 +5195,6 @@ MonoBehaviour:
   fontSize: 20
   key: 
   value: 7500 $
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1469064585
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5973,7 +5959,6 @@ MonoBehaviour:
   fontSize: 20
   key: MainMenu_SaveDescription_Played
   value: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1834180754
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6175,7 +6160,6 @@ MonoBehaviour:
   fontSize: 20
   key: 
   value: 23 Days
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1915930049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6398,7 +6382,6 @@ MonoBehaviour:
   fontSize: 20
   key: 
   value: Hatch
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &2012800491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6773,7 +6756,6 @@ MonoBehaviour:
   fontSize: 20
   key: 
   value: Hatch
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &2094611976
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7090,7 +7072,6 @@ MonoBehaviour:
   fontSize: 20
   key: MainMenu_SaveDescription_Play
   value: 
-  textColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2134668920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7201,7 +7182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10.000061, y: 5}
+  m_AnchoredPosition: {x: 10.000122, y: 5}
   m_SizeDelta: {x: 66.20001, y: 35.399994}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2139034154
