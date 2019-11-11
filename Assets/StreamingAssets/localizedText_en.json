@@ -1,8 +1,28 @@
 {
 	"items": [
 		{ "key":"MainMenu_Carrier", "value":"New Carrier" },
-		{ "key":"MainMenu_OptionB", "value":"Unclickable" },
-		{ "key":"MainMenu_OptionC", "value":"Unclickable" },
+		{ "key":"MainMenu_Load", "value":"Load Carrier" },
+		{ "key":"MainMenu_Quit", "value":"Quit" },
+
+		{ "key":"EscMenu_Save", "value":"Save" },
+		{ "key":"EscMenu_Load", "value":"Load" },
+		{ "key":"EscMenu_Options", "value":"Options" },
+		{ "key":"EscMenu_Quit", "value":"Quit" },
+
+		{ "key":"LoadSaveMenu_Save", "value":"Save" },
+		{ "key":"LoadSaveMenu_Money", "value":"Money" },
+		{ "key":"LoadSaveMenu_TimePlayed", "value":"Time played" },
+		{ "key":"LoadSaveMenu_Back", "value":"Back" },
+
+		{ "key":"StartScene_BaseInfos", "value":"Base infos: blah blah blah" },
+		{ "key":"StartScene_StarterSelection", "value":"Select my dog" },
+		{ "key":"StartScene_StarterSelectionTitle", "value":"Dog selection" },
+		{ "key":"StartScene_DogName1", "value":"Doggy" },
+		{ "key":"StartScene_DogName2", "value":"Doggo" },
+		{ "key":"StartScene_DogName3", "value":"Dogga" },
+		{ "key":"StartScene_DogSpeed", "value":"Average speed: " },
+		{ "key":"StartScene_DogMaxSpeed", "value":"Max speed: " },
+		{ "key":"StartScene_DogStamina", "value":"Stamina: " },
 		
 		{ "key":"MainMenu_SaveDescription_Profil", "value":"Profil" },
 		{ "key":"MainMenu_SaveDescription_Greyhound", "value":"Greyhound" },
