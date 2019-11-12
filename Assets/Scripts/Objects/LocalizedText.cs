@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using TMPro;
 
 public class LocalizedText : MonoBehaviour {
     public string key;
 
     private Text _text;
-    private TextMesh _textMesh;
+    private TextMeshProUGUI _textMesh;
 
     private bool _isText;
     
@@ -20,7 +21,7 @@ public class LocalizedText : MonoBehaviour {
             _text.text = LocalizationManager.instance.GetLocalizedValue(key);
         } else {
             _isText = false;
-            _textMesh = GetComponent<TextMesh>();
+            _textMesh = GetComponent<TextMeshProUGUI>();
             _textMesh.text = LocalizationManager.instance.GetLocalizedValue(key);
         }
     }

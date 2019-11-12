@@ -1,5 +1,7 @@
 {
 	"items": [
+		{ "key":"Global_Back", "value":"Retour" },
+
 		{ "key":"MainMenu_Carrier", "value":"Nouvelle Carrière" },
 		{ "key":"MainMenu_Load", "value":"Charger Carrière" },
 		{ "key":"MainMenu_Quit", "value":"Quitter" },
@@ -23,6 +25,7 @@
 		{ "key":"StartScene_DogSpeed", "value":"Vitesse moyenne: " },
 		{ "key":"StartScene_DogMaxSpeed", "value":"Vitesse max: " },
 		{ "key":"StartScene_DogStamina", "value":"Endurance: " },
+		{ "key":"StartScene_DogAccel", "value":"Accel: " },
 
 		{ "key":"MainMenu_SaveDescription_Profil", "value":"Profil" },
 		{ "key":"MainMenu_SaveDescription_Greyhound", "value":"Lévrier" },
@@ -46,6 +49,9 @@
 		
 		{ "key":"GameplayMenu_DogTrack", "value":"Cynodrome" },
 		{ "key":"GameplayMenu_DogTrack_PopUp_Description", "value":"Description" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Description1turn", "value":"course à 1 tour" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Description2turn", "value":"course à 2 tours" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Description3turn", "value":"course à 3 tours" },
 		{ "key":"GameplayMenu_DogTrack_PopUp_Registration", "value":"Enregistrement" },
 		{ "key":"GameplayMenu_DogTrack_PopUp_Bet", "value":"Parier" },
 		{ "key":"GameplayMenu_DogTrack_PopUp_Championship", "value":"Championnat" },		
@@ -54,6 +60,9 @@
 		{ "key":"GameplayMenu_Training_Lands", "value":"Terrains possédés" },
 		{ "key":"GameplayMenu_Training_Location", "value":"Lieux" },
 		{ "key":"GameplayMenu_Training_Progression", "value":"Progression"},
+
+		{ "key":"GameplayMenu_GoToRace", "value":"Aller à la course"},
+
 
 		{ "key":"LangageSelection_English", "value":"Anglais" },
 		{ "key":"LangageSelection_French", "value":"Français" }

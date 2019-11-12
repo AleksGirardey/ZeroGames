@@ -1,5 +1,7 @@
 {
 	"items": [
+		{ "key":"Global_Back", "value":"Back" },
+
 		{ "key":"MainMenu_Carrier", "value":"New Carrier" },
 		{ "key":"MainMenu_Load", "value":"Load Carrier" },
 		{ "key":"MainMenu_Quit", "value":"Quit" },
@@ -23,6 +25,7 @@
 		{ "key":"StartScene_DogSpeed", "value":"Average speed: " },
 		{ "key":"StartScene_DogMaxSpeed", "value":"Max speed: " },
 		{ "key":"StartScene_DogStamina", "value":"Stamina: " },
+		{ "key":"StartScene_DogAccel", "value":"Accel: " },
 		
 		{ "key":"MainMenu_SaveDescription_Profil", "value":"Profil" },
 		{ "key":"MainMenu_SaveDescription_Greyhound", "value":"Greyhound" },
@@ -46,6 +49,9 @@
 		
 		{ "key":"GameplayMenu_DogTrack", "value":"Dog track" },
 		{ "key":"GameplayMenu_DogTrack_PopUp_Description", "value":"Description" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Description1turn", "value":"1 turn race" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Description2turn", "value":"2 turn race" },
+		{ "key":"GameplayMenu_DogTrack_PopUp_Description3turn", "value":"3 turn race" },
 		{ "key":"GameplayMenu_DogTrack_PopUp_Registration", "value":"Registration" },
 		{ "key":"GameplayMenu_DogTrack_PopUp_Bet", "value":"Bet on it" },
 		{ "key":"GameplayMenu_DogTrack_PopUp_Championship", "value":"Championship" },
@@ -54,6 +60,8 @@
 		{ "key":"GameplayMenu_Training_Lands", "value":"Owned lands" },
 		{ "key":"GameplayMenu_Training_Location", "value":"Location" },
 		{ "key":"GameplayMenu_Training_Progression", "value":"Progression" },
+
+		{ "key":"GameplayMenu_GoToRace", "value":"Go to race"},
 		
 		{ "key":"LangageSelection_English", "value":"English" },
 		{ "key":"LangageSelection_French", "value":"French" }

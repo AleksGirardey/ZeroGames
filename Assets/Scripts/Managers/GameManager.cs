@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEditor;
 /**
  * Main manager, handle the game, the player and the world
  */
@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Instance;
 
-    public GameObject Menu;
+
     
     private Game _game;
 
@@ -23,11 +23,16 @@ public class GameManager : MonoBehaviour {
 
     public TextGameObject MoneyText, ProfileText, DogText, TimePlayerText;
 
+    public int Turns;
+    public StatsChien[] PlayerDogs;
     void Awake() {
         if (Instance == null) Instance = this;
         else if (Instance != this) Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+        gameObject.tag = "GameManager";
+        //PlayerDogs[0] = (StatsChien)AssetDatabase.LoadAssetAtPath("Assets/Ressources/PlayerDogs/Chien1", typeof(ScriptableObject));
+
     }
 
     private void Start()
@@ -39,15 +44,17 @@ public class GameManager : MonoBehaviour {
 
     void Update() {
 
-        if (Input.GetKeyDown("escape")) {
-
-            Menu.SetActive(!Menu.activeSelf);
-
-        }
-
-        UpdateTextValue();
+        // UpdateTextValue();
 
     }
+
+    public void SetPlayerDog(int endu, int accel, int vmax)
+    {
+        PlayerDogs[0].Endurance = endu;
+        PlayerDogs[0].Acceleration = accel;
+        PlayerDogs[0].VitesseMax = vmax;
+    }
+
 
     public void Save()
     {

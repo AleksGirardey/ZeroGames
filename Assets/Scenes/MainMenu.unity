@@ -1772,6 +1772,24 @@ MonoBehaviour:
   StarterSelectionGO: {fileID: 1060462942}
   SaveLoadScreen: {fileID: 379656702}
   MenuEsc: {fileID: 543610182}
+  DogMaxSpeed1: 0
+  DogAccel1: 0
+  DogStamina1: 0
+  DogMaxSpeed2: 0
+  DogAccel2: 0
+  DogStamina2: 0
+  DogAccel3: 0
+  DogStamina3: 0
+  DogMaxSpeed3: 0
+  DogMaxSpeed1txt: {fileID: 1060462943}
+  DogAccel1txt: {fileID: 1060462943}
+  DogStamina1txt: {fileID: 1060462943}
+  DogMaxSpeed2txt: {fileID: 1060462943}
+  DogAccel2txt: {fileID: 1060462943}
+  DogStamina2txt: {fileID: 1060462943}
+  DogAccel3txt: {fileID: 1060462943}
+  DogStamina3txt: {fileID: 1060462943}
+  DogMaxSpeed3txt: {fileID: 1060462943}
 --- !u!4 &422153728
 Transform:
   m_ObjectHideFlags: 0
@@ -2185,7 +2203,7 @@ GameObject:
   - component: {fileID: 601617778}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2202,7 +2220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acdb1c816bbab344eb8d74a76b288d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Menu: {fileID: 0}
   _player:
     _kennel:
       SelectedDog: {fileID: 0}
@@ -2218,6 +2235,9 @@ MonoBehaviour:
   ProfileText: {fileID: 2012800490}
   DogText: {fileID: 1241250955}
   TimePlayerText: {fileID: 1915930048}
+  Turns: 0
+  PlayerDogs:
+  - {fileID: 11400000, guid: 927761249eb65404abf3fae10bd891b7, type: 2}
 --- !u!114 &601617779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3481,6 +3501,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+  - component: {fileID: 1060462945}
+  - component: {fileID: 1060462944}
   - component: {fileID: 1060462943}
   m_Layer: 0
   m_Name: Debug
@@ -3489,20 +3511,65 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1060462943
-Transform:
+--- !u!114 &1060462943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060462942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1060462944
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060462942}
+  m_CullTransparentMesh: 0
+--- !u!224 &1060462945
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060462942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 648.2591, y: 343.22742, z: -859.25}
+  m_LocalPosition: {x: 0, y: 0, z: -859.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 648.2591, y: 343.22742}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1141584296
 GameObject:
   m_ObjectHideFlags: 0
