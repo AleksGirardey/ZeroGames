@@ -7,18 +7,36 @@ public class TextButton : MonoBehaviour
 {
     public bool isLocalized;
 
-    public int fontSize = 30;
+    public float fontSize;
     public string key;
     public string value;
 
-    private LocalizedText _localization;
+    public float Scale;
+
+    private ButtonLocalizedText _localization;
     private TextMeshProUGUI _textMesh;
 
     // Todo : Faire en sorte de match la size du text en fonction de celle du GO
     void Awake()
     {
+        
+        Scale = GetComponent<RectTransform>().anchorMax.x - GetComponent<RectTransform>().anchorMin.x;
+        if (Scale < 0.02f)
+        {
+            Scale = GetComponent<RectTransform>().anchorMax.y - GetComponent<RectTransform>().anchorMin.y;
+        }
+        
+
         _textMesh = transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
-              
+        if (Scale < 0.05)
+        {
+            fontSize = ((Scale * 1000) / (Mathf.Pow(((float)_textMesh.text.Length), 0.5f)));
+        }
+        else
+        {
+            fontSize = ((Scale * 1000) / (Mathf.Pow(((float)_textMesh.text.Length), 1.1f-Scale)));
+        }
+        
 
         _textMesh.text = value;
         _textMesh.characterWidthAdjustment = 0.1f;
@@ -34,15 +52,35 @@ public class TextButton : MonoBehaviour
             1 / localScale.y,
             1 / localScale.z);
 
-        /*if (isLocalized)
+        if (isLocalized)
         {
-            _localization = go.AddComponent<LocalizedText>();
+            _localization = this.gameObject.AddComponent<ButtonLocalizedText>();
             _localization.key = key;
-        }*/
+        }
     }
+
+
 
     private void Update()
     {
         _textMesh.text = value;
+        Scale = GetComponent<RectTransform>().anchorMax.x - GetComponent<RectTransform>().anchorMin.x;
+        if (Scale < 0.02f)
+        {
+            Scale = GetComponent<RectTransform>().anchorMax.y - GetComponent<RectTransform>().anchorMin.y;
+        }
+
+
+        _textMesh = transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
+        if (Scale < 0.05)
+        {
+            fontSize = ((Scale * 1000) / (Mathf.Pow(((float)_textMesh.text.Length), 0.5f)));
+        }
+        else
+        {
+            fontSize = ((Scale * 1000) / (Mathf.Pow(((float)_textMesh.text.Length), 1.1f - Scale)));
+        }
+
+        _textMesh.fontSize = fontSize;
     }
 }
