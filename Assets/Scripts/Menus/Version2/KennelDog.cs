@@ -9,7 +9,7 @@ public class KennelDog : MonoBehaviour
 
     public GameObject Archive;
 
-    private void Awake()
+    private void Start()
     {
         GetComponent<Image>().color = Archive.GetComponent<DogData>().KennelDogData[_dog];
     }
