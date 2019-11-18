@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BoutonChien
   - GameManager
+  - TrainingManager
   layers:
   - Default
   - TransparentFX

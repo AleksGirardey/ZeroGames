@@ -17,7 +17,7 @@ public class ButtonLocalizedText : MonoBehaviour
     void Start()
     {
         _textMesh = transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
-        if (_textMesh.text != null)
+        if (_textMesh.text == null)
         {
             _isText = true;
             _text.text = LocalizationManager.instance.GetLocalizedValue(key);
