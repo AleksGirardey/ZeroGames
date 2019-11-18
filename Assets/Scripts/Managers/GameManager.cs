@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
     public TextGameObject MoneyText, ProfileText, DogText, TimePlayerText;
 
     public int Turns;
-    public StatsChien[] PlayerDogs;
+    public StatsChien[] PlayerDogs; // IL A PAS AIMER QUE JE METTE CHIEN
     void Awake() {
         if (Instance == null) Instance = this;
         else if (Instance != this) Destroy(gameObject);

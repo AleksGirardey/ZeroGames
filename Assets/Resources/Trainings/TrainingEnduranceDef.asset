@@ -9,17 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4632c185e4c0b41ac746f005a3630c, type: 3}
-  m_Name: Chien1
+  m_Script: {fileID: 11500000, guid: f35934de32ecc9146bf5acd0a99bfeb8, type: 3}
+  m_Name: TrainingEnduranceDef
   m_EditorClassIdentifier: 
-  Endurance: 30
-  Acceleration: 30
-  VitesseMax: 30
-  EnduranceDef: 0
+  EnduranceDef: 1
   AccelerationDef: 0
   VitesseMaxDef: 0
-  EnduranceTempo: []
-  AccelerationTempo: []
-  VitesseMaxTempo: []
-  imgColor: {r: 1, g: 0, b: 0, a: 1}
-  Name: doggy
+  EnduranceTempo: 0
+  AccelerationTempo: 0
+  VitesseMaxTempo: 0
+  WeekLeft: -1
