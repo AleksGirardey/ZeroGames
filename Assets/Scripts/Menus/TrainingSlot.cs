@@ -3,16 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+public enum DayOfTraining {
+    MONDAY = 0,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY
+}
+
 public class TrainingSlot : MonoBehaviour, IDropHandler
 {
-    public bool Monday, Tuesday, Wednesday, Thursday, Friday, TrainingMenu;
+    public DayOfTraining day;
+
+    //public bool Monday, Tuesday, Wednesday, Thursday, Friday;
+    bool TrainingMenu;
     public TrainingManager TrainingManager;
+
+    public Training training;
+
+    public void Start() {
+        TrainingManager = GameObject.FindWithTag("TrainingManager").GetComponent<TrainingManager>();
+    }
 
     public void OnDrop(PointerEventData eventData)
     {
+        if (eventData.pointerDrag != null)
+        {
+            training = eventData.pointerDrag.GetComponent<TrainingButton>().Training;
+        }
+        
         //print("Drop");
-        TrainingManager = GameObject.FindWithTag("TrainingManager").GetComponent<TrainingManager>();
-
+        
+        /*
         if (eventData.pointerDrag != null)
         {
             if (TrainingMenu)
@@ -141,7 +163,7 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
 
             
             eventData.pointerDrag.GetComponent<RectTransform>().transform.position = gameObject.transform.position;
-        }
+        }*/
     }
 
 
