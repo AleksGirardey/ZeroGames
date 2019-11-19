@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
+using System.Collections.Generic;
 /**
  * Main manager, handle the game, the player and the world
  */
@@ -24,7 +25,9 @@ public class GameManager : MonoBehaviour {
     public TextGameObject MoneyText, ProfileText, DogText, TimePlayerText;
 
     public int Turns;
-    public StatsChien[] PlayerDogs; // IL A PAS AIMER QUE JE METTE CHIEN
+    public List<StatsChien> PlayerDogs; // IL A PAS AIMER QUE JE METTE CHIEN
+    public List<Training> Trainings;
+
     void Awake() {
         if (Instance == null) Instance = this;
         else if (Instance != this) Destroy(gameObject);
@@ -32,13 +35,22 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
         gameObject.tag = "GameManager";
         //PlayerDogs[0] = (StatsChien)AssetDatabase.LoadAssetAtPath("Assets/Ressources/PlayerDogs/Chien1", typeof(ScriptableObject));
-
+        foreach (StatsChien st in Resources.LoadAll<StatsChien>("PlayerDogs"))
+        {
+            PlayerDogs.Add(st);
+        }
+        foreach (Training training in Resources.LoadAll<Training>("Trainings"))
+        {
+            Trainings.Add(training);
+        }
     }
 
     private void Start()
     {
-
+        //PlayerDogs[] = Resources.LoadAll<StatsChien>("Chiens");
         Load();
+
+       
 
     }
 
