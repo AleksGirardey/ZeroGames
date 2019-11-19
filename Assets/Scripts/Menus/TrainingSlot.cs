@@ -16,148 +16,37 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
     public DayOfTraining day;
 
     //public bool Monday, Tuesday, Wednesday, Thursday, Friday;
-    bool TrainingMenu;
     public TrainingManager TrainingManager;
 
     public Training training;
+    public EnergyBars EnergyBar;
 
     public void Start() {
         TrainingManager = GameObject.FindWithTag("TrainingManager").GetComponent<TrainingManager>();
+        EnergyBar = transform.parent.parent.GetComponentInChildren<EnergyBars>();
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (eventData.pointerDrag != null)
+        if (eventData.pointerDrag != null && training == null && EnergyBar.EnergyBarNb() != 0)
         {
             training = eventData.pointerDrag.GetComponent<TrainingButton>().Training;
+            //eventData.pointerDrag.GetComponent<RectTransform>().transform.position = gameObject.transform.position;
+            eventData.pointerDrag.transform.position = gameObject.transform.position - new Vector3(0, 55, 0);
+             //eventData.pointerDrag.transform.position = gameObject.GetComponent<RectTransform>().position;
+            eventData.pointerDrag.GetComponent<TrainingButton>().dropped = true;
+            eventData.pointerDrag.GetComponent<TrainingButton>().TrainingSlot = this;
+            eventData.pointerDrag.transform.SetParent(this.transform);
+
+
         }
-        
+
         //print("Drop");
-        
+
         /*
         if (eventData.pointerDrag != null)
         {
-            if (TrainingMenu)
-            {
-                if (eventData.pointerDrag.GetComponent<TrainingButton>().Monday)
-                {
-                    eventData.pointerDrag.GetComponent<TrainingButton>().Monday = false;
-                    TrainingManager.Monday--;
-                }
-                else if (eventData.pointerDrag.GetComponent<TrainingButton>().Tuesday)
-                {
-                    eventData.pointerDrag.GetComponent<TrainingButton>().Tuesday = false;
-                    TrainingManager.Tuesday--;
-
-                }
-                else if (eventData.pointerDrag.GetComponent<TrainingButton>().Wednesday)
-                {
-                    eventData.pointerDrag.GetComponent<TrainingButton>().Wednesday = false;
-                    TrainingManager.Wednesday--;
-
-                }
-                else if (eventData.pointerDrag.GetComponent<TrainingButton>().Thursday)
-                {
-                    eventData.pointerDrag.GetComponent<TrainingButton>().Thursday = false;
-                    TrainingManager.Thursday--;
-
-                }
-                else if (eventData.pointerDrag.GetComponent<TrainingButton>().Friday)
-                {
-                    eventData.pointerDrag.GetComponent<TrainingButton>().Friday = false;
-                    TrainingManager.Friday--;
-
-                }
-                TrainingManager.UpcomingTrainings.Remove(eventData.pointerDrag.GetComponent<TrainingButton>().Training);
-                eventData.pointerDrag.GetComponent<TrainingButton>().onCalendar = false;
-            }
-            else
-            {
-                if (eventData.pointerDrag.GetComponent<TrainingButton>().onCalendar == true)
-                {
-                    if (eventData.pointerDrag.GetComponent<TrainingButton>().Monday)
-                    {
-                        eventData.pointerDrag.GetComponent<TrainingButton>().Monday = false;
-                        TrainingManager.Monday--;
-                    }
-                    else if (eventData.pointerDrag.GetComponent<TrainingButton>().Tuesday)
-                    {
-                        eventData.pointerDrag.GetComponent<TrainingButton>().Tuesday = false;
-                        TrainingManager.Tuesday--;
-
-                    }
-                    else if (eventData.pointerDrag.GetComponent<TrainingButton>().Wednesday)
-                    {
-                        eventData.pointerDrag.GetComponent<TrainingButton>().Wednesday = false;
-                        TrainingManager.Wednesday--;
-
-                    }
-                    else if (eventData.pointerDrag.GetComponent<TrainingButton>().Thursday)
-                    {
-                        eventData.pointerDrag.GetComponent<TrainingButton>().Thursday = false;
-                        TrainingManager.Thursday--;
-
-                    }
-                    else if (eventData.pointerDrag.GetComponent<TrainingButton>().Friday)
-                    {
-                        eventData.pointerDrag.GetComponent<TrainingButton>().Friday = false;
-                        TrainingManager.Friday--;
-
-                    }
-                    TrainingManager.UpcomingTrainings.Remove(eventData.pointerDrag.GetComponent<TrainingButton>().Training);
-                }
-
-                if (Monday)
-                {
-                    
-                        TrainingManager.Monday++;
-                    
-                    eventData.pointerDrag.GetComponent<TrainingButton>().onCalendar = true;
-                    eventData.pointerDrag.GetComponent<TrainingButton>().Monday = true;
-                }
-                else if (Tuesday)
-                {
-                    
-                        TrainingManager.Tuesday++;
-                    
-                    eventData.pointerDrag.GetComponent<TrainingButton>().onCalendar = true;                   
-                    eventData.pointerDrag.GetComponent<TrainingButton>().Tuesday = true;
-
-                }
-                else if (Wednesday)
-                {
-                    
-                        TrainingManager.Wednesday++;
-                    
-                    eventData.pointerDrag.GetComponent<TrainingButton>().onCalendar = true;                   
-                    eventData.pointerDrag.GetComponent<TrainingButton>().Wednesday = true;
-
-                }
-                else if (Thursday)
-                {
-                    
-                        TrainingManager.Thursday++;
-                    
-                    eventData.pointerDrag.GetComponent<TrainingButton>().onCalendar = true;                   
-                    eventData.pointerDrag.GetComponent<TrainingButton>().Thursday = true;
-
-                }
-                else if (Friday)
-                {
-                   
-                        TrainingManager.Friday++;
-                    
-                    eventData.pointerDrag.GetComponent<TrainingButton>().onCalendar = true;                   
-                    eventData.pointerDrag.GetComponent<TrainingButton>().Friday = true;
-
-                }
-                TrainingManager.UpcomingTrainings.Add(eventData.pointerDrag.GetComponent<TrainingButton>().Training);
-
-               
-            }
-            
-            
-
+           
             eventData.pointerDrag.GetComponent<TrainingButton>().dropped = true;
             //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = gameObject.GetComponent<RectTransform>().anchoredPosition;
 

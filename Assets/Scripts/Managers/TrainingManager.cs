@@ -14,13 +14,13 @@ public class TrainingManager : MonoBehaviour
     public Text SelectedDogTxt;
     public Image SelectedDogImg;
     public StatsChien SelectedDog;
-    public Color RedEnergy, OrangeEnergy, GreenEnergy, EmptyEnergy;
+    //public Color RedEnergy, OrangeEnergy, GreenEnergy, EmptyEnergy;
 
-    public List<Training> UpcomingTrainings = new List<Training>();
-    public int Monday, Tuesday, Wednesday, Thursday, Friday;
-    public int MondayEnergy, TuesdayEnergy, WednesdayEnergy, ThursdayEnergy, FridayEnergy;
+    public List<Training> ConfirmedTrainings = new List<Training>();
+    //public int Monday, Tuesday, Wednesday, Thursday, Friday;
+    //public int MondayEnergy, TuesdayEnergy, WednesdayEnergy, ThursdayEnergy, FridayEnergy;
 
-    public Image[] MondayEnergyImg, TuesdayEnergyImg, WednesdayEnergyImg, ThursdayEnergyImg, FridayEnergyImg;
+    //public Image[] MondayEnergyImg, TuesdayEnergyImg, WednesdayEnergyImg, ThursdayEnergyImg, FridayEnergyImg;
 
     // Start is called before the first frame update
     void Start()
@@ -33,10 +33,12 @@ public class TrainingManager : MonoBehaviour
             day.transform.localScale = new Vector3(1, 1, 1);
             day.GetComponent<TrainingDay>().dayOfWeek = dot;
             trainingSlots.AddRange(day.GetComponent<TrainingDay>().SetTrainingSlots());
+
+
             day.GetComponentInChildren<EnergyBars>().previousDay = previousDay;
-            previousDay = day.GetComponentInChildren<EnergyBars>().previousDay;
+            previousDay = day.GetComponentInChildren<EnergyBars>();
         }
-        /*
+        
         if(SelectedDog == null)
         {
             // RECUPERER LE PRMIER CHIEN DANS LES ASSETS
@@ -44,26 +46,16 @@ public class TrainingManager : MonoBehaviour
         }
         SetSelectedDog(SelectedDog);
 
-        foreach(Image img in MondayEnergyImg)
+       
+    }
+
+    public void ConfirmTrainings()
+    {
+        foreach (TrainingSlot ts in trainingSlots)
         {
-            img.color = GreenEnergy;
+            if (ts.training != null) ConfirmedTrainings.Add(ts.training);
         }
-        foreach (Image img in TuesdayEnergyImg)
-        {
-            img.color = GreenEnergy;
-        }
-        foreach (Image img in WednesdayEnergyImg)
-        {
-            img.color = GreenEnergy;
-        }
-        foreach (Image img in ThursdayEnergyImg)
-        {
-            img.color = GreenEnergy;
-        }
-        foreach (Image img in FridayEnergyImg)
-        {
-            img.color = GreenEnergy;
-        }*/
+        print("Trainings confirmed!");
     }
 
     public void SetSelectedDog(StatsChien Dog)

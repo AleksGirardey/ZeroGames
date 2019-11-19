@@ -128,10 +128,10 @@ MonoBehaviour:
   energyBar1: {fileID: 2807397798881345945}
   energyBar2: {fileID: 2807397800196692047}
   energyBar3: {fileID: 2807397799938362171}
-  RedEnergy: {r: 1, g: 0, b: 0, a: 1}
-  OrangeEnergy: {r: 1, g: 0.5666981, b: 0, a: 1}
-  GreenEnergy: {r: 0.075788975, g: 1, b: 0, a: 1}
-  EmptyEnergy: {r: 0.5849056, g: 0.5655927, b: 0.5655927, a: 1}
+  RedEnergy: {r: 0.8980393, g: 0, b: 0.31764707, a: 1}
+  OrangeEnergy: {r: 0.95294124, g: 0.57254905, b: 0, a: 1}
+  GreenEnergy: {r: 0.24313727, g: 0.63529414, b: 0.3372549, a: 1}
+  EmptyEnergy: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
   previousDay: {fileID: 0}
   EnergyBarsAvailable: 3
 --- !u!1 &2807397799938362169

@@ -10,7 +10,7 @@ public class ScrollListTrainingManager : MonoBehaviour
     private void Start()
     {
         GameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
-        for (int i = 0; i < GameManager.PlayerDogs.Length; i++) // INSTANTIATE DES SPRITES DES CHIENS DU JOUEUR DANS MENU TRAINING
+        for (int i = 0; i < GameManager.PlayerDogs.Count; i++) // INSTANTIATE DES SPRITES DES CHIENS DU JOUEUR DANS MENU TRAINING
         {
             GameObject DogImgButton = Instantiate(buttonPrefab) as GameObject;
             DogImgButton.SetActive(true);

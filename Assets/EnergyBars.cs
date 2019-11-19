@@ -72,4 +72,10 @@ public class EnergyBars : MonoBehaviour
         energyBar2.color = EmptyEnergy;
         energyBar3.color = EmptyEnergy;
     }
+
+    public int EnergyBarNb()
+    {
+        return EnergyBarsAvailable;
+    }
+
 }
