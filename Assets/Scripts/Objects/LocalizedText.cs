@@ -19,19 +19,19 @@ public class LocalizedText : MonoBehaviour {
         _text = GetComponent<Text>();
         if (_text != null) {
             _isText = true;
-            _text.text = LocalizationManager.instance.GetLocalizedValue(key);
+            _text.text = LocalizationManager.Instance.GetLocalizedValue(key);
         } else {
             _isText = false;
             _textMesh = GetComponent<TextMeshProUGUI>();
-            _textMesh.text = LocalizationManager.instance.GetLocalizedValue(key);
+            _textMesh.text = LocalizationManager.Instance.GetLocalizedValue(key);
         }
     }
 
     //Todo : remplacer update par un catch d evenement
     private void Update() {
         if (_isText)
-            _text.text = LocalizationManager.instance.GetLocalizedValue(key);
+            _text.text = LocalizationManager.Instance.GetLocalizedValue(key);
         else
-            _textMesh.text = LocalizationManager.instance.GetLocalizedValue(key);
+            _textMesh.text = LocalizationManager.Instance.GetLocalizedValue(key);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartupManager : MonoBehaviour {
     private IEnumerator Start() {
-        while (!LocalizationManager.instance.GetIsReady())
+        while (!LocalizationManager.Instance.GetIsReady())
             yield return null;
 
         SceneManager.LoadScene("GameMenu");

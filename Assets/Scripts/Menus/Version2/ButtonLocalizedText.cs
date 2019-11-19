@@ -20,12 +20,13 @@ public class ButtonLocalizedText : MonoBehaviour
         if (_textMesh.text == null)
         {
             _isText = true;
-            _text.text = LocalizationManager.instance.GetLocalizedValue(key);
+            _text = transform.Find("Text (TMP)").GetComponent<Text>();
+            _text.text = LocalizationManager.Instance.GetLocalizedValue(key);
         }
         else
         {
             _isText = false;
-            _textMesh.text = LocalizationManager.instance.GetLocalizedValue(key);
+            _textMesh.text = LocalizationManager.Instance.GetLocalizedValue(key);
         }
     }
 
@@ -33,8 +34,8 @@ public class ButtonLocalizedText : MonoBehaviour
     private void Update()
     {
         if (_isText)
-            _textMesh.text = LocalizationManager.instance.GetLocalizedValue(key);
+            _text.text = LocalizationManager.Instance.GetLocalizedValue(key);
         else
-            _textMesh.text = LocalizationManager.instance.GetLocalizedValue(key);
+            _textMesh.text = LocalizationManager.Instance.GetLocalizedValue(key);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 
 public class LocalizationManager : MonoBehaviour {
-    public static LocalizationManager instance;
+    public static LocalizationManager Instance;
     
     private Dictionary<string, string> _localizedText;
     private bool _isReady = false;
@@ -12,8 +12,8 @@ public class LocalizationManager : MonoBehaviour {
     void Awake() {
         LoadLocalizedText("localizedText_en.json");
         
-        if (instance == null) instance = this;
-        else if (instance != null) Destroy(gameObject);
+        if (Instance == null) Instance = this;
+        else if (Instance != null) Destroy(gameObject);
         
         DontDestroyOnLoad(gameObject);
     }

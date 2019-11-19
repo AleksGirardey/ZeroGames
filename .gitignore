@@ -37,3 +37,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+
+De Vinci/
+Plugins/Editor/JetBrains/
