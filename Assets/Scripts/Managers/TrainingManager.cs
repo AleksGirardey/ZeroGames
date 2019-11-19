@@ -1,10 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TrainingManager : MonoBehaviour
 {
+    public GameObject prefabDay;
+    public GameObject Calendar;
+
+    public List<TrainingSlot> trainingSlots;
+
     public Text SelectedDogTxt;
     public Image SelectedDogImg;
     public StatsChien SelectedDog;
@@ -19,6 +25,18 @@ public class TrainingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EnergyBars previousDay = null;
+
+        foreach (DayOfTraining dot in Enum.GetValues(typeof(DayOfTraining))) {
+            GameObject day = Instantiate<GameObject>(prefabDay);
+            day.transform.SetParent(Calendar.transform);
+            day.transform.localScale = new Vector3(1, 1, 1);
+            day.GetComponent<TrainingDay>().dayOfWeek = dot;
+            trainingSlots.AddRange(day.GetComponent<TrainingDay>().SetTrainingSlots());
+            day.GetComponentInChildren<EnergyBars>().previousDay = previousDay;
+            previousDay = day.GetComponentInChildren<EnergyBars>().previousDay;
+        }
+        /*
         if(SelectedDog == null)
         {
             // RECUPERER LE PRMIER CHIEN DANS LES ASSETS
@@ -45,7 +63,7 @@ public class TrainingManager : MonoBehaviour
         foreach (Image img in FridayEnergyImg)
         {
             img.color = GreenEnergy;
-        }
+        }*/
     }
 
     public void SetSelectedDog(StatsChien Dog)
