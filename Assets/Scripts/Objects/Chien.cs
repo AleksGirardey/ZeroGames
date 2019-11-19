@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Serialization;
 
 public class Chien : StatsChien
 {
-    public string Name;
-    public int Age;
+    public new string Name;
+    [FormerlySerializedAs("Age")] public int age;
 
     Chien(string name, int age, float endurance, float acceleration, float vitesseMax) : base(endurance, acceleration, vitesseMax) {
         Name = name;
-        Age = age;
+        this.age = age;
     }
 }
