@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 224.8, y: 80.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2352057673695192108
@@ -101,6 +101,10 @@ MonoBehaviour:
   TrainingSlot: {fileID: 0}
   ParentWhileDrag: {fileID: 0}
   Name: {fileID: 0}
+  Clone: 0
+  CloneSpawned: 0
+  DefaultTrainingButton: {fileID: 0}
+  trainingManager: {fileID: 0}
 --- !u!225 &2352057673695192105
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -147,8 +151,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.3001, y: -0.000014305}
-  m_SizeDelta: {x: 246.5, y: 80.6}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 224.8, y: 80.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2352057674809600837
 CanvasRenderer:

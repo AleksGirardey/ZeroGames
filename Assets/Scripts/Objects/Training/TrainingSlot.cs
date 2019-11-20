@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public enum DayOfTraining {
     Monday = 0,
@@ -41,6 +42,12 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
             eventData.pointerDrag.GetComponent<TrainingButton>().dropped = true;
             eventData.pointerDrag.GetComponent<TrainingButton>().TrainingSlot = this;
             eventData.pointerDrag.transform.SetParent(transform);
+            eventData.pointerDrag.GetComponent<RectTransform>().sizeDelta = GetComponent<RectTransform>().sizeDelta;
+            eventData.pointerDrag.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = GetComponent<RectTransform>().sizeDelta;
+            //GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            //eventData.pointerDrag.GetComponent<RectTransform>().position = new Vector3(0, 0, 0); UI incompréhensible, impossible de mettre 0,0,0 en position du TrainingButton
+
+
         }
     }
 

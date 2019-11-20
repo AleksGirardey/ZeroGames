@@ -16,7 +16,7 @@ MonoBehaviour:
   Acceleration: 30
   VitesseMax: 30
   EnduranceDef: 0
-  AccelerationDef: 0
+  AccelerationDef: 1
   VitesseMaxDef: 0
   EnduranceTempo: []
   AccelerationTempo: []

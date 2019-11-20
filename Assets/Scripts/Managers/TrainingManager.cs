@@ -83,7 +83,7 @@ public class TrainingManager : MonoBehaviour
                 SelectedDog.UpcomingTrainings.Add(ConfirmedTrainings[i]);
             }
             SelectedDog.TrainingsConfirmed = true;
-
+            SelectedDog.AssignTrainings();
         }
 
 
