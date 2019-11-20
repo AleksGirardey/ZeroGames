@@ -32,7 +32,9 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null
             && training == null
             && energyBar.EnergyBarNb() != 0
-            && eventData.pointerDrag.GetComponent<TrainingButton>() != null) {
+            && eventData.pointerDrag.GetComponent<TrainingButton>() != null
+            && energyBar.NextEnergyBarNb() != 0)
+             {
             
             training = eventData.pointerDrag.GetComponent<TrainingButton>().Training;
             eventData.pointerDrag.transform.position = gameObject.transform.position - new Vector3(0, 55, 0);

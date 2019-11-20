@@ -21,6 +21,10 @@ public class StatsChien : ScriptableObject
 
     public string Name;
 
+    public bool TrainingsConfirmed;
+
+    public List<Training> UpcomingTrainings = new List<Training>();
+
     public StatsChien(float Endu, float Accel, float Vmax)
     {
         Endurance = Endu;

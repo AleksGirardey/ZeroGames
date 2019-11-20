@@ -23,3 +23,5 @@ MonoBehaviour:
   VitesseMaxTempo: []
   imgColor: {r: 1, g: 0, b: 0, a: 1}
   Name: doggy
+  TrainingsConfirmed: 0
+  UpcomingTrainings: []

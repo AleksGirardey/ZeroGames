@@ -11,24 +11,37 @@ public class EnergyBars : MonoBehaviour
     public Image energyBar3;
     public Color RedEnergy, OrangeEnergy, GreenEnergy, EmptyEnergy;
 
-    public EnergyBars previousDay;
+    public EnergyBars previousDay, nextDay;
     public int EnergyBarsAvailable = 3;
 
     // Start is called before the first frame update
     void Start() {
         trainingDay = GetComponentInParent<TrainingDay>();
         SetColorGreen();
+  
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (previousDay == null) EnergyBarsAvailable = 3;
-        else EnergyBarsAvailable = Mathf.Clamp(previousDay.EnergyBarsAvailable + 1, 0, 3);
+        /*
+        if(nextDay != null && nextDay.EnergyBarsAvailable == 0)
+        {
+            EnergyBarsAvailable = Mathf.Clamp(EnergyBarsAvailable, 0, 2);
+        }
+         */
+        
+
+        if(previousDay == null) EnergyBarsAvailable = 3;
+        else
+        {
+                    EnergyBarsAvailable = Mathf.Clamp(previousDay.EnergyBarsAvailable + 1, 0, 3);
+                }
 
         foreach(TrainingSlot ts in trainingDay.trainingSlots)
         {
             if (ts.training != null) EnergyBarsAvailable--;
+
         }
 
         switch (EnergyBarsAvailable)
@@ -76,6 +89,18 @@ public class EnergyBars : MonoBehaviour
     public int EnergyBarNb()
     {
         return EnergyBarsAvailable;
+    }
+    public int NextEnergyBarNb()
+    {
+        if(nextDay != null)
+        {
+            return nextDay.EnergyBarsAvailable;
+        }
+        else
+        {
+            return 3;
+        }
+        
     }
 
 }
