@@ -23,3 +23,11 @@ MonoBehaviour:
   VitesseMaxTempo: []
   imgColor: {r: 0.02114594, g: 1, b: 0, a: 1}
   Name: doggo
+  TrainingsConfirmed: 0
+  UpcomingTrainings:
+  - {fileID: 11400000, guid: 65fe7d35320f20e408a21320410caa36, type: 2}
+  - {fileID: 11400000, guid: 7b3dc20e4b52e3c4381db2b1153ef6be, type: 2}
+  - {fileID: 11400000, guid: ebdaa962a7bf4034089a340bf44bad88, type: 2}
+  - {fileID: 11400000, guid: 65fe7d35320f20e408a21320410caa36, type: 2}
+  - {fileID: 11400000, guid: 7b3dc20e4b52e3c4381db2b1153ef6be, type: 2}
+  - {fileID: 11400000, guid: ebdaa962a7bf4034089a340bf44bad88, type: 2}

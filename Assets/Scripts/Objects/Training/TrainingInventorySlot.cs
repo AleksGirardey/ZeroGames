@@ -20,8 +20,13 @@ public class TrainingInventorySlot : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<TrainingButton>() != null)
         {
-            eventData.pointerDrag.GetComponent<RectTransform>().transform.position = gameObject.transform.position;
             
+            if (eventData.pointerDrag.GetComponent<TrainingButton>().DefaultTrainingButton != null)
+            {
+                eventData.pointerDrag.GetComponent<TrainingButton>().DefaultTrainingButton.CloneSpawned = false;
+            }
+            Destroy(eventData.pointerDrag.GetComponent<GameObject>());
+            eventData.pointerDrag.GetComponent<RectTransform>().transform.position = gameObject.transform.position;
             eventData.pointerDrag.GetComponent<TrainingButton>().dropped = true;
             eventData.pointerDrag.transform.SetParent(transform);
 

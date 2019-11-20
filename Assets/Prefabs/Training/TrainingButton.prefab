@@ -277,5 +277,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c5dbeb899cca142980021c033104a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrainingManager: {fileID: 0}
-  TrainingButton: {fileID: 2352057673695192106}
+  trainingManager: {fileID: 0}
+  trainingButton: {fileID: 2352057673695192106}
