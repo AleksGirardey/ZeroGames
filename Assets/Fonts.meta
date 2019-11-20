@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Fonts.meta
 guid: acc06f533154fcf49a3e5d016388ae59
+=======
+guid: d88a68cca6204bd459f89668475ef2c7
+>>>>>>> fix: Rework UI:Assets/Prefabs/Training.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

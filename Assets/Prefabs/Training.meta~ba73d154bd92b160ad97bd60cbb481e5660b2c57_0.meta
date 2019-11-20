@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: dd27ec53efd607b4583040f9f575d741
+=======
+guid: d1a6966c45f04234095ec41b19ed4bf7
+>>>>>>> fix: Rework UI
 DefaultImporter:
   externalObjects: {}
   userData: 

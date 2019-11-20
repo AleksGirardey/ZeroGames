@@ -25,6 +25,8 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     PointerEventData m_PointerEventData;
     EventSystem m_EventSystem;
     [FormerlySerializedAs("TrainingManager")] public TrainingManager trainingManager;
+
+    private Vector2 baseSize;
     public void SetName(string name)
     {
         Name.text = name;
@@ -39,6 +41,7 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     void Start()
     {
         trainingManager = GameObject.FindWithTag("TrainingManager").GetComponent<TrainingManager>();
+        baseSize = GetComponent<RectTransform>().sizeDelta;
         /*
         //Fetch the Raycaster from the GameObject (the Canvas)
         m_Raycaster = GetComponent<GraphicRaycaster>();
@@ -83,7 +86,8 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     */
     public void OnBeginDrag(PointerEventData eventData)
     {
-        
+        GetComponent<RectTransform>().sizeDelta = baseSize;
+        GetComponentInChildren<RectTransform>().sizeDelta = baseSize;
         if (Clone)
         {
             if (TrainingSlot != null && TrainingSlot.training == Training)
@@ -125,6 +129,8 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
             //transform.localPosition = Vector3.zero;
             canvasGroup.blocksRaycasts = true;
             canvasGroup.alpha = 1;
+
+
             //print("end drag");
             if (!dropped)
             {

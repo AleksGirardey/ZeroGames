@@ -98,4 +98,44 @@ public class StatsChien : ScriptableObject
         }
         VitesseMaxTempo = newList;
     }
+
+    public void AssignTrainings()
+    {
+        foreach(Training training in UpcomingTrainings)
+        {
+            if(training.EnduranceTempo != 0)
+            {
+                EnduranceTempo.Add(training);
+            }
+
+            if (training.AccelerationTempo != 0)
+            {
+                AccelerationTempo.Add(training);
+            }
+
+            if (training.VitesseMaxTempo != 0)
+            {
+                VitesseMaxTempo.Add(training);
+            }
+
+            if (training.EnduranceDef != 0)
+            {
+                EnduranceDef+=training.EnduranceDef;
+            }
+
+            if (training.AccelerationDef != 0)
+            {
+                AccelerationDef+=training.AccelerationDef;
+            }
+
+            if (training.VitesseMaxDef != 0)
+            {
+                VitesseMaxDef+=training.VitesseMaxDef;
+            }
+        }
+        UpcomingTrainings.Clear();
+
+
+    }
+
 }
