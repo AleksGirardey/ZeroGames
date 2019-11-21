@@ -16,7 +16,7 @@
 		{ "key":"LoadSaveMenu_TimePlayed", "value":"Time played" },
 		{ "key":"LoadSaveMenu_Back", "value":"Back" },
 
-		{ "key":"StartScene_BaseInfos", "value":"Base infos: blah blah blah" },
+		{ "key":"StartScene_BaseInfos", "value":"PLACEHOLDER -- Base character informations" },
 		{ "key":"StartScene_StarterSelection", "value":"Select my dog" },
 		{ "key":"StartScene_StarterSelectionTitle", "value":"Dog selection" },
 		{ "key":"StartScene_DogName1", "value":"Doggy" },

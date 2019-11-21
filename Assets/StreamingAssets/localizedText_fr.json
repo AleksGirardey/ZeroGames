@@ -16,7 +16,7 @@
 		{ "key":"LoadSaveMenu_TimePlayed", "value":"Temps joué" },
 		{ "key":"LoadSaveMenu_Back", "value":"Retour" },
 
-		{ "key":"StartScene_BaseInfos", "value":"Infos de base: bla bla bla" },
+		{ "key":"StartScene_BaseInfos", "value":"PLACEHOLDER -- INFORMATIONS DE BASE DU JOUEUR" },
 		{ "key":"StartScene_StarterSelection", "value":"Sélectionner mon chien" },
 		{ "key":"StartScene_StarterSelectionTitle", "value":"Sélection du chien" },
 		{ "key":"StartScene_DogName1", "value":"Doggy" },
