@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RaceManager : MonoBehaviour
 {
@@ -9,13 +10,21 @@ public class RaceManager : MonoBehaviour
 
     public DogMovement[] Chiens = new DogMovement[4];
 
+    public Text Name;
     public Text Endurance;
     public Text VitesseMax;
     public Text Acceleration;
     public Text VitesseMoyenne;
     public Text Countdown;
+    public Text Ranking;
 
     public LayerMask ChienLayer;
+
+    Transform chienSelected;
+
+    public GameObject Bilan;
+    public Text BilanTxt;
+    public Text Profit;
 
     public bool RaceStarted;
     public bool CountdownStarted;
@@ -23,233 +32,51 @@ public class RaceManager : MonoBehaviour
 
     private float _startDiff; // Ecarter les chiens au début
 
-    public GameManager GameManager;
-    public int Turns;
-    public int i1, i2, i3;
-    public bool Day, Night, Rain, Sun;
-    public Text RaceInfosTxt;
+    int RankLine;
+
     private void Start()
     {
-        GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        chienSelected = null;
+        RankLine = 0;
+
         Countdown.text = "";
-        Turns = GameManager.Turns;
-        /*
         foreach (DogMovement chien in Chiens) // Générer 4 chiens aléatoire parmis les 20 dans Assets/Ressources/Chiens
         {
             int i = Random.Range(0, ListeDesChiens.Length);
 
+            chien.ThisDog = ListeDesChiens[i];
+
             chien.Endurance = ListeDesChiens[i].GetEndurance();
             chien.VitesseMax = ListeDesChiens[i].GetVitesseMax();
             chien.Acceleration = ListeDesChiens[i].GetAcceleration();
-        }*/
-
-        if(Random.Range(0,100) < 50)
-        {
-            Day = true;
         }
-        else
-        {
-            Night = true;
-        }
-        if (Random.Range(0, 100) < 50)
-        {
-            Rain = true;
-        }
-        else
-        {
-            Sun = true;
-        }
-        RaceInfosTxt.text = "Infos course: \n Jour: " + Day + " Night: " + Night + "\n Rain: " + Rain + " Sun: " + Sun + "\n Nb de tours: " + Turns.ToString();
-
-        // CHIEN DU JOUEUR
-        Chiens[0].Endurance = GameManager.PlayerDogs[0].Endurance;
-        Chiens[0].VitesseMax = GameManager.PlayerDogs[0].VitesseMax;
-        Chiens[0].Acceleration = GameManager.PlayerDogs[0].Acceleration;
-
-
-        if (Turns == 1) // 2 CHIENS AVEC GROSSE ACCEL
-        {
-            i1 = Random.Range(0, ListeDesChiens.Length);
-            Chiens[1].Endurance = ListeDesChiens[i1].GetEndurance();
-            Chiens[1].VitesseMax = ListeDesChiens[i1].GetVitesseMax();
-            Chiens[1].Acceleration = ListeDesChiens[i1].GetAcceleration();
-            while (Chiens[1].Acceleration < 21)
-            {
-                i1 = Random.Range(0, ListeDesChiens.Length);
-                Chiens[1].Endurance = ListeDesChiens[i1].GetEndurance();
-                Chiens[1].VitesseMax = ListeDesChiens[i1].GetVitesseMax();
-                Chiens[1].Acceleration = ListeDesChiens[i1].GetAcceleration();
-            }
-
-            i2 = Random.Range(0, ListeDesChiens.Length);
-            Chiens[2].Endurance = ListeDesChiens[i2].GetEndurance();
-            Chiens[2].VitesseMax = ListeDesChiens[i2].GetVitesseMax();
-            Chiens[2].Acceleration = ListeDesChiens[i2].GetAcceleration();
-            while (Chiens[2].Acceleration < 21 || i2 == i1)
-            {
-                i2 = Random.Range(0, ListeDesChiens.Length);
-                Chiens[2].Endurance = ListeDesChiens[i2].GetEndurance();
-                Chiens[2].VitesseMax = ListeDesChiens[i2].GetVitesseMax();
-                Chiens[2].Acceleration = ListeDesChiens[i2].GetAcceleration();
-            }
-
-            i3 = Random.Range(0, ListeDesChiens.Length);
-            Chiens[3].Endurance = ListeDesChiens[i3].GetEndurance();
-            Chiens[3].VitesseMax = ListeDesChiens[i3].GetVitesseMax();
-            Chiens[3].Acceleration = ListeDesChiens[i3].GetAcceleration();
-            while (i3 == i2 || i3 == i1)// 1 CHIEN RANDOM
-            {
-                i3 = Random.Range(0, ListeDesChiens.Length);
-                Chiens[3].Endurance = ListeDesChiens[i3].GetEndurance();
-                Chiens[3].VitesseMax = ListeDesChiens[i3].GetVitesseMax();
-                Chiens[3].Acceleration = ListeDesChiens[i3].GetAcceleration();
-            }
-        }
-        else if(Turns == 2) // 2 CHIENS AVEC STATS MOYENNE (EN DESSOUS DE 30)
-        {
-            i1 = Random.Range(0, ListeDesChiens.Length);
-            Chiens[1].Endurance = ListeDesChiens[i1].GetEndurance();
-            Chiens[1].VitesseMax = ListeDesChiens[i1].GetVitesseMax();
-            Chiens[1].Acceleration = ListeDesChiens[i1].GetAcceleration();
-            while (Chiens[1].Endurance > 30 && Chiens[1].VitesseMax > 30 && Chiens[1].Acceleration > 30)
-            {
-                i1 = Random.Range(0, ListeDesChiens.Length);
-                Chiens[1].Endurance = ListeDesChiens[i1].GetEndurance();
-                Chiens[1].VitesseMax = ListeDesChiens[i1].GetVitesseMax();
-                Chiens[1].Acceleration = ListeDesChiens[i1].GetAcceleration();
-            }
-
-            i2 = Random.Range(0, ListeDesChiens.Length);
-            Chiens[2].Endurance = ListeDesChiens[i2].GetEndurance();
-            Chiens[2].VitesseMax = ListeDesChiens[i2].GetVitesseMax();
-            Chiens[2].Acceleration = ListeDesChiens[i2].GetAcceleration();
-            while ((Chiens[2].Endurance > 30 && Chiens[2].VitesseMax > 30 && Chiens[2].Acceleration > 30) || i2 == i1)
-            {
-                i2 = Random.Range(0, ListeDesChiens.Length);
-                Chiens[2].Endurance = ListeDesChiens[i2].GetEndurance();
-                Chiens[2].VitesseMax = ListeDesChiens[i2].GetVitesseMax();
-                Chiens[2].Acceleration = ListeDesChiens[i2].GetAcceleration();
-            }
-
-            i3 = Random.Range(0, ListeDesChiens.Length);
-            Chiens[3].Endurance = ListeDesChiens[i3].GetEndurance();
-            Chiens[3].VitesseMax = ListeDesChiens[i3].GetVitesseMax();
-            Chiens[3].Acceleration = ListeDesChiens[i3].GetAcceleration();
-            while (i3 == i2 || i3 == i1)// 1 CHIEN RANDOM
-            {
-                i3 = Random.Range(0, ListeDesChiens.Length);
-                Chiens[3].Endurance = ListeDesChiens[i3].GetEndurance();
-                Chiens[3].VitesseMax = ListeDesChiens[i3].GetVitesseMax();
-                Chiens[3].Acceleration = ListeDesChiens[i3].GetAcceleration();
-            }
-        }
-        else if (Turns == 3) // 2 CHIENS AVEC GROSSE ENDURANCE
-        {
-            i1 = Random.Range(0, ListeDesChiens.Length);
-            Chiens[1].Endurance = ListeDesChiens[i1].GetEndurance();
-            Chiens[1].VitesseMax = ListeDesChiens[i1].GetVitesseMax();
-            Chiens[1].Acceleration = ListeDesChiens[i1].GetAcceleration();
-            while (Chiens[1].Endurance < 29)
-            {
-                i1 = Random.Range(0, ListeDesChiens.Length);
-                Chiens[1].Endurance = ListeDesChiens[i1].GetEndurance();
-                Chiens[1].VitesseMax = ListeDesChiens[i1].GetVitesseMax();
-                Chiens[1].Acceleration = ListeDesChiens[i1].GetAcceleration();
-            }
-
-            i2 = Random.Range(0, ListeDesChiens.Length);
-            Chiens[2].Endurance = ListeDesChiens[i2].GetEndurance();
-            Chiens[2].VitesseMax = ListeDesChiens[i2].GetVitesseMax();
-            Chiens[2].Acceleration = ListeDesChiens[i2].GetAcceleration();
-            while (Chiens[2].Endurance < 29 || i2 == i1)
-            {
-                i2 = Random.Range(0, ListeDesChiens.Length);
-                Chiens[2].Endurance = ListeDesChiens[i2].GetEndurance();
-                Chiens[2].VitesseMax = ListeDesChiens[i2].GetVitesseMax();
-                Chiens[2].Acceleration = ListeDesChiens[i2].GetAcceleration();
-            }
-
-            i3 = Random.Range(0, ListeDesChiens.Length);
-            Chiens[3].Endurance = ListeDesChiens[i3].GetEndurance();
-            Chiens[3].VitesseMax = ListeDesChiens[i3].GetVitesseMax();
-            Chiens[3].Acceleration = ListeDesChiens[i3].GetAcceleration();
-            while (i3 == i2 || i3 == i1)// 1 CHIEN RANDOM
-            {
-                i3 = Random.Range(0, ListeDesChiens.Length);
-                Chiens[3].Endurance = ListeDesChiens[i3].GetEndurance();
-                Chiens[3].VitesseMax = ListeDesChiens[i3].GetVitesseMax();
-                Chiens[3].Acceleration = ListeDesChiens[i3].GetAcceleration();
-            }
-        }
-        else
-        {
-            print("error, turn nb != 1, 2, 3");
-        }
-        
-        
-        
-
 
     }
 
     private void Update()
     {
-        // if (!RaceStarted) SelectChien();
-        DisplayChienStats();
+        if (!RaceStarted) SelectChien();
+
+        if (RankLine >= 4) DisplayScore();      // Lorsque la course est finie
     }
 
-    public void StartRace()
-    {
-        foreach (DogMovement dog in Chiens)
-        {
-            dog.transform.position = StartPoint.position + new Vector3(_startDiff, 0, 0); // Mettre les chiens à pos. de départ et les écarter entre eux
-            _startDiff += 0.2f;
-        }
-        if (!CountdownStarted)
-        {
-            StartCoroutine("RaceCountdown");
-            CountdownStarted = true;
-        }
-    }
-
-    void DisplayChienStats()
+    void SelectChien() // Choix du chien
     {
         RaycastHit hit;
-        Transform chienSelected = null;
-
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, ChienLayer)) // Quand la souris passe sur un chien
-        {
-            chienSelected = hit.transform;
-            chienSelected.localScale = new Vector3(0.5f, 0.5f, -0.5f); // On rescale le chien
-
-            Endurance.text = "endurance : " + chienSelected.GetComponent<DogMovement>().Endurance; // Actualisation des stats
-            VitesseMax.text = "vitesse max : " + chienSelected.GetComponent<DogMovement>().VitesseMax;
-            Acceleration.text = "accélération : " + chienSelected.GetComponent<DogMovement>().Acceleration;
-            VitesseMoyenne.text = "vitesse moyenne: " + chienSelected.GetComponent<DogMovement>().VitesseMoyenne;
-        }
-
-        for (int i = 0; i < Chiens.Length; i++) // Reset le scale du chien si déselectionné
-        {
-            if (Chiens[i].transform != chienSelected) Chiens[i].transform.localScale = new Vector3(0.2f, 0.2f, -0.2f);
-        }
-    }
-
-    void SelectChien() // Choix du chien, disabled atm
-    {
-        RaycastHit hit;
-        Transform chienSelected = null;
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, ChienLayer) && !CountdownStarted) // Quand la souris passe sur un chien
         {
             chienSelected = hit.transform;
-            chienSelected.localScale = new Vector3(0.5f,0.5f,-0.5f); // On rescale le chien
+            chienSelected.localScale = Vector3.one * 1.5f; // Rescale du chien selectionné
+
+            Name.text = chienSelected.GetComponent<DogMovement>().ThisDog.name;
 
             Endurance.text = "endurance : " + chienSelected.GetComponent<DogMovement>().Endurance; // Actualisation des stats
             VitesseMax.text = "vitesse max : " + chienSelected.GetComponent<DogMovement>().VitesseMax;
             Acceleration.text = "accélération : " + chienSelected.GetComponent<DogMovement>().Acceleration;
             VitesseMoyenne.text = "vitesse moyenne: " + chienSelected.GetComponent<DogMovement>().VitesseMoyenne;
 
-            if (Input.GetMouseButtonDown(0) && !RaceStarted)
+            if (Input.GetMouseButtonDown(0) && !RaceStarted)    // La sélection a été faite
             {
                 foreach (DogMovement dog in Chiens)
                 {
@@ -266,8 +93,63 @@ public class RaceManager : MonoBehaviour
 
         for (int i = 0; i < Chiens.Length; i++) // Reset le scale du chien si déselectionné
         {
-            if (Chiens[i].transform != chienSelected && !CountdownStarted) Chiens[i].transform.localScale = new Vector3(0.2f,0.2f,-0.2f);
+            if (Chiens[i].transform != chienSelected && !CountdownStarted) Chiens[i].transform.localScale = Vector3.one;
         }
+    }
+
+    public int DogRank(DogMovement RankedDog)   // Retourne le classement du chien RankedDog
+    {
+
+        int FinishedDogCount = 0;
+
+        foreach (DogMovement chien in Chiens)
+        {
+
+            if (chien._hasFinished && chien != RankedDog) FinishedDogCount++;
+
+        }
+
+        return FinishedDogCount + 1;
+
+    }
+
+    public void SetRank(DogMovement RankedDog)  // La liste des arrivants selon leur classement est générée
+    {
+
+        Ranking.text += "\n" + DogRank(RankedDog) + ". " + RankedDog.ThisDog.name;
+
+        RankedDog.ThisDog.LatestRank = DogRank(RankedDog);
+        RankedDog.ThisDog.LatestRace = System.DateTime.Now.ToString();
+
+        RankLine++;
+
+    }
+
+    public void DisplayScore()  // Affiche une interface qui rend compte de la course et permet de retourner au choix de carrière 
+    {
+
+        RankLine = 0;
+
+        Bilan.SetActive(true);
+
+        int Rank = chienSelected.GetComponent<DogMovement>().ThisDog.LatestRank;
+        string Prefix = "eme";
+
+        float ProfitAmount = 0;
+
+        if (Rank == 1)
+        {
+            Prefix = "er";
+            ProfitAmount = 1000;
+            BilanTxt.color = Color.green;
+            Profit.color = Color.green;
+        }
+
+        BilanTxt.text = "Votre chien est arrive " + Rank + Prefix;
+        Profit.text = "Gain : +" + ProfitAmount + "€";
+
+
+
     }
 
     IEnumerator RaceCountdown()
@@ -282,6 +164,11 @@ public class RaceManager : MonoBehaviour
         RaceStarted = true;
         yield return new WaitForSeconds(1f);
         Countdown.text = "";
+    }
+
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene("GamePlayMenu");
     }
 
 }

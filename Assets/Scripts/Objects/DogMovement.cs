@@ -6,9 +6,10 @@ public class DogMovement : MonoBehaviour
     [SerializeField]
     public Transform[] Routes;
     public float SpeedModifier;
-    public float Endurance;
-    public float Acceleration;
-    public float VitesseMax;
+        public float Endurance;
+        public float Acceleration;
+        public float VitesseMax;
+        private float VitesseMin;
     public float Vitesse;
     public float VitesseMoyenne;
     public RaceManager RaceManager;
@@ -16,20 +17,30 @@ public class DogMovement : MonoBehaviour
     private bool _coroutineAllowed;
     private Rigidbody _dogPhysics;
     private bool _enduranceConsumed;
-    private bool _hasFinished;
+    public bool _hasFinished;
     private int _routeToGo;
     private float _tParam;
     private Vector3 _dogPosition;
 
+    public StatsChien ThisDog;
+
+    public Animator DogAnimator;
+
+    float TerrainSize;
+
     void Start()
     {
+
         _dogPhysics = GetComponent<Rigidbody>();
+
         _routeToGo = 0;
         _tParam = 0f;
         SpeedModifier = 1f;
         _coroutineAllowed = true;
+
         Vitesse = 0;
         VitesseMoyenne = VitesseMax / 2;
+        VitesseMin = VitesseMoyenne;
     }
 
     void Update()
@@ -39,6 +50,8 @@ public class DogMovement : MonoBehaviour
         }
 
         if (RaceManager.RaceStarted) SpeedCalc();
+
+        UpdateAnimation();
     }
 
     public void SpeedCalc()
@@ -50,14 +63,15 @@ public class DogMovement : MonoBehaviour
         {
             PhaseDeceleration();
         }
-        Vitesse = Mathf.Clamp(Vitesse, 0, VitesseMax);
+        if (!_hasFinished) Vitesse = Mathf.Clamp(Vitesse, VitesseMin, VitesseMax);
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Finish") && RaceManager.RaceStarted) {
+        if(other.CompareTag("Finish") && RaceManager.RaceStarted) {         // Quand le chien finit sa course
             _hasFinished = true;
+            RaceManager.SetRank(this);
         }
     }
 
@@ -75,7 +89,7 @@ public class DogMovement : MonoBehaviour
         }
         else
         {
-            Vitesse -= Time.deltaTime;
+            Vitesse = 0;
         }
     }
 
@@ -103,10 +117,7 @@ public class DogMovement : MonoBehaviour
                 Mathf.Pow(_tParam, 3) * p3;
 
                 // AJOUT DE LA FORCE AU CHIEN
-                _dogPhysics.AddForce(dir * Vitesse);
-                
-                // Affichage visuelle du next point (debug)
-                // Debug.DrawLine(transform.position, dogPosition, Color.red, 0.1f);
+                _dogPhysics.AddForce(dir * Vitesse * 12f);
 
                 // Rotation du chien
                 transform.rotation = Quaternion.LookRotation(Vector3.up, dir) * Quaternion.Euler(90, 0, 0);
@@ -122,4 +133,13 @@ public class DogMovement : MonoBehaviour
 
         _coroutineAllowed = true;
     }
+
+    void UpdateAnimation()
+    {
+
+        DogAnimator.SetFloat("Speed", Vitesse / 3f);
+        DogAnimator.SetBool("IsMoving", RaceManager.RaceStarted && !_hasFinished);
+
+    }
+
 }

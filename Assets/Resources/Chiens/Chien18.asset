@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4632c185e4c0b41ac746f005a3630c, type: 3}
   m_Name: Chien18
   m_EditorClassIdentifier: 
-  Endurance: 10
+  Endurance: 95
   Acceleration: 5
   VitesseMax: 15
+  LatestRace: 
+  LatestRank: 0

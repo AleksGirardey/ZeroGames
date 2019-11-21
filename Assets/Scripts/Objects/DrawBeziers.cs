@@ -16,7 +16,7 @@ public class DrawBeziers : MonoBehaviour
                 3 * (1 - t) * Mathf.Pow(t, 2) * ControlPoints[2].position +
                 Mathf.Pow(t, 3) * ControlPoints[3].position;
 
-            Gizmos.DrawSphere(_gizmosPosition, 0.25f);
+            Gizmos.DrawSphere(_gizmosPosition, 1f);
         }
 
         Gizmos.DrawLine(new Vector3(ControlPoints[0].position.x, ControlPoints[0].position.y, ControlPoints[0].position.z),

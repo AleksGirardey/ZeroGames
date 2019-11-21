@@ -61,8 +61,6 @@ public class TrainingManager : MonoBehaviour
     public void SetSelectedDog(StatsChien Dog)
     {
         SelectedDog = Dog;
-        SelectedDogTxt.text = Dog.Name;
-        SelectedDogImg.color = Dog.imgColor;
     }
 
     private void Update()

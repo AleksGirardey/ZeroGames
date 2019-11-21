@@ -14,8 +14,6 @@ public class ScrollListTrainingManager : MonoBehaviour
         {
             GameObject DogImgButton = Instantiate(buttonPrefab) as GameObject;
             DogImgButton.SetActive(true);
-            DogImgButton.GetComponent<DogButtonList>().SetImg(GameManager.PlayerDogs[i].imgColor);
-            DogImgButton.GetComponent<DogButtonList>().SetName(GameManager.PlayerDogs[i].Name);
             DogImgButton.GetComponent<DogButtonList>().SetDog(GameManager.PlayerDogs[i]);
 
             DogImgButton.transform.SetParent(buttonPrefab.transform.parent, false);
