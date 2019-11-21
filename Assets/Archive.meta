@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Archive.meta
 guid: 1fbadcb594665fb468b70e13af057a3f
 folderAsset: yes
+=======
+guid: eaf845db98f855f4797afdf9c30f58bc
+>>>>>>> feat : ajout map 3d:Assets/Scenes/Race2.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
