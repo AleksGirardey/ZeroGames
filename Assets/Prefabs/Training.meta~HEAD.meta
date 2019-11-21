@@ -1,9 +1,18 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: d15af744dbf24d24f87440adb821b773
 =======
 guid: 055cc10817a8e124f8b1a6a4152a080e
 >>>>>>> fix: Rework UI
+=======
+<<<<<<< HEAD:Assets/Scenes/TEMP.meta
+guid: 5de85143a0153fa4686a1aaa5947a0c9
+folderAsset: yes
+=======
+guid: 055cc10817a8e124f8b1a6a4152a080e
+>>>>>>> dccf74b9f52c85b3352bcb3f2069b9e6e3630146:Assets/Prefabs/Training.meta~HEAD.meta
+>>>>>>> dccf74b9f52c85b3352bcb3f2069b9e6e3630146
 DefaultImporter:
   externalObjects: {}
   userData: 

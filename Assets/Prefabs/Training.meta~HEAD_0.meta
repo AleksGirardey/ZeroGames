@@ -1,10 +1,20 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: b156747dd8c6a954f8efe21a4792871c
 =======
 guid: 1772577ca4a914346af4e93938e4cfc8
 >>>>>>> fix: Rework UI
 DefaultImporter:
+=======
+<<<<<<< HEAD:Assets/Prefabs/Training/FoodSlot.prefab.meta
+guid: 509f9950d847f8d46808bedb48df282d
+PrefabImporter:
+=======
+guid: 1772577ca4a914346af4e93938e4cfc8
+DefaultImporter:
+>>>>>>> dccf74b9f52c85b3352bcb3f2069b9e6e3630146:Assets/Prefabs/Training.meta~HEAD_0.meta
+>>>>>>> dccf74b9f52c85b3352bcb3f2069b9e6e3630146
   externalObjects: {}
   userData: 
   assetBundleName: 

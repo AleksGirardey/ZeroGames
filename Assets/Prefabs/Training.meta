@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: d88a68cca6204bd459f89668475ef2c7
 =======
 <<<<<<< HEAD:Assets/Fonts.meta
@@ -8,6 +9,13 @@ guid: acc06f533154fcf49a3e5d016388ae59
 guid: d88a68cca6204bd459f89668475ef2c7
 >>>>>>> fix: Rework UI:Assets/Prefabs/Training.meta
 >>>>>>> fix: Rework UI
+=======
+<<<<<<< HEAD:Assets/Resources/Dogs.meta
+guid: 9b9d79aabcd6bba4da9728808db923aa
+=======
+guid: d88a68cca6204bd459f89668475ef2c7
+>>>>>>> dccf74b9f52c85b3352bcb3f2069b9e6e3630146:Assets/Prefabs/Training.meta
+>>>>>>> dccf74b9f52c85b3352bcb3f2069b9e6e3630146
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
