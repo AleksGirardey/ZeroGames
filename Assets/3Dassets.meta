@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:Assets/De Vinci.meta
+﻿fileFormatVersion: 2
+guid: ec01a34ac6fe4ea29245b2c8d99050b9
+timeCreated: 1574347225
+========
+>>>>>>> 9b3ea1894ac07c48c7bb7b61ab7bbc8292e5b7ff
 fileFormatVersion: 2
 guid: d22c5cd1138d806478d731f2b5c66e94
 folderAsset: yes
@@ -6,3 +14,7 @@ DefaultImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< HEAD
+=======
+>>>>>>>> 9b3ea1894ac07c48c7bb7b61ab7bbc8292e5b7ff:Assets/3Dassets.meta
+>>>>>>> 9b3ea1894ac07c48c7bb7b61ab7bbc8292e5b7ff
