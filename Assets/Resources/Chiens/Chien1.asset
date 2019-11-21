@@ -13,5 +13,13 @@ MonoBehaviour:
   m_Name: Chien1
   m_EditorClassIdentifier: 
   Endurance: 25
-  Acceleration: 5
-  VitesseMax: 10
+  Acceleration: 0
+  VitesseMax: 250
+  EnduranceDef: 0
+  AccelerationDef: 0
+  VitesseMaxDef: 0
+  EnduranceTempo: []
+  AccelerationTempo: []
+  VitesseMaxTempo: []
+  imgColor: {r: 0, g: 0, b: 0, a: 0}
+  Name: 
