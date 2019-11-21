@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DogButtonList : MonoBehaviour
 {
     public Image img; // A REMPLACER PAR SPRITE
+    //public Sprite dogSprite;
     public Text text; // NOM DU CHIEN
     private StatsChien Dog;
     public TrainingManager TrainingManager;
@@ -15,9 +16,11 @@ public class DogButtonList : MonoBehaviour
         //GetComponent<Button>().onClick += OnClick();
     }
 
-    public void SetImg(Color dogColor)
+
+
+    public void SetImg(Sprite dogSprite)
     {
-        img.color = dogColor;
+        img.sprite = dogSprite;
     }
 
     public void SetName(string dogName)

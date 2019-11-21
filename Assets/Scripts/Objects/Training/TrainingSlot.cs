@@ -34,9 +34,10 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
             && training == null
             && energyBar.EnergyBarNb() != 0
             && eventData.pointerDrag.GetComponent<TrainingButton>() != null
-            && energyBar.NextEnergyBarNb() != 0)
+            && energyBar.NextEnergyBarNb() != 0
+            && energyBar.EnergyBarsAvailable - 1 >= energyBar.MinEnergy)
              {
-            
+            energyBar.UpdEnergy(energyBar.previousDay, 3 - energyBar.EnergyBarsAvailable);
             training = eventData.pointerDrag.GetComponent<TrainingButton>().Training;
             eventData.pointerDrag.transform.position = gameObject.transform.position - new Vector3(0, 55, 0);
             eventData.pointerDrag.GetComponent<TrainingButton>().dropped = true;

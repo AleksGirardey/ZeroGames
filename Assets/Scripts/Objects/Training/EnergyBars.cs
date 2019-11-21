@@ -13,30 +13,47 @@ public class EnergyBars : MonoBehaviour
 
     public EnergyBars previousDay, nextDay;
     public int EnergyBarsAvailable = 3;
+    public int EnergyUsed, MinEnergy = 0;
 
     // Start is called before the first frame update
     void Start() {
         trainingDay = GetComponentInParent<TrainingDay>();
         SetColorGreen();
-  
+    }
+
+    public void UpdEnergy(EnergyBars previousDay, int energyUsed)
+    {
+        if(previousDay == null)
+        {
+            return;
+        }
+        previousDay.MinEnergy = energyUsed;
+
+        if (energyUsed != 0 && previousDay.previousDay != null)
+        {
+            UpdEnergy(previousDay.previousDay, energyUsed - 1);
+        }
+
+        // QUAND ON POSE, EnergyAvailable - 1 >= MinEnergy SI FALSE ON POSE PAS
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        if(nextDay != null && nextDay.EnergyBarsAvailable == 0)
-        {
-            EnergyBarsAvailable = Mathf.Clamp(EnergyBarsAvailable, 0, 2);
-        }
-         */
+        EnergyUsed = 3 - EnergyBarsAvailable;
+
+        //MinEnergy = nextDay.EnergyUsed - 1;
+
+        // Si on pose X entrainement, le jour d'avant doit avoir au minimum X - 1 d'énergie dispo. 
+        // UpdEnergy(previousDay, X) MinEnergy = 
+
         
 
         if(previousDay == null) EnergyBarsAvailable = 3;
         else
         {
-                    EnergyBarsAvailable = Mathf.Clamp(previousDay.EnergyBarsAvailable + 1, 0, 3);
-                }
+          EnergyBarsAvailable = Mathf.Clamp(previousDay.EnergyBarsAvailable + 1, 0, 3);
+        }
 
         foreach(TrainingSlot ts in trainingDay.trainingSlots)
         {

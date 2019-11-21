@@ -92,6 +92,7 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
         {
             if (TrainingSlot != null && TrainingSlot.training == Training)
             {
+                TrainingSlot.energyBar.UpdEnergy(TrainingSlot.energyBar.previousDay, TrainingSlot.energyBar.EnergyUsed);
                 TrainingSlot.training = null;
             }
             canvasGroup.blocksRaycasts = false;

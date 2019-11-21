@@ -21,7 +21,7 @@ MonoBehaviour:
   EnduranceTempo: []
   AccelerationTempo: []
   VitesseMaxTempo: []
-  imgColor: {r: 1, g: 0, b: 0, a: 1}
+  dogSprite: {fileID: 21300000, guid: 7136fb5dd97dcd540910d214d52a148e, type: 3}
   Name: doggy
   TrainingsConfirmed: 0
   UpcomingTrainings: []

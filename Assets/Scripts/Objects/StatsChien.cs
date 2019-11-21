@@ -17,7 +17,8 @@ public class StatsChien : ScriptableObject
     public List<Training> AccelerationTempo = new List<Training>();
     public List<Training> VitesseMaxTempo = new List<Training>();
 
-    public Color imgColor;
+    //public Color imgColor;
+    public Sprite dogSprite;
 
     public string Name;
 
