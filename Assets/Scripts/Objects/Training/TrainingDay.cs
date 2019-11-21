@@ -9,7 +9,7 @@ public class TrainingDay : MonoBehaviour
 
     [FormerlySerializedAs("TrainingAssignation")] public GameObject trainingAssignation;
     public TrainingSlot prefabTrainingSlot;
-
+  
     public List<TrainingSlot> trainingSlots;
 
     public List<TrainingSlot> SetTrainingSlots()
@@ -24,6 +24,10 @@ public class TrainingDay : MonoBehaviour
             obj.transform.localScale = new Vector3(1,1,1);
             slots.Add(obj);
         }
+
+    
+
+
         trainingSlots = slots;
 
         return slots;

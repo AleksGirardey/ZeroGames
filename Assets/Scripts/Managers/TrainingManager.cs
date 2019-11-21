@@ -94,7 +94,7 @@ public class TrainingManager : MonoBehaviour
     {
         SelectedDog = Dog;
         SelectedDogTxt.text = Dog.Name;
-        SelectedDogImg.color = Dog.imgColor;
+        SelectedDogImg.sprite = Dog.dogSprite;
     }
 
     private void Update()
