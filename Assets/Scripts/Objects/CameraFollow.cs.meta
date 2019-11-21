@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f5a2087f90b9cef45ba6652dd7fa692f
+=======
+<<<<<<< HEAD:Assets/Highlight_change.cs.meta
+guid: 3a26d3b8ffdd185469f01fcef75fc22f
+=======
+guid: f5a2087f90b9cef45ba6652dd7fa692f
+>>>>>>> bea15757343611b099d6c7392f2f044df071f3db:Assets/Scripts/Objects/CameraFollow.cs.meta
+>>>>>>> bea15757343611b099d6c7392f2f044df071f3db
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

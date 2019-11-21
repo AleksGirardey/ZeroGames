@@ -12,14 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4632c185e4c0b41ac746f005a3630c, type: 3}
   m_Name: Chien12
   m_EditorClassIdentifier: 
-  Endurance: 350
-  Acceleration: 450
-  VitesseMax: 450
-  EnduranceDef: 0
-  AccelerationDef: 0
-  VitesseMaxDef: 0
-  EnduranceTempo: []
-  AccelerationTempo: []
-  VitesseMaxTempo: []
-  imgColor: {r: 0, g: 0, b: 0, a: 0}
-  Name: 
+  Endurance: 95
+  Acceleration: 20
+  VitesseMax: 20
+  LatestRace: 
+  LatestRank: 0
