@@ -69,12 +69,15 @@ public class RaceManager : MonoBehaviour
             chienSelected = hit.transform;
             chienSelected.localScale = Vector3.one * 1.5f; // Rescale du chien selectionné
 
-            Name.text = chienSelected.GetComponent<DogMovement>().ThisDog.name;
+            if (chienSelected.GetComponent<DogMovement>() != null) {
+                Name.text = chienSelected.GetComponent<DogMovement>().ThisDog.name;
 
-            Endurance.text = "endurance : " + chienSelected.GetComponent<DogMovement>().Endurance; // Actualisation des stats
-            VitesseMax.text = "vitesse max : " + chienSelected.GetComponent<DogMovement>().VitesseMax;
-            Acceleration.text = "accélération : " + chienSelected.GetComponent<DogMovement>().Acceleration;
-            VitesseMoyenne.text = "vitesse moyenne: " + chienSelected.GetComponent<DogMovement>().VitesseMoyenne;
+                Endurance.text =
+                    "endurance : " + chienSelected.GetComponent<DogMovement>().Endurance; // Actualisation des stats
+                VitesseMax.text = "vitesse max : " + chienSelected.GetComponent<DogMovement>().VitesseMax;
+                Acceleration.text = "accélération : " + chienSelected.GetComponent<DogMovement>().Acceleration;
+                VitesseMoyenne.text = "vitesse moyenne: " + chienSelected.GetComponent<DogMovement>().VitesseMoyenne;
+            }
 
             if (Input.GetMouseButtonDown(0) && !RaceStarted)    // La sélection a été faite
             {

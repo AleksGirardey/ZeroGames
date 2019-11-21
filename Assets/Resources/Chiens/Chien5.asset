@@ -12,8 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4632c185e4c0b41ac746f005a3630c, type: 3}
   m_Name: Chien5
   m_EditorClassIdentifier: 
+  LatestRace: 21/11/2019 16:44:23
+  LatestRank: 2
   Endurance: 95
   Acceleration: 6
   VitesseMax: 20
-  LatestRace: 
-  LatestRank: 0
+  EnduranceDef: 0
+  AccelerationDef: 0
+  VitesseMaxDef: 0
+  EnduranceTempo: []
+  AccelerationTempo: []
+  VitesseMaxTempo: []
+  dogSprite: {fileID: 0}
+  Name: DogE
+  TrainingsConfirmed: 0
+  UpcomingTrainings: []

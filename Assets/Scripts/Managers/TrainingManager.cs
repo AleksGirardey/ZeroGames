@@ -23,9 +23,14 @@ public class TrainingManager : MonoBehaviour
     //public Image[] MondayEnergyImg, TuesdayEnergyImg, WednesdayEnergyImg, ThursdayEnergyImg, FridayEnergyImg;
 
     // Start is called before the first frame update
+
+    public GameObject FreezeScreen, BinScreen;
+
     void Start()
     {
         EnergyBars previousDay = null;
+        EnergyBars nextDay = null;
+        EnergyBars previousEnergyBar = null;
 
         foreach (DayOfTraining dot in Enum.GetValues(typeof(DayOfTraining))) {
             GameObject day = Instantiate<GameObject>(prefabDay);
@@ -37,6 +42,17 @@ public class TrainingManager : MonoBehaviour
 
             day.GetComponentInChildren<EnergyBars>().previousDay = previousDay;
             previousDay = day.GetComponentInChildren<EnergyBars>();
+
+            
+
+            //day.GetComponentInChildren<EnergyBars>().nextDay = previousDay;
+            //previousDay = day.GetComponentInChildren<EnergyBars>();
+            if(previousEnergyBar != null)
+            {
+                previousEnergyBar.nextDay = day.GetComponentInChildren<EnergyBars>();
+            }
+            
+            previousEnergyBar = day.GetComponentInChildren<EnergyBars>();
         }
         
         if(SelectedDog == null)
@@ -46,28 +62,59 @@ public class TrainingManager : MonoBehaviour
         }
         SetSelectedDog(SelectedDog);
 
-       
+       if(SelectedDog.TrainingsConfirmed == false)
+        {
+            SelectedDog.UpcomingTrainings.Clear();
+        }
     }
 
     public void ConfirmTrainings()
     {
-        foreach (TrainingSlot ts in trainingSlots)
+        
+        if (!SelectedDog.TrainingsConfirmed)
         {
-            if (ts.training != null) ConfirmedTrainings.Add(ts.training);
+            foreach (TrainingSlot ts in trainingSlots)
+            {
+                if (ts.training != null) ConfirmedTrainings.Add(ts.training);
+            }
+
+            for (int i = 0; i < ConfirmedTrainings.Count; i++)
+            {
+                SelectedDog.UpcomingTrainings.Add(ConfirmedTrainings[i]);
+            }
+            SelectedDog.TrainingsConfirmed = true;
+            SelectedDog.AssignTrainings();
         }
+
+
         print("Trainings confirmed!");
     }
 
     public void SetSelectedDog(StatsChien Dog)
     {
         SelectedDog = Dog;
+        SelectedDogTxt.text = Dog.Name;
+        SelectedDogImg.sprite = Dog.dogSprite;
     }
 
     private void Update()
     {
         //jsp
-
+        if (SelectedDog.TrainingsConfirmed)
+        {
+            FreezeScreen.SetActive(true);
+        }
+        else
+        {
+            FreezeScreen.SetActive(false);
+        }
         
+    }
+
+
+    public void SetBinScreen()
+    {
+        BinScreen.SetActive(!BinScreen.activeSelf);
     }
 
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class DogMovement : MonoBehaviour
@@ -65,6 +66,7 @@ public class DogMovement : MonoBehaviour
         }
         if (!_hasFinished) Vitesse = Mathf.Clamp(Vitesse, VitesseMin, VitesseMax);
 
+        GetComponentInChildren<Animator>().SetFloat("Speed", Vitesse);
     }
 
     private void OnTriggerEnter(Collider other)
