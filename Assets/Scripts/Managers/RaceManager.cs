@@ -81,6 +81,8 @@ public class RaceManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && !RaceStarted)    // La sélection a été faite
             {
+                chienSelected.localScale = Vector3.one; // Rescale du chien selectionné
+
                 foreach (DogMovement dog in Chiens)
                 {
                     dog.transform.position = StartPoint.position + new Vector3(_startDiff, 0, 0); // Mettre les chiens à pos. de départ et les écarter entre eux

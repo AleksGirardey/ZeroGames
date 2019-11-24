@@ -8,11 +8,11 @@ public class CameraFollow : MonoBehaviour
     public Transform StaticCamTransform;
     public GameObject Target;
 
-    Vector3 Offset;
+    public Vector3 Offset;
 
     int CameraIndex;
 
-    float AutoSwitchCooldown = 5f;
+    float AutoSwitchCooldown = 5000f;
 
     void Update()
     {
@@ -64,7 +64,7 @@ public class CameraFollow : MonoBehaviour
     void CloseCam()
     {
         transform.position = Target.transform.position + Offset;
-        Offset = - Target.transform.right * 3f;
+        Offset = - Target.transform.right * 5f + Target.transform.up * 5f;
         transform.rotation = Quaternion.LookRotation(Target.transform.position - transform.position, Vector3.up);
     }
 

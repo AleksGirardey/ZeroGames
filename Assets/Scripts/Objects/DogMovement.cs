@@ -63,7 +63,9 @@ public class DogMovement : MonoBehaviour
         {
             PhaseDeceleration();
         }
+
         if (!_hasFinished) Vitesse = Mathf.Clamp(Vitesse, VitesseMin, VitesseMax);
+        else Vitesse = 0;
 
         GetComponentInChildren<Animator>().SetFloat("Speed", Vitesse);
     }
@@ -104,7 +106,7 @@ public class DogMovement : MonoBehaviour
 
             while (_tParam < 1)
             {
-                if ((_dogPosition - transform.position).magnitude < SpeedModifier * 3f) // CHECK SI LE CHIEN A VRAIMENT ATTEINT LE POINT
+                if ((_dogPosition - transform.position).magnitude < SpeedModifier * 6f) // CHECK SI LE CHIEN A VRAIMENT ATTEINT LE POINT
                 {
                 _tParam += Time.fixedDeltaTime * SpeedModifier; // SI OUI, ON AUGMENTE TPARAM DONC DOGPOSITION CALCULE LE NEXT POINT
                 }
@@ -139,7 +141,7 @@ public class DogMovement : MonoBehaviour
     {
 
         DogAnimator.SetFloat("Speed", Vitesse / 3f);
-        DogAnimator.SetBool("IsMoving", RaceManager.RaceStarted && !_hasFinished);
+        DogAnimator.SetBool("Isidle", !RaceManager.RaceStarted || _hasFinished);
 
     }
 
