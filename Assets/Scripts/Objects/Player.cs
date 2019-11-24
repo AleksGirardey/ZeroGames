@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class Player
 {
 
-    public Kennel _kennel;
+    public Kennel kennel;
 
-    public string _profileName;
-    public string _greyhound;
+    public string profileName = "PlacerHolderName";
+    public string greyhound;
 
-    public int _daysPlayed;
-    public int _money;
-
+    public int daysPlayed = 1;
+    public int money = 7500;
 }

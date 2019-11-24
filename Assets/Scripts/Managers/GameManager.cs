@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
+
 /**
  * Main manager, handle the game, the player and the world
  */
@@ -8,12 +10,12 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Instance;
 
-
+    public string date = "01 Janvier 2020";
     
     private Game _game;
 
-    [SerializeField]
-    private Player _player;
+    [FormerlySerializedAs("_player")] [SerializeField]
+    public Player player;
 
     [SerializeField]
     private Kennel _kennel;
@@ -49,9 +51,7 @@ public class GameManager : MonoBehaviour {
     {
         //PlayerDogs[] = Resources.LoadAll<StatsChien>("Chiens");
         Load();
-
-       
-
+        player = new Player();
     }
 
     void Update() {
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour {
     public void Save()
     {
 
-        string PlayerJson = JsonUtility.ToJson(_player);
+        string PlayerJson = JsonUtility.ToJson(player);
         Debug.Log(PlayerJson);
         PlayerPrefs.SetString("SavedPlayerData", PlayerJson);
 
@@ -86,17 +86,17 @@ public class GameManager : MonoBehaviour {
 
         string SavedJsonPlayer = PlayerPrefs.GetString("SavedPlayerData");
 
-        if (SavedJsonPlayer != null && SavedJsonPlayer.Length > 0)
+        if (!string.IsNullOrEmpty(SavedJsonPlayer))
         {
 
             Player LoadedPlayerData = JsonUtility.FromJson<Player>(SavedJsonPlayer);
-            _player = LoadedPlayerData;
+            player = LoadedPlayerData;
 
         }
 
         string SavedJsonKennel = PlayerPrefs.GetString("SavedKennelData");
 
-        if (SavedJsonKennel != null && SavedJsonKennel.Length > 0)
+        if (!string.IsNullOrEmpty(SavedJsonKennel))
         {
 
             Kennel LoadedKennelData = JsonUtility.FromJson<Kennel>(SavedJsonKennel);
@@ -109,12 +109,12 @@ public class GameManager : MonoBehaviour {
     public void CreateNewGame()
     {
 
-        _player = new Player();
+        player = new Player();
 
-        _player._money = 0;
-        _player._daysPlayed = 0;
-        _player._profileName = "nicolasHeinz";
-        _player._greyhound = "chien";
+        player.money = 0;
+        player.daysPlayed = 0;
+        player.profileName = "nicolasHeinz";
+        player.greyhound = "chien";
 
         _kennel = new Kennel();
         _kennel.SelectedDog = _world.AllDogs[i];
@@ -124,10 +124,10 @@ public class GameManager : MonoBehaviour {
     void UpdateTextValue()
     {
 
-        MoneyText.value = _player._money.ToString();
-        TimePlayerText.value = _player._daysPlayed.ToString();
-        ProfileText.value = _player._profileName.ToString();
-        DogText.value = _player._greyhound.ToString();
+        MoneyText.value = player.money.ToString();
+        TimePlayerText.value = player.daysPlayed.ToString();
+        ProfileText.value = player.profileName.ToString();
+        DogText.value = player.greyhound.ToString();
 
     }
 
