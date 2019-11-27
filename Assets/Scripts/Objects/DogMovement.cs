@@ -141,7 +141,7 @@ public class DogMovement : MonoBehaviour
     {
 
         DogAnimator.SetFloat("Speed", Vitesse / 3f);
-        DogAnimator.SetBool("IsMoving", !RaceManager.RaceStarted || _hasFinished);
+        DogAnimator.SetBool("IsMoving", !(!RaceManager.RaceStarted || _hasFinished));
 
     }
 
