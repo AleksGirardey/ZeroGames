@@ -9,7 +9,7 @@ public class DogMovement : MonoBehaviour
         public float Endurance;
         public float Acceleration;
         public float VitesseMax;
-        private float VitesseMin;
+        public float VitesseMin;
     public float Vitesse;
     public float VitesseMoyenne;
     public RaceManager RaceManager;
@@ -39,7 +39,7 @@ public class DogMovement : MonoBehaviour
         _coroutineAllowed = true;
 
         Vitesse = 0;
-        VitesseMoyenne = VitesseMax / 2;
+        VitesseMoyenne = VitesseMax / 2f;
         VitesseMin = VitesseMoyenne;
     }
 
@@ -120,7 +120,7 @@ public class DogMovement : MonoBehaviour
                 Mathf.Pow(_tParam, 3) * p3;
 
                 // AJOUT DE LA FORCE AU CHIEN
-                _dogPhysics.AddForce(dir * Vitesse * 12f);
+                _dogPhysics.AddForce(dir * Vitesse * 2f);
 
                 // Rotation du chien
                 transform.rotation = Quaternion.LookRotation(Vector3.up, dir) * Quaternion.Euler(90, 0, 0);
@@ -140,7 +140,7 @@ public class DogMovement : MonoBehaviour
     void UpdateAnimation()
     {
 
-        DogAnimator.SetFloat("Speed", Vitesse / 3f);
+        DogAnimator.SetFloat("Speed", Vitesse / 10f);
         DogAnimator.SetBool("IsMoving", !(!RaceManager.RaceStarted || _hasFinished));
 
     }
