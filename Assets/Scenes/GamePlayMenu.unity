@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371a2705f84dd764ea2947c54b40cb03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  Target: {fileID: 2067820073}
   speed: 10
 --- !u!1 &232771027
 GameObject:
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 232771028}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -775,7 +775,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 497500441}
+  m_TargetGraphic: {fileID: 432567908}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1100,6 +1100,7 @@ GameObject:
   - component: {fileID: 513112387}
   - component: {fileID: 513112389}
   - component: {fileID: 513112388}
+  - component: {fileID: 513112390}
   m_Layer: 5
   m_Name: Date
   m_TagString: Untagged
@@ -1157,7 +1158,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: THIS IS MY NAME
+  m_Text: THIS IS MY DATE
 --- !u!222 &513112389
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1166,6 +1167,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513112386}
   m_CullTransparentMesh: 0
+--- !u!114 &513112390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513112386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e8114bbedb25c4ca72b5a097a24991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &536404232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,6 +1364,7 @@ MonoBehaviour:
     type: 3}
   trainingCanvasPrefab: {fileID: 8662654559037655557, guid: 08db4633c15e0714596251b7354cd6dc,
     type: 3}
+  _displayedMenu: {fileID: 497500443}
 --- !u!114 &597501066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1696,7 +1710,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1725,7 +1739,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1939,7 +1953,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2094,7 +2108,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2123,7 +2137,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2541,10 +2555,10 @@ RectTransform:
   m_Father: {fileID: 232771030}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0.90700006}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1209398246
 MonoBehaviour:
@@ -3163,7 +3177,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 497500441}
+  m_TargetGraphic: {fileID: 1426443258}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -3757,7 +3771,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3786,7 +3800,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 4
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -4430,7 +4444,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -4904,7 +4918,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 497500441}
+  m_TargetGraphic: {fileID: 1983278666}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -4977,6 +4991,7 @@ GameObject:
   - component: {fileID: 2143104084}
   - component: {fileID: 2143104086}
   - component: {fileID: 2143104085}
+  - component: {fileID: 2143104087}
   m_Layer: 5
   m_Name: PlayerMoney
   m_TagString: Untagged
@@ -5043,6 +5058,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143104083}
   m_CullTransparentMesh: 0
+--- !u!114 &2143104087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143104083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c914eaae0ff399459096cbefac13afa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3105203686059345519
 GameObject:
   m_ObjectHideFlags: 0
@@ -5075,26 +5102,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acdb1c816bbab344eb8d74a76b288d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  date: 01 Janvier 2020
-  player:
-    kennel:
-      SelectedDog: {fileID: 0}
-    profileName: 
-    greyhound: 
-    daysPlayed: 0
-    money: 0
+  date: 
+  money: 0
+  greyhound: GreyhoundHold
+  playername: 
   _kennel:
     SelectedDog: {fileID: 0}
   _world: {fileID: 11400000, guid: 03f0a233ac2c42442a93e748e2aef854, type: 2}
   i: 0
-  MoneyText: {fileID: 0}
-  ProfileText: {fileID: 0}
-  DogText: {fileID: 0}
-  TimePlayerText: {fileID: 0}
   Turns: 0
   PlayerDogs:
   - {fileID: 11400000, guid: 927761249eb65404abf3fae10bd891b7, type: 2}
   Trainings: []
+  Player: []
+  selectedPlayer: {fileID: 0}
 --- !u!114 &3105203686059345521
 MonoBehaviour:
   m_ObjectHideFlags: 0

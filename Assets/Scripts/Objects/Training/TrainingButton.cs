@@ -36,6 +36,7 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
     }
 
     void Start()
@@ -100,7 +101,7 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
             // canvasGroup.ignoreParentGroups = true;
             //print("drag begin");
             initialParent = transform.parent;
-            transform.SetParent(ParentWhileDrag); // SETPARENT MARCHE MAIS PAS DANS LINSPECTEUR MAIS VISUELLEMENT CELA CHANGE QUELQUE  CHOSE
+            transform.SetParent(ParentWhileDrag); // SETPARENT MARCHE MAIS PAS DANS LINSPECTEUR MAIS VISUELLEMENT CELA CHANGE BIEN QUELQUE CHOSE
 
             initialPos = transform.position;
             dropped = false;

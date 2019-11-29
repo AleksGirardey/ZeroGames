@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DogButtonList : MonoBehaviour
+public class DogButtonListKennel : MonoBehaviour
 {
     public Image img; 
-    public Text text;
+    public Text text; 
     private StatsChien Dog;
-    public TrainingManager TrainingManager;
-
-    public void Start()
-    {
-        TrainingManager = GameObject.FindWithTag("TrainingManager").GetComponent<TrainingManager>();
-    }
+    public KennelManager KennelManager;
 
     public void SetImg(Sprite dogSprite)
     {
@@ -34,7 +29,7 @@ public class DogButtonList : MonoBehaviour
 
     public void OnClick()
     {
-        TrainingManager.SetSelectedDog(Dog);
+        KennelManager.SetSelectedDog(Dog);
     }
 
 

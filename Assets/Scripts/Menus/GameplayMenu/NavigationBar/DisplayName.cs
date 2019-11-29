@@ -7,8 +7,8 @@ public class DisplayName : MonoBehaviour {
     private Text _name;
     
     // Start is called before the first frame update
-    void Start() {
+    void Update() {
         _name = GetComponent<Text>();
-        _name.text = GameManager.Instance.player.profileName;
+        _name.text = GameManager.Instance.playername;
     }
 }

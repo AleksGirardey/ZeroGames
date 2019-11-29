@@ -10,12 +10,15 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Instance;
 
-    public string date = "01 Janvier 2020";
+    public string date;
+    public int money;
+    public string greyhound;
+    public string playername;
     
     private Game _game;
 
-    [FormerlySerializedAs("_player")] [SerializeField]
-    public Player player;
+    //[FormerlySerializedAs("_player")] [SerializeField]
+    //public Player[] player;
 
     [SerializeField]
     private Kennel _kennel;
@@ -24,16 +27,17 @@ public class GameManager : MonoBehaviour {
 
     public int i;
 
-    public TextGameObject MoneyText, ProfileText, DogText, TimePlayerText;
-
     public int Turns;
     public List<StatsChien> PlayerDogs; // IL A PAS AIMER QUE JE METTE CHIEN
     public List<Training> Trainings;
+    public List<Player> Player;
+    public Player selectedPlayer;
 
     void Awake() {
         if (Instance == null) Instance = this;
         else if (Instance != this) Destroy(gameObject);
 
+        PlayerDogs.Clear();
         DontDestroyOnLoad(gameObject);
         gameObject.tag = "GameManager";
         //PlayerDogs[0] = (StatsChien)AssetDatabase.LoadAssetAtPath("Assets/Ressources/PlayerDogs/Chien1", typeof(ScriptableObject));
@@ -45,19 +49,32 @@ public class GameManager : MonoBehaviour {
         {
             Trainings.Add(training);
         }
+        //player = Resources.Load<Player>("Player");
+        foreach (Player player in Resources.LoadAll<Player>("Player"))
+        {
+            Player.Add(player);
+        }
+        selectedPlayer = Player[0];
     }
 
     private void Start()
     {
         //PlayerDogs[] = Resources.LoadAll<StatsChien>("Chiens");
-        Load();
-        player = new Player();
+        //Load();
+        //player = new Player();
+        
     }
 
     void Update() {
+        GetPlayerStats();
+        
+    }
 
-        // UpdateTextValue();
-
+    public void GetPlayerStats()
+    {
+        date = selectedPlayer.daysPlayed.ToString() + "days";
+        playername = selectedPlayer.profileName;
+        money = selectedPlayer.money;
     }
 
     public void SetPlayerDog(int endu, int accel, int vmax)
@@ -67,7 +84,7 @@ public class GameManager : MonoBehaviour {
         PlayerDogs[0].VitesseMax = vmax;
     }
 
-
+    /*
     public void Save()
     {
 
@@ -106,12 +123,13 @@ public class GameManager : MonoBehaviour {
 
     }
 
+    
     public void CreateNewGame()
     {
 
         player = new Player();
 
-        player.money = 0;
+        player.money = 80;
         player.daysPlayed = 0;
         player.profileName = "nicolasHeinz";
         player.greyhound = "chien";
@@ -120,15 +138,5 @@ public class GameManager : MonoBehaviour {
         _kennel.SelectedDog = _world.AllDogs[i];
 
     }
-
-    void UpdateTextValue()
-    {
-
-        MoneyText.value = player.money.ToString();
-        TimePlayerText.value = player.daysPlayed.ToString();
-        ProfileText.value = player.profileName.ToString();
-        DogText.value = player.greyhound.ToString();
-
-    }
-
+    */
 }

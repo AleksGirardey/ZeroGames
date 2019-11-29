@@ -38,12 +38,8 @@ public class TrainingManager : MonoBehaviour
             day.transform.localScale = new Vector3(1, 1, 1);
             day.GetComponent<TrainingDay>().dayOfWeek = dot;
             trainingSlots.AddRange(day.GetComponent<TrainingDay>().SetTrainingSlots());
-
-
             day.GetComponentInChildren<EnergyBars>().previousDay = previousDay;
             previousDay = day.GetComponentInChildren<EnergyBars>();
-
-            
 
             //day.GetComponentInChildren<EnergyBars>().nextDay = previousDay;
             //previousDay = day.GetComponentInChildren<EnergyBars>();
@@ -57,12 +53,10 @@ public class TrainingManager : MonoBehaviour
         
         if(SelectedDog == null)
         {
-            // RECUPERER LE PRMIER CHIEN DANS LES ASSETS
-            // EN ATTENDANT JE LAI MIS DANS L'INSPECTEUR (1er  chien par defaut)
+            SetSelectedDog(GameManager.Instance.PlayerDogs[0]);
         }
-        SetSelectedDog(SelectedDog);
 
-       if(SelectedDog.TrainingsConfirmed == false)
+        if (SelectedDog.TrainingsConfirmed == false)
         {
             SelectedDog.UpcomingTrainings.Clear();
         }

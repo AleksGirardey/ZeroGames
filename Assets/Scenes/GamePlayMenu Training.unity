@@ -270,7 +270,7 @@ MonoBehaviour:
   Kennel_canvas: {fileID: 0}
   Management_canvas: {fileID: 0}
   DogTrack_canvas: {fileID: 0}
-  Training_canvas: {fileID: 1779979171}
+  Training_canvas: {fileID: 0}
   Highlight: {fileID: 0}
   Cam: {fileID: 0}
   IIIdTarget: {fileID: 0}
@@ -800,7 +800,7 @@ MonoBehaviour:
   Kennel_canvas: {fileID: 0}
   Management_canvas: {fileID: 0}
   DogTrack_canvas: {fileID: 0}
-  Training_canvas: {fileID: 1779979171}
+  Training_canvas: {fileID: 0}
   Highlight: {fileID: 0}
   Cam: {fileID: 0}
   IIIdTarget: {fileID: 0}
@@ -1800,7 +1800,7 @@ MonoBehaviour:
   Kennel_canvas: {fileID: 0}
   Management_canvas: {fileID: 0}
   DogTrack_canvas: {fileID: 0}
-  Training_canvas: {fileID: 1779979171}
+  Training_canvas: {fileID: 0}
   Highlight: {fileID: 0}
   Cam: {fileID: 0}
   IIIdTarget: {fileID: 0}
@@ -1971,7 +1971,7 @@ MonoBehaviour:
   Kennel_canvas: {fileID: 0}
   Management_canvas: {fileID: 0}
   DogTrack_canvas: {fileID: 0}
-  Training_canvas: {fileID: 1779979171}
+  Training_canvas: {fileID: 0}
   Highlight: {fileID: 0}
   Cam: {fileID: 0}
   IIIdTarget: {fileID: 0}
@@ -2099,12 +2099,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4567608086916490401}
   m_PrefabAsset: {fileID: 0}
---- !u!223 &1779979171 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 4567608086545807106, guid: 466be2f122b2b6c4bbc513bc8c082fff,
-    type: 3}
-  m_PrefabInstance: {fileID: 4567608086916490401}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2120312238 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4567608086209659151, guid: 466be2f122b2b6c4bbc513bc8c082fff,
@@ -2129,6 +2123,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasTrainingManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1530254697477709685, guid: fb29c91d1752dc84892e290534609a47,
+        type: 3}
+      propertyPath: Calendar
+      value: 
+      objectReference: {fileID: 658819385}
+    - target: {fileID: 1530254697477709685, guid: fb29c91d1752dc84892e290534609a47,
+        type: 3}
+      propertyPath: SelectedDogTxt
+      value: 
+      objectReference: {fileID: 247334552}
+    - target: {fileID: 1530254697477709685, guid: fb29c91d1752dc84892e290534609a47,
+        type: 3}
+      propertyPath: SelectedDogImg
+      value: 
+      objectReference: {fileID: 2120312238}
+    - target: {fileID: 1530254697477709685, guid: fb29c91d1752dc84892e290534609a47,
+        type: 3}
+      propertyPath: FreezeScreen
+      value: 
+      objectReference: {fileID: 1363431435}
+    - target: {fileID: 1530254697477709685, guid: fb29c91d1752dc84892e290534609a47,
+        type: 3}
+      propertyPath: BinScreen
+      value: 
+      objectReference: {fileID: 545413990}
     - target: {fileID: 1530254697477709684, guid: fb29c91d1752dc84892e290534609a47,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2184,31 +2203,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1530254697477709685, guid: fb29c91d1752dc84892e290534609a47,
-        type: 3}
-      propertyPath: Calendar
-      value: 
-      objectReference: {fileID: 658819385}
-    - target: {fileID: 1530254697477709685, guid: fb29c91d1752dc84892e290534609a47,
-        type: 3}
-      propertyPath: SelectedDogTxt
-      value: 
-      objectReference: {fileID: 247334552}
-    - target: {fileID: 1530254697477709685, guid: fb29c91d1752dc84892e290534609a47,
-        type: 3}
-      propertyPath: SelectedDogImg
-      value: 
-      objectReference: {fileID: 2120312238}
-    - target: {fileID: 1530254697477709685, guid: fb29c91d1752dc84892e290534609a47,
-        type: 3}
-      propertyPath: FreezeScreen
-      value: 
-      objectReference: {fileID: 1363431435}
-    - target: {fileID: 1530254697477709685, guid: fb29c91d1752dc84892e290534609a47,
-        type: 3}
-      propertyPath: BinScreen
-      value: 
-      objectReference: {fileID: 545413990}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb29c91d1752dc84892e290534609a47, type: 3}
 --- !u!1 &3105203686059345519
@@ -2243,13 +2237,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acdb1c816bbab344eb8d74a76b288d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player:
-    _kennel:
+  date: 01 Janvier 2020
+  player:
+    kennel:
       SelectedDog: {fileID: 0}
-    _profileName: 
-    _greyhound: 
-    _daysPlayed: 0
-    _money: 0
+    profileName: PlacerHolderName
+    greyhound: 
+    daysPlayed: 1
+    money: 7500
   _kennel:
     SelectedDog: {fileID: 0}
   _world: {fileID: 11400000, guid: 03f0a233ac2c42442a93e748e2aef854, type: 2}
@@ -2525,6 +2520,51 @@ PrefabInstance:
     - target: {fileID: 4567608085979892874, guid: 466be2f122b2b6c4bbc513bc8c082fff,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567608085820226145, guid: 466be2f122b2b6c4bbc513bc8c082fff,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567608085820226145, guid: 466be2f122b2b6c4bbc513bc8c082fff,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567608085820226145, guid: 466be2f122b2b6c4bbc513bc8c082fff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567608087399050651, guid: 466be2f122b2b6c4bbc513bc8c082fff,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567608087399050651, guid: 466be2f122b2b6c4bbc513bc8c082fff,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567608087399050651, guid: 466be2f122b2b6c4bbc513bc8c082fff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567608085941386794, guid: 466be2f122b2b6c4bbc513bc8c082fff,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567608085941386794, guid: 466be2f122b2b6c4bbc513bc8c082fff,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567608085941386794, guid: 466be2f122b2b6c4bbc513bc8c082fff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

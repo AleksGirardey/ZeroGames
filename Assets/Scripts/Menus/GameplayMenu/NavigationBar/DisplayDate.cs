@@ -7,7 +7,7 @@ public class DisplayDate : MonoBehaviour {
     private Text _date;
     
     // Start is called before the first frame update
-    void Start() {
+    void Update() {
         _date = GetComponent<Text>();
         _date.text = GameManager.Instance.date;
     }
