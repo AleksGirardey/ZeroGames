@@ -1,10 +1,23 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/StatsChienScriptableObject", order = 1)]
+
 public class StatsChien : ScriptableObject
 {
+    private static readonly Dictionary<int, string> statLetters = new Dictionary<int, string>() {
+        {249, "C-"}, 
+        {349, "C"}, 
+        {449, "C+"}, 
+        {549, "B-"}, 
+        {649, "B"}, 
+        {749, "B+"}, 
+        {849, "A-"}, 
+        {949, "A"}, 
+        {1000, "A+"}
+    };
+    
     public string LatestRace;
     public int LatestRank;
     public float Endurance;
@@ -22,11 +35,6 @@ public class StatsChien : ScriptableObject
     public List<Training> EnduranceTempo = new List<Training>();
     public List<Training> AccelerationTempo = new List<Training>();
     public List<Training> VitesseMaxTempo = new List<Training>();
-
-    //public Color imgColor;
-    public Sprite dogSprite;
-
-    public string Name;
 
     public bool TrainingsConfirmed;
 
@@ -108,6 +116,26 @@ public class StatsChien : ScriptableObject
         VitesseMaxTempo = newList;
     }
 
+    private string GetStatAsLetter(float value) {
+        foreach (var key in statLetters.Keys.Where(key => (value <= key))) {
+            return statLetters[key];
+        }
+
+        return "C-";
+    }
+    
+    public string GetAccelerationAsLetter() {
+        return GetStatAsLetter(GetAcceleration());
+    }
+
+    public string GetMaxSpeedAsLetter() {
+        return GetStatAsLetter(GetVitesseMax());
+    }
+
+    public string GetStaminaAsLetter() {
+        return GetStatAsLetter(GetEndurance());
+    }
+    
     public void AssignTrainings()
     {
         foreach(Training training in UpcomingTrainings)

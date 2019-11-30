@@ -27,6 +27,13 @@
 		{ "key":"StartScene_DogStamina", "value":"Stamina: " },
 		{ "key":"StartScene_DogAccel", "value":"Accel: " },
 		
+		{ "key":"MainMenu_NewCarrier_PlayerName", "value":"Player Name" },
+		{ "key":"MainMenu_NewCarrier_KennelName", "value":"Kennel Name" },
+		{ "key":"MainMenu_NewCarrier_CompanyName", "value":"Company Name" },
+		{ "key":"MainMenu_NewCarrier_StatNameAccel", "value":"Acc." },
+		{ "key":"MainMenu_NewCarrier_StatNameStamina", "value":"Sta." },
+		{ "key":"MainMenu_NewCarrier_StatNameMaxSpeed", "value":"Speed" },
+		
 		{ "key":"MainMenu_SaveDescription_Profil", "value":"Profil" },
 		{ "key":"MainMenu_SaveDescription_Greyhound", "value":"Greyhound" },
 		{ "key":"MainMenu_SaveDescription_Played", "value":"Time played" },

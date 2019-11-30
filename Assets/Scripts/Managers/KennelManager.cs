@@ -15,16 +15,16 @@ public class KennelManager : MonoBehaviour
     {
         if (SelectedDog == null)
         {
-            SetSelectedDog(GameManager.Instance.PlayerDogs[0]);
+            SetSelectedDog(GameManager.Instance.Player.kennel.dogs[0]);
         }
     }
 
-    public void SetSelectedDog(StatsChien Dog)
+    public void SetSelectedDog(Dog dog)
     {
-        SelectedDog = Dog;
-        SelectedDogTxt.text = Dog.Name;
-        SelectedDogImg.sprite = Dog.dogSprite;
-        SelectedDogMood.text = Dog.Mood;
+        SelectedDog = dog;
+        SelectedDogTxt.text = dog.dogName;
+        SelectedDogImg.sprite = dog.avatar;
+        SelectedDogMood.text = dog.Mood;
     }
 
  

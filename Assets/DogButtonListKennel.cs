@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class DogButtonListKennel : MonoBehaviour
 {
     public Image img; 
     public Text text; 
-    private StatsChien Dog;
-    public KennelManager KennelManager;
+    private Dog _dog;
+    [FormerlySerializedAs("KennelManager")] public KennelManager kennelManager;
 
     public void SetImg(Sprite dogSprite)
     {
@@ -20,16 +21,16 @@ public class DogButtonListKennel : MonoBehaviour
         text.text = dogName;
     }
 
-    public void SetDog(StatsChien dog)
+    public void SetDog(Dog dog)
     {
-        Dog = dog;
-        img.sprite = dog.dogSprite;
-        text.text = dog.Name;
+        _dog = dog;
+        img.sprite = dog.avatar;
+        text.text = dog.dogName;
     }
 
     public void OnClick()
     {
-        KennelManager.SetSelectedDog(Dog);
+        kennelManager.SetSelectedDog(_dog);
     }
 
 

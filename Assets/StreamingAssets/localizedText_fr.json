@@ -26,6 +26,13 @@
 		{ "key":"StartScene_DogMaxSpeed", "value":"Vitesse max: " },
 		{ "key":"StartScene_DogStamina", "value":"Endurance: " },
 		{ "key":"StartScene_DogAccel", "value":"Accel: " },
+		
+		{ "key":"MainMenu_NewCarrier_PlayerName", "value":"Nom Joueur" },
+		{ "key":"MainMenu_NewCarrier_KennelName", "value":"Nom Chenil" },
+		{ "key":"MainMenu_NewCarrier_CompanyName", "value":"Nom Compagnie" },
+		{ "key":"MainMenu_NewCarrier_StatNameAccel", "value":"Acc." },
+		{ "key":"MainMenu_NewCarrier_StatNameStamina", "value":"End." },
+		{ "key":"MainMenu_NewCarrier_StatNameMaxSpeed", "value":"Vit." },
 
 		{ "key":"MainMenu_SaveDescription_Profil", "value":"Profil" },
 		{ "key":"MainMenu_SaveDescription_Greyhound", "value":"Lévrier" },

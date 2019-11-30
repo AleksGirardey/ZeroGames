@@ -1,27 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class ScrollListKennelManager : MonoBehaviour
 {
     public GameObject buttonPrefab;
-    private GameManager GameManager;
     private void Start()
     {
-        GameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
-        for (int i = 0; i < GameManager.PlayerDogs.Count; i++) // INSTANTIATE DES SPRITES DES CHIENS DU JOUEUR DANS MENU TRAINING
+        for (int i = 0; i < GameManager.Instance.Player.kennel.dogs.Count; i++) // INSTANTIATE DES SPRITES DES CHIENS DU JOUEUR DANS MENU TRAINING
         {
-            GameObject DogImgButton = Instantiate(buttonPrefab) as GameObject;
+            GameObject DogImgButton = Instantiate(buttonPrefab, buttonPrefab.transform.parent, false) as GameObject;
             DogImgButton.SetActive(true);
-            DogImgButton.GetComponent<DogButtonListKennel>().SetDog(GameManager.PlayerDogs[i]);
-            DogImgButton.transform.SetParent(buttonPrefab.transform.parent, false);
+            DogImgButton.GetComponent<DogButtonListKennel>().SetDog(GameManager.Instance.Player.kennel.dogs[i]);
         }
-
-    }
-
-    void CreateButtons()
-    {
 
     }
 

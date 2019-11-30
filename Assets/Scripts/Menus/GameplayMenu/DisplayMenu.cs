@@ -18,7 +18,7 @@ public class DisplayMenu : MonoBehaviour {
     private GameObject _loadedScreen;
 
     private bool _loadScreen = true;
-    public Menus _displayedMenu;
+    public Menus displayedMenu;
 
     private void LoadScreen(GameObject prefab) {
         Destroy(_loadedScreen);
@@ -30,7 +30,7 @@ public class DisplayMenu : MonoBehaviour {
     void Update()
     {
         if (_loadScreen) {  
-                switch (_displayedMenu.choosedMenus)
+                switch (displayedMenu.choosedMenus)
                 {
                     case EMenus.Kennel:
                         LoadScreen(kennelCanvasPrefab);
@@ -52,7 +52,7 @@ public class DisplayMenu : MonoBehaviour {
     }
 
     public void SetDisplayedMenu(Menus menu) {
-        _displayedMenu = menu;
+        displayedMenu = menu;
         _loadScreen = true;
     }
 }

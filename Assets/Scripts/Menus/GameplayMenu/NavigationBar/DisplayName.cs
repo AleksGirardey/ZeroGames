@@ -9,6 +9,6 @@ public class DisplayName : MonoBehaviour {
     // Start is called before the first frame update
     void Update() {
         _name = GetComponent<Text>();
-        _name.text = GameManager.Instance.playername;
+        _name.text = GameManager.Instance.Player.name;
     }
 }

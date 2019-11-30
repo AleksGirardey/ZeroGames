@@ -67,19 +67,19 @@ public class CanvasManager : MonoBehaviour
 
     public void SelectChien1()
     {
-        GameManager.Instance.SetPlayerDog(DogStamina1, DogAccel1, DogMaxSpeed1);
+        //GameManager.Instance.SetPlayerDog(DogStamina1, DogAccel1, DogMaxSpeed1);
         SceneManager.LoadScene("GamePlayMenu");
     }
 
     public void SelectChien2()
     {
-        GameManager.Instance.SetPlayerDog(DogStamina2, DogAccel2, DogMaxSpeed2);
+        //GameManager.Instance.SetPlayerDog(DogStamina2, DogAccel2, DogMaxSpeed2);
         SceneManager.LoadScene("GamePlayMenu");
     }
 
     public void SelectChien3()
     {
-        GameManager.Instance.SetPlayerDog(DogStamina3, DogAccel3, DogMaxSpeed3);
+        //GameManager.Instance.SetPlayerDog(DogStamina3, DogAccel3, DogMaxSpeed3);
         SceneManager.LoadScene("GamePlayMenu");
     }
 

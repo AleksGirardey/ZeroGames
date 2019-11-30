@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class DogButtonList : MonoBehaviour
 {
     public Image img; 
     public Text text;
-    private StatsChien Dog;
-    public TrainingManager TrainingManager;
+    private Dog _dog;
+    [FormerlySerializedAs("TrainingManager")] public TrainingManager trainingManager;
 
     public void Start()
     {
-        TrainingManager = GameObject.FindWithTag("TrainingManager").GetComponent<TrainingManager>();
+        trainingManager = GameObject.FindWithTag("TrainingManager").GetComponent<TrainingManager>();
     }
 
     public void SetImg(Sprite dogSprite)
@@ -25,16 +24,16 @@ public class DogButtonList : MonoBehaviour
         text.text = dogName;
     }
 
-    public void SetDog(StatsChien dog)
+    public void SetDog(Dog newDog)
     {
-        Dog = dog;
-        img.sprite = dog.dogSprite;
-        text.text = dog.Name;
+        _dog = newDog;
+        img.sprite = _dog.avatar;
+        text.text = _dog.dogName;
     }
 
     public void OnClick()
     {
-        TrainingManager.SetSelectedDog(Dog);
+        trainingManager.SetSelectedDog(_dog);
     }
 
 

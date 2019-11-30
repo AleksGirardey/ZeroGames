@@ -23,9 +23,9 @@ public class StatsChange : MonoBehaviour
 
     private void Update()
     {  
-            _MaxSpeed = GM.PlayerDogs[0].VitesseMax;
-            _Acceleration = GM.PlayerDogs[0].Acceleration;
-            _Stamina = GM.PlayerDogs[0].Endurance;
+            _MaxSpeed = GM.Player.kennel.dogs[0].VitesseMax;
+            _Acceleration = GM.Player.kennel.dogs[0].Acceleration;
+            _Stamina = GM.Player.kennel.dogs[0].Endurance;
 
             if (MaxSpeed)
             {

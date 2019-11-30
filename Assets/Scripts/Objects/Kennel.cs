@@ -1,8 +1,8 @@
-using UnityEngine;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class Kennel {
 
-    public StatsChien SelectedDog;
+    public List<Dog> dogs;
 
 }

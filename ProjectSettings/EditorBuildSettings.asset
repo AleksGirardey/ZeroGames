@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Race.unity
     guid: eaf845db98f855f4797afdf9c30f58bc
+  - enabled: 1
+    path: Assets/Scenes/GamePlayMenu.unity
+    guid: 3bb271dc104092447ab3afff66d63e8a
   m_configObjects: {}

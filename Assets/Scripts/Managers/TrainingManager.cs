@@ -13,7 +13,7 @@ public class TrainingManager : MonoBehaviour
 
     public Text SelectedDogTxt;
     public Image SelectedDogImg;
-    public StatsChien SelectedDog;
+    public Dog SelectedDog;
     //public Color RedEnergy, OrangeEnergy, GreenEnergy, EmptyEnergy;
 
     public List<Training> ConfirmedTrainings = new List<Training>();
@@ -33,8 +33,7 @@ public class TrainingManager : MonoBehaviour
         EnergyBars previousEnergyBar = null;
 
         foreach (DayOfTraining dot in Enum.GetValues(typeof(DayOfTraining))) {
-            GameObject day = Instantiate<GameObject>(prefabDay);
-            day.transform.SetParent(Calendar.transform);
+            GameObject day = Instantiate(prefabDay, Calendar.transform, true);
             day.transform.localScale = new Vector3(1, 1, 1);
             day.GetComponent<TrainingDay>().dayOfWeek = dot;
             trainingSlots.AddRange(day.GetComponent<TrainingDay>().SetTrainingSlots());
@@ -53,7 +52,7 @@ public class TrainingManager : MonoBehaviour
         
         if(SelectedDog == null)
         {
-            SetSelectedDog(GameManager.Instance.PlayerDogs[0]);
+            SetSelectedDog(GameManager.Instance.Player.kennel.dogs[0]);
         }
 
         if (SelectedDog.TrainingsConfirmed == false)
@@ -84,11 +83,11 @@ public class TrainingManager : MonoBehaviour
         print("Trainings confirmed!");
     }
 
-    public void SetSelectedDog(StatsChien Dog)
+    public void SetSelectedDog(Dog selected)
     {
-        SelectedDog = Dog;
-        SelectedDogTxt.text = Dog.Name;
-        SelectedDogImg.sprite = Dog.dogSprite;
+        SelectedDog = selected;
+        SelectedDogTxt.text = selected.dogName;
+        SelectedDogImg.sprite = selected.avatar;
     }
 
     private void Update()
