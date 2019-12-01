@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -24,6 +25,10 @@ public class DisplayMenu : MonoBehaviour {
         Destroy(_loadedScreen);
         _loadedScreen = Instantiate(prefab, transform, false);
         _loadScreen = false;
+    }
+
+    private void Awake() {
+        LoadScreen(kennelCanvasPrefab);
     }
 
     // Update is called once per frame

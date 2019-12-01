@@ -4,12 +4,16 @@
 
 		{ "key":"MainMenu_Carrier", "value":"New Carrier" },
 		{ "key":"MainMenu_Load", "value":"Load Carrier" },
+		{ "key":"MainMenu_Options", "value":"Options" },
 		{ "key":"MainMenu_Quit", "value":"Quit" },
 
-		{ "key":"EscMenu_Save", "value":"Save" },
-		{ "key":"EscMenu_Load", "value":"Load" },
+		{ "key":"EscMenu_Save", "value":"Save Carrier" },
+		{ "key":"EscMenu_Load", "value":"Load Carrier" },
 		{ "key":"EscMenu_Options", "value":"Options" },
 		{ "key":"EscMenu_Quit", "value":"Quit" },
+		
+		{ "key":"Options_Language", "value":"Language" },
+		{ "key":"Options_Back", "value":"Back" },
 
 		{ "key":"LoadSaveMenu_Save", "value":"Save" },
 		{ "key":"LoadSaveMenu_Money", "value":"Money" },
@@ -29,10 +33,12 @@
 		
 		{ "key":"MainMenu_NewCarrier_PlayerName", "value":"Player Name" },
 		{ "key":"MainMenu_NewCarrier_KennelName", "value":"Kennel Name" },
-		{ "key":"MainMenu_NewCarrier_CompanyName", "value":"Company Name" },
+		{ "key":"MainMenu_NewCarrier_GreyhoundName", "value":"Greyhound Name" },
 		{ "key":"MainMenu_NewCarrier_StatNameAccel", "value":"Acc." },
 		{ "key":"MainMenu_NewCarrier_StatNameStamina", "value":"Sta." },
 		{ "key":"MainMenu_NewCarrier_StatNameMaxSpeed", "value":"Speed" },
+		{ "key":"MainMenu_NewCarrier_Back", "value":"Back" },
+		{ "key":"MainMenu_NewCarrier_Validate", "value":"Validate" },
 		
 		{ "key":"MainMenu_SaveDescription_Profil", "value":"Profil" },
 		{ "key":"MainMenu_SaveDescription_Greyhound", "value":"Greyhound" },

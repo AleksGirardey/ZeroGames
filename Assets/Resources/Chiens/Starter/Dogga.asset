@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LatestRace: 
   LatestRank: 0
-  Endurance: 400
+  Endurance: 500
   Acceleration: 500
   VitesseMax: 600
   EnduranceDef: 0

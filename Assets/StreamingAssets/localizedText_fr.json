@@ -4,12 +4,16 @@
 
 		{ "key":"MainMenu_Carrier", "value":"Nouvelle Carrière" },
 		{ "key":"MainMenu_Load", "value":"Charger Carrière" },
+		{ "key":"MainMenu_Options", "value":"Options" },
 		{ "key":"MainMenu_Quit", "value":"Quitter" },
 
-		{ "key":"EscMenu_Save", "value":"Sauvegarder" },
-		{ "key":"EscMenu_Load", "value":"Charger" },
+		{ "key":"EscMenu_Save", "value":"Sauvegarder Carrière" },
+		{ "key":"EscMenu_Load", "value":"Charger Carrière" },
 		{ "key":"EscMenu_Options", "value":"Options" },
 		{ "key":"EscMenu_Quit", "value":"Quitter" },
+		
+		{ "key":"Options_Language", "value":"Langage" },
+		{ "key":"Options_Back", "value":"Retour" },
 
 		{ "key":"LoadSaveMenu_Save", "value":"Sauvegarde" },
 		{ "key":"LoadSaveMenu_Money", "value":"Argent" },
@@ -29,10 +33,12 @@
 		
 		{ "key":"MainMenu_NewCarrier_PlayerName", "value":"Nom Joueur" },
 		{ "key":"MainMenu_NewCarrier_KennelName", "value":"Nom Chenil" },
-		{ "key":"MainMenu_NewCarrier_CompanyName", "value":"Nom Compagnie" },
+		{ "key":"MainMenu_NewCarrier_GreyhoundName", "value":"Nom lévrier" },
 		{ "key":"MainMenu_NewCarrier_StatNameAccel", "value":"Acc." },
 		{ "key":"MainMenu_NewCarrier_StatNameStamina", "value":"End." },
 		{ "key":"MainMenu_NewCarrier_StatNameMaxSpeed", "value":"Vit." },
+		{ "key":"MainMenu_NewCarrier_Back", "value":"Retour" },
+		{ "key":"MainMenu_NewCarrier_Validate", "value":"Valider" },
 
 		{ "key":"MainMenu_SaveDescription_Profil", "value":"Profil" },
 		{ "key":"MainMenu_SaveDescription_Greyhound", "value":"Lévrier" },

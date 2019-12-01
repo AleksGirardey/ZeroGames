@@ -9,8 +9,7 @@ public class Player : ScriptableObject
     public Kennel kennel;
 
     public string profileName;
-    public string greyhound;
 
-    public int daysPlayed;
-    public int money;
+    public int daysPlayed = 0;
+    public int money = 2500;
 }

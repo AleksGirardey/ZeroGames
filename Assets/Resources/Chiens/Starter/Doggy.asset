@@ -16,7 +16,7 @@ MonoBehaviour:
   LatestRank: 0
   Endurance: 600
   Acceleration: 500
-  VitesseMax: 400
+  VitesseMax: 500
   EnduranceDef: 0
   AccelerationDef: 0
   VitesseMaxDef: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   VitesseMaxTempo: []
   TrainingsConfirmed: 0
   UpcomingTrainings: []
-  dogName: Dogga
+  dogName: Doggy
   age: 3
   width: 1
   height: 1

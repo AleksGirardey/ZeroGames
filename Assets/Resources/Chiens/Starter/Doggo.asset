@@ -15,7 +15,7 @@ MonoBehaviour:
   LatestRace: 
   LatestRank: 0
   Endurance: 500
-  Acceleration: 500
+  Acceleration: 600
   VitesseMax: 500
   EnduranceDef: 0
   AccelerationDef: 0
