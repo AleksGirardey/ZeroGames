@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DisplayDate : MonoBehaviour {
-    private Text _date;
+public class DisplayBlazon : MonoBehaviour {
+    private Image _blazon;
     
     // Start is called before the first frame update
     void Update() {
-        _date = GetComponentInParent<Text>();
-        _date.text = GameManager.Instance.date;
+        _blazon = GetComponentInParent<Image>();
+        _blazon.sprite = GameManager.Instance.player.kennel.blazon;
     }
 }

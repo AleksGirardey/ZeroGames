@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class DisplayName : MonoBehaviour {
@@ -8,7 +6,7 @@ public class DisplayName : MonoBehaviour {
     
     // Start is called before the first frame update
     void Update() {
-        _name = GetComponent<Text>();
-        _name.text = GameManager.Instance.Player.name;
+        _name = GetComponentInParent<Text>();
+        _name.text = GameManager.Instance.player.profileName;
     }
 }

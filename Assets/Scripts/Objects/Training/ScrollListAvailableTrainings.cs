@@ -12,13 +12,13 @@ public class ScrollListAvailableTrainings : MonoBehaviour
     {
         GameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
 
-        for (int i = 0; i < GameManager.Trainings.Count; i++) // INSTANTIATE DES TRAININGS DANS AVAILABLE TRAININGS
+        for (int i = 0; i < GameManager.trainings.Count; i++) // INSTANTIATE DES TRAININGS DANS AVAILABLE TRAININGS
         {
             GameObject TrainingInventorySlot = Instantiate(buttonPrefab) as GameObject;
             TrainingInventorySlot.SetActive(true);
-            TrainingInventorySlot.GetComponentInChildren<TrainingButton>().Training = GameManager.Trainings[i];
+            TrainingInventorySlot.GetComponentInChildren<TrainingButton>().Training = GameManager.trainings[i];
             TrainingInventorySlot.transform.SetParent(buttonPrefab.transform.parent, false);
-            TrainingInventorySlot.GetComponentInChildren<TrainingButton>().SetName(GameManager.Trainings[i].name);
+            TrainingInventorySlot.GetComponentInChildren<TrainingButton>().SetName(GameManager.trainings[i].name);
         }
 
     }

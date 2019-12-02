@@ -15,7 +15,7 @@ public class KennelManager : MonoBehaviour
     {
         if (SelectedDog == null)
         {
-            SetSelectedDog(GameManager.Instance.Player.kennel.dogs[0]);
+            SetSelectedDog(GameManager.Instance.player.kennel.dogs[0]);
         }
     }
 

@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 using UnityEngine.Serialization;
+using Object = UnityEngine.Object;
 
 /**
  * Main manager, handle the game, the player and the world
@@ -21,9 +23,25 @@ public class GameManager : MonoBehaviour {
 
     [FormerlySerializedAs("_world")] public World world;
 
-    public int Turns;
-    public List<Training> Trainings;
-    public Player Player;
+    [FormerlySerializedAs("Turns")] public int turns;
+    [FormerlySerializedAs("Trainings")] public List<Training> trainings;
+    [FormerlySerializedAs("Player")] public Player player;
+
+    private void Start() {
+/*        Dog[] dog = Resources.LoadAll<Dog>("DefaultDogs");
+        
+        if (dog.Length == 0) Debug.Log("Couldn't load dog");
+        
+        player = ScriptableObject.CreateInstance<Player>();
+        player.money = 2500;
+        player.profileName = "DefaultPlayer";
+        player.kennel = new Kennel();
+        player.kennel.kennelName = "defaultKennel";
+        player.kennel.dogs.Add(dog[0]);
+        Game game = ScriptableObject.CreateInstance<Game>();
+        game.player = player;
+        SetGame(game);*/
+    }
 
     void Awake() {
         if (Instance == null) Instance = this;
@@ -36,10 +54,10 @@ public class GameManager : MonoBehaviour {
     private void Load() {
         foreach (Training training in Resources.LoadAll<Training>("Trainings"))
         {
-            Trainings.Add(training);
+            trainings.Add(training);
         }
         //player = Resources.Load<Player>("Player");
-        Player = _game.player;
+        player = _game.player;
     }
 
     public void SetGame(Object game) {

@@ -42,17 +42,17 @@ public class BeforeRaceManager : MonoBehaviour
 
     public void StartRace1()
     {
-        GameManager.Turns = 1;
+        GameManager.turns = 1;
         SceneManager.LoadScene("Race");
     }
     public void StartRace2()
     {
-        GameManager.Turns = 2;
+        GameManager.turns = 2;
         SceneManager.LoadScene("Race");
     }
     public void StartRace3()
     {
-        GameManager.Turns = 3;
+        GameManager.turns = 3;
         SceneManager.LoadScene("Race");
     }
 

@@ -37,6 +37,8 @@ public class MenuManager : MonoBehaviour {
     public bool isGamePaused = false;
     public DisplayMenu displayMenu;
 
+    public string defaultState = "MainMenu";
+    
     public StateMenu state;
     
     // Start is called before the first frame update
@@ -46,7 +48,7 @@ public class MenuManager : MonoBehaviour {
         
         DontDestroyOnLoad(gameObject);
 
-        state = new StateMenu(EStateMenu.MainMenu, null);
+        state = new StateMenu(States[defaultState], null);
     }
 
     // Update is called once per frame
@@ -120,6 +122,8 @@ public class MenuManager : MonoBehaviour {
         switch (newMenu) {
             case EStateMenu.EscapeMenu:
                 LoadEscapeMenu();
+                if (lastMenu == EStateMenu.OptionsMenu)
+                    UnloadOptions();
                 break;
             case EStateMenu.MainMenu:
                 LoadMainMenu();

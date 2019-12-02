@@ -8,7 +8,7 @@ public class DisplayMoney : MonoBehaviour {
     
     // Start is called before the first frame update
     void Update() {
-        _money = GetComponent<Text>();
-        _money.text = GameManager.Instance.Player.money + " $";
+        _money = GetComponentInParent<Text>();
+        _money.text = GameManager.Instance.player.money + " $";
     }
 }

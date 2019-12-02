@@ -33,24 +33,30 @@ public class NewCarrier : MonoBehaviour {
         
         Game game = ScriptableObject.CreateInstance<Game>();
         Kennel kennel = new Kennel();
+        kennel.kennelName = _kennelName;
+        kennel.blazon = _chosenBlazon.sprite;
         Player player = ScriptableObject.CreateInstance<Player>();
 
+        player.profileName = _playerName;
         player.kennel = kennel;
         player.money = 2000;
         
-        Dog dog = ScriptableObject.CreateInstance<Dog>();
+        Dog dog = Instantiate(_chosenDog);/*
         dog.Endurance = _chosenDog.Endurance;
         dog.Acceleration = _chosenDog.Acceleration;
         dog.VitesseMax = _chosenDog.VitesseMax;
         dog.LatestRace = "";
         dog.LatestRank = 0;
         dog.dogName = _greyhoundName;
-        
+        dog.age = _chosenDog.age;
+        dog.avatar = _chosenDog.avatar;*/
+
         kennel.dogs = new List<Dog> {dog};
         kennel.kennelName = _kennelName;
         
         GameManager.Instance.SetGame(game);
-        GameManager.Instance.Player = player;
+        GameManager.Instance.player = player;
+        GameManager.Instance.date = "01/01/2020";
         MenuManager.Instance.LoadMenu("GamePlayMenu");
     }
 }
