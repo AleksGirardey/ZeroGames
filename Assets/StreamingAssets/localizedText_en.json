@@ -77,6 +77,47 @@
 		{ "key":"GameplayMenu_GoToRace", "value":"Go to race"},
 		
 		{ "key":"LangageSelection_English", "value":"English" },
-		{ "key":"LangageSelection_French", "value":"French" }
+		{ "key":"LangageSelection_French", "value":"French" },
+        
+        { "key":"DescriptionDogA",
+        "value":"Test\nTest2"},
+        { "key":"DescriptionDogB",
+        "value":"Test2\nTest4"},
+        { "key":"DescriptionDogC",
+        "value":"Test3\nTest5"},
+        
+        { "key":"NatureCalm",
+        "value":"Calm"},
+        { "key":"NatureEnergetic",
+        "value":"Energetic"},
+        { "key":"NatureShy",
+        "value":"Shy"},
+        
+        { "key":"CityNameLondon",
+        "value":"London"},
+        { "key":"CityNameBristol",
+        "value":"Bristol"},
+        { "key":"CityNameDublin",
+        "value":"Dublin"},
+        
+        { "key":"Register",
+        "value":"Register"},
+        { "key":"Bets",
+        "value":"Bets"},
+        { "key":"Championship",
+        "value":"Championship"},
+        
+        { "key":"Monday",
+        "value":"Monday"},
+        { "key":"Tuesday",
+        "value":"Tuesday"},
+        { "key":"Wednesday",
+        "value":"Wednesday"},
+        { "key":"Thursday",
+        "value":"Thursday"},
+        { "key":"Friday",
+        "value":"Friday"},        
+        { "key":"Confirm",
+        "value":"Confirm"}
 	]
 }

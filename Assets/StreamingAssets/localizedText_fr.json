@@ -78,6 +78,47 @@
 
 
 		{ "key":"LangageSelection_English", "value":"Anglais" },
-		{ "key":"LangageSelection_French", "value":"Français" }
+		{ "key":"LangageSelection_French", "value":"Français" },
+        
+        { "key":"DescriptionDogA",
+        "value":"TestF\nTest2"},
+        { "key":"DescriptionDogB",
+        "value":"TestF2\nTest4"},
+        { "key":"DescriptionDogC",
+        "value":"TestF3\nTest5"},
+        
+        { "key":"NatureCalm",
+        "value":"Calme"},
+        { "key":"NatureEnergetic",
+        "value":"Energetique"},
+        { "key":"NatureShy",
+        "value":"Timide"},
+        
+        { "key":"CityNameLondon",
+        "value":"Londre"},
+        { "key":"CityNameBristol",
+        "value":"Bristol"},
+        { "key":"CityNameDublin",
+        "value":"Dublin"},
+        
+        { "key":"Register",
+        "value":"Participer"},
+        { "key":"Bets",
+        "value":"Parier"},
+        { "key":"Championship",
+        "value":"Championat"},
+        
+        { "key":"Monday",
+        "value":"Lundi"},
+        { "key":"Tuesday",
+        "value":"Mardi"},
+        { "key":"Wednesday",
+        "value":"Mercredi"},
+        { "key":"Thursday",
+        "value":"Jeudi"},
+        { "key":"Friday",
+        "value":"Vendredi"},
+        { "key":"Confirm",
+        "value":"Valider"}
 	]
 }

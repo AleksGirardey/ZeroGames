@@ -28,9 +28,16 @@ public class StatsChien : ScriptableObject
     public float AccelerationDef;
     public float VitesseMaxDef;
 
-    public string Mood;
+    public string NatureKey;
 
     public int Wins, Looses;
+
+    public string DescriptionKey;
+
+    public int NumberRaceWon;
+    public int NumberRaceLost;
+    public int MaxSpeedRun;
+    public int MoneyEarned;
 
     public List<Training> EnduranceTempo = new List<Training>();
     public List<Training> AccelerationTempo = new List<Training>();

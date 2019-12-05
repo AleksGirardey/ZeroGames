@@ -9,7 +9,9 @@ public class KennelManager : MonoBehaviour
     public Text SelectedDogTxt;
     public Image SelectedDogImg;
     public StatsChien SelectedDog;
-    public Text SelectedDogMood;
+    public LocalizedText SelectedDogNatureKey;
+    public LocalizedText SelectedDogDescriptionKey;
+    public DogHistory SelectedDogHistory;
 
     void Start()
     {
@@ -24,7 +26,11 @@ public class KennelManager : MonoBehaviour
         SelectedDog = dog;
         SelectedDogTxt.text = dog.dogName;
         SelectedDogImg.sprite = dog.avatar;
-        SelectedDogMood.text = dog.Mood;
+        SelectedDogNatureKey.key = dog.NatureKey;
+        SelectedDogDescriptionKey.key = dog.DescriptionKey;
+        SelectedDogHistory.RaceWon = dog.NumberRaceWon;
+        SelectedDogHistory.MaxSpeedRun = dog.MaxSpeedRun;
+        SelectedDogHistory.MoneyEarned = dog.MoneyEarned;
     }
 
  

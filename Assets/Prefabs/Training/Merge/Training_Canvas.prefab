@@ -2152,11 +2152,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 2352057674809600836, guid: c09e954b199056e4f998ee5dc654ee5b,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 2352057675473329481, guid: c09e954b199056e4f998ee5dc654ee5b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2215,12 +2210,12 @@ PrefabInstance:
     - target: {fileID: 2352057675473329481, guid: c09e954b199056e4f998ee5dc654ee5b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 112.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2352057675473329481, guid: c09e954b199056e4f998ee5dc654ee5b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -40.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2352057675473329481, guid: c09e954b199056e4f998ee5dc654ee5b,
         type: 3}
@@ -2240,7 +2235,7 @@ PrefabInstance:
     - target: {fileID: 2352057675473329481, guid: c09e954b199056e4f998ee5dc654ee5b,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2352057675473329481, guid: c09e954b199056e4f998ee5dc654ee5b,
         type: 3}
@@ -2250,7 +2245,7 @@ PrefabInstance:
     - target: {fileID: 2352057675473329481, guid: c09e954b199056e4f998ee5dc654ee5b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2352057675473329481, guid: c09e954b199056e4f998ee5dc654ee5b,
         type: 3}
@@ -2261,6 +2256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352057674809600835, guid: c09e954b199056e4f998ee5dc654ee5b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.2599945
       objectReference: {fileID: 0}
     - target: {fileID: 2352057673695192106, guid: c09e954b199056e4f998ee5dc654ee5b,
         type: 3}
@@ -2281,6 +2281,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352057674809600836, guid: c09e954b199056e4f998ee5dc654ee5b,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c09e954b199056e4f998ee5dc654ee5b, type: 3}
@@ -2315,16 +2320,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4567608085707831583}
     m_Modifications:
-    - target: {fileID: 8130543164142541277, guid: 1a292696f89a76747a761fb73042fd16,
+    - target: {fileID: 6277432790180162958, guid: 1a292696f89a76747a761fb73042fd16,
         type: 3}
-      propertyPath: img
-      value: 
-      objectReference: {fileID: 4567608086956822532}
-    - target: {fileID: 8130543164142541277, guid: 1a292696f89a76747a761fb73042fd16,
+      propertyPath: m_Name
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277432790180162958, guid: 1a292696f89a76747a761fb73042fd16,
         type: 3}
-      propertyPath: text
-      value: 
-      objectReference: {fileID: 4567608086497991624}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277432790180162958, guid: 1a292696f89a76747a761fb73042fd16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6277432790180162959, guid: 1a292696f89a76747a761fb73042fd16,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2430,21 +2440,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6277432790180162958, guid: 1a292696f89a76747a761fb73042fd16,
-        type: 3}
-      propertyPath: m_Name
-      value: Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 6277432790180162958, guid: 1a292696f89a76747a761fb73042fd16,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6277432790180162958, guid: 1a292696f89a76747a761fb73042fd16,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6277432790180162952, guid: 1a292696f89a76747a761fb73042fd16,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2475,6 +2470,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8130543164142541277, guid: 1a292696f89a76747a761fb73042fd16,
+        type: 3}
+      propertyPath: img
+      value: 
+      objectReference: {fileID: 4567608086956822532}
+    - target: {fileID: 8130543164142541277, guid: 1a292696f89a76747a761fb73042fd16,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 4567608086497991624}
     - target: {fileID: 6277432791868810827, guid: 1a292696f89a76747a761fb73042fd16,
         type: 3}
       propertyPath: m_Layer

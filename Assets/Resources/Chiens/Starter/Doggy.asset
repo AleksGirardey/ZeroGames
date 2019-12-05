@@ -20,9 +20,13 @@ MonoBehaviour:
   EnduranceDef: 0
   AccelerationDef: 0
   VitesseMaxDef: 0
-  Mood: 
+  NatureKey: NatureShy
   Wins: 0
   Looses: 0
+  DescriptionKey: DescriptionDogC
+  NumberRaceWon: 3
+  MaxSpeedRun: 40
+  MoneyEarned: 4000
   EnduranceTempo: []
   AccelerationTempo: []
   VitesseMaxTempo: []
