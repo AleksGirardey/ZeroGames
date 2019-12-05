@@ -20,9 +20,13 @@ MonoBehaviour:
   EnduranceDef: 0
   AccelerationDef: 0
   VitesseMaxDef: 0
-  Mood: 
+  NatureKey: NatureCalm
   Wins: 0
   Looses: 0
+  DescriptionKey: DescriptionDogA
+  NumberRaceWon: 1
+  MaxSpeedRun: 30
+  MoneyEarned: 3000
   EnduranceTempo: []
   AccelerationTempo: []
   VitesseMaxTempo: []

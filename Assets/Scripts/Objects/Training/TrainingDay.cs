@@ -15,7 +15,7 @@ public class TrainingDay : MonoBehaviour
     public List<TrainingSlot> SetTrainingSlots()
     {
         List<TrainingSlot> slots = new List<TrainingSlot>();
-        GetComponentInChildren<Text>().text = dayOfWeek.ToString();
+        GetComponentInChildren<Text>().text = LocalizationManager.Instance.GetLocalizedValue(dayOfWeek.ToString());
 
         for (int i = 0; i < 4; i++)
         {
@@ -31,5 +31,10 @@ public class TrainingDay : MonoBehaviour
         trainingSlots = slots;
 
         return slots;
+    }
+
+    private void Update()
+    {
+        GetComponentInChildren<Text>().text = LocalizationManager.Instance.GetLocalizedValue(dayOfWeek.ToString());
     }
 }

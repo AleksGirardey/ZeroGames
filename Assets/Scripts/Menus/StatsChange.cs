@@ -13,21 +13,16 @@ public class StatsChange : MonoBehaviour
     public float _Acceleration;
     public float _Stamina;
 
-    public GameManager GM;
+    public KennelManager KM;
 
-
-    private void Start()
-    {
-        GM = GameManager.Instance;
-    }
 
     private void Update()
-    {  
-            _MaxSpeed = GM.player.kennel.dogs[0].VitesseMax;
-            _Acceleration = GM.player.kennel.dogs[0].Acceleration;
-            _Stamina = GM.player.kennel.dogs[0].Endurance;
+    {
+        _MaxSpeed = KM.SelectedDog.VitesseMax;
+            _Acceleration = KM.SelectedDog.Acceleration;
+        _Stamina = KM.SelectedDog.Endurance;
 
-            if (MaxSpeed)
+        if (MaxSpeed)
             {
                 MaxSpeedSetUp();
             }

@@ -20,10 +20,12 @@ MonoBehaviour:
   EnduranceDef: 0
   AccelerationDef: 0
   VitesseMaxDef: 0
+  Mood: NatureShy
+  Wins: 0
+  Looses: 0
+  DescriptionKey: DescriptionDogA
   EnduranceTempo: []
   AccelerationTempo: []
   VitesseMaxTempo: []
-  dogSprite: {fileID: 0}
-  Name: DogP
   TrainingsConfirmed: 0
   UpcomingTrainings: []

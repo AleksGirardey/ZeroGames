@@ -46,9 +46,9 @@ public class NewCarrier : MonoBehaviour {
         dog.Acceleration = _chosenDog.Acceleration;
         dog.VitesseMax = _chosenDog.VitesseMax;
         dog.LatestRace = "";
-        dog.LatestRank = 0;
+        dog.LatestRank = 0;*/
         dog.dogName = _greyhoundName;
-        dog.age = _chosenDog.age;
+        /*dog.age = _chosenDog.age;
         dog.avatar = _chosenDog.avatar;*/
 
         kennel.dogs = new List<Dog> {dog};
