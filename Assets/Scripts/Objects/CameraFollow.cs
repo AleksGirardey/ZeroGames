@@ -5,39 +5,64 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
 
+    public RaceManager RM;
     public Transform StaticCamTransform;
+    public Transform BeginCamTransform;
+    public Transform EndCamTransform;
+
+    Transform PreviousTarget;
     public GameObject Target;
 
     public Vector3 Offset;
 
-    int CameraIndex;
+    int CameraIndex = 3;
 
-    float AutoSwitchCooldown = 5000f;
+    public float AutoSwitchCooldown = 5f;
 
     void Update()
     {
-
-        switch (CameraIndex)
+        if (!RM.CountdownStarted)
         {
-            case 0:
-                StaticCam();
-                break;
-            case 1:
-                CloseCam();
-                break;
-            case 2:
-                MediumRangeCam();
-                break;
+
+            BeginCam();
+
         }
 
-        SwitchCam();
+        else if (RM.RaceEnded)
+        {
+
+            EndCam();
+
+        }
+
+        else
+        {
+
+            SwitchCam();
+
+            switch (CameraIndex)
+            {
+                case 0:
+                    StaticCam();
+                    break;
+                case 1:
+                    CloseCam();
+                    break;
+                case 2:
+                    MediumRangeCam();
+                    break;
+                case 3:
+                    EndCam();
+                    break;
+            }
+        }
     }
 
     void SwitchCam()
     {
 
-        if (CameraIndex > 2) CameraIndex = 0;
-        else if (CameraIndex < 0) CameraIndex = 2;
+        if (CameraIndex > 3) CameraIndex = 0;
+        else if (CameraIndex < 0) CameraIndex = 3;
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -63,22 +88,38 @@ public class CameraFollow : MonoBehaviour
 
     void CloseCam()
     {
-        transform.position = Target.transform.position + Offset;
-        Offset = - Target.transform.right * 5f + Target.transform.up * 5f;
-        transform.rotation = Quaternion.LookRotation(Target.transform.position - transform.position, Vector3.up);
+        transform.position = Vector3.Lerp(transform.position, Target.transform.position + Offset, Time.deltaTime * 7f);
+        Offset = - Target.transform.right * 12f + Target.transform.up * 7f;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Target.transform.position - transform.position + new Vector3(0, 1.3f, 0), Vector3.up), Time.deltaTime * 7f);
     }
 
     void MediumRangeCam()
     {
-        transform.position = Target.transform.position + Offset;
-        Offset = Target.transform.forward * 10f + Target.transform.up * 10f ;
-        transform.rotation = Quaternion.LookRotation(Target.transform.position - transform.position, Vector3.up);
+        transform.position = Vector3.Lerp(transform.position, Target.transform.position + Offset, Time.deltaTime * 7f);
+        Offset = Target.transform.forward * 13f + Target.transform.up * 13f ;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Target.transform.position + new Vector3(0,0.7f,0) - transform.position, Vector3.up), Time.deltaTime * 7f);
     }
 
     void StaticCam()
     {
-        transform.position = StaticCamTransform.position;
-        transform.rotation = Quaternion.LookRotation(Target.transform.position - transform.position, Vector3.up);
+        transform.position = Vector3.Lerp(transform.position, StaticCamTransform.position, Time.deltaTime * 7f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Target.transform.position + new Vector3(0, 0.7f, 0) - transform.position, Vector3.up), Time.deltaTime * 7f);
+    }
+
+    void BeginCam()
+    {
+
+        transform.position = Vector3.Lerp(transform.position, BeginCamTransform.position, Time.deltaTime * 7f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, BeginCamTransform.rotation, Time.deltaTime * 7f);
+
+    }
+
+    void EndCam()
+    {
+
+        transform.position = Vector3.Lerp(transform.position, EndCamTransform.position, Time.deltaTime * 7f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, EndCamTransform.rotation, Time.deltaTime * 7f);
+
     }
 
 }

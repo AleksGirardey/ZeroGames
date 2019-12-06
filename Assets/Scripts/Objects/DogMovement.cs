@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DogMovement : MonoBehaviour
 {
@@ -19,10 +20,15 @@ public class DogMovement : MonoBehaviour
     private bool _enduranceConsumed;
     public bool _hasFinished;
     private int _routeToGo;
+
+    public int LapsRemaining;
+
     private float _tParam;
     private Vector3 _dogPosition;
 
     public StatsChien ThisDog;
+
+    public Image DogOnMap;
 
     public Animator DogAnimator;
 
@@ -41,6 +47,7 @@ public class DogMovement : MonoBehaviour
         Vitesse = 0;
         VitesseMoyenne = VitesseMax / 2f;
         VitesseMin = VitesseMoyenne;
+
     }
 
     void Update()
@@ -52,6 +59,7 @@ public class DogMovement : MonoBehaviour
         if (RaceManager.RaceStarted) SpeedCalc();
 
         UpdateAnimation();
+        UpdateMapLocation();
     }
 
     public void SpeedCalc()
@@ -73,8 +81,16 @@ public class DogMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Finish") && RaceManager.RaceStarted) {         // Quand le chien finit sa course
-            _hasFinished = true;
-            RaceManager.SetRank(this);
+
+
+            LapsRemaining--;
+
+            if (LapsRemaining <= 0)
+            {
+                RaceManager.SetRank(this);
+                _hasFinished = true;
+            }
+
         }
     }
 
@@ -142,6 +158,13 @@ public class DogMovement : MonoBehaviour
 
         DogAnimator.SetFloat("Speed", Vitesse / 10f);
         DogAnimator.SetBool("IsMoving", !(!RaceManager.RaceStarted || _hasFinished));
+
+    }
+
+    void UpdateMapLocation()
+    {
+
+        DogOnMap.GetComponent<RectTransform>().anchoredPosition = new Vector3(-transform.position.z * 2.6f, transform.position.x * 2.6f, 0);
 
     }
 

@@ -10,6 +10,8 @@ public class RaceManager : MonoBehaviour
 
     public DogMovement[] Chiens = new DogMovement[4];
 
+    public Text Timet;
+    public float Timer = 0;
     public Text Name;
     public Text Endurance;
     public Text VitesseMax;
@@ -17,6 +19,12 @@ public class RaceManager : MonoBehaviour
     public Text VitesseMoyenne;
     public Text Countdown;
     public Text Ranking;
+
+    public CameraFollow CameraF;
+
+    public int Laps = 3;
+    int PreviousLap = 3;
+    public Text LapsText;
 
     public LayerMask ChienLayer;
 
@@ -27,6 +35,7 @@ public class RaceManager : MonoBehaviour
     public Text Profit;
 
     public bool RaceStarted;
+    public bool RaceEnded;
     public bool CountdownStarted;
     public Transform StartPoint;
 
@@ -47,8 +56,11 @@ public class RaceManager : MonoBehaviour
             chien.ThisDog = ListeDesChiens[i];
 
             chien.Endurance = ListeDesChiens[i].GetEndurance();
-            chien.VitesseMax = ListeDesChiens[i].GetVitesseMax();
+            chien.VitesseMax = ListeDesChiens[i].VitesseMax;
             chien.Acceleration = ListeDesChiens[i].GetAcceleration();
+            chien.VitesseMoyenne = ListeDesChiens[i].VitesseMax / 2f;
+            chien.VitesseMin = ListeDesChiens[i].VitesseMax / 2f;
+            chien.LapsRemaining = Laps;
         }
 
     }
@@ -56,6 +68,15 @@ public class RaceManager : MonoBehaviour
     private void Update()
     {
         if (!RaceStarted) SelectChien();
+
+        if (RaceStarted && RankLine < 4)
+        {
+            Timet.text = Mathf.RoundToInt(Timer).ToString();
+            Timer+= Time.deltaTime;
+        }
+
+        CheckLap();
+        CamTrackDog();
 
         if (RankLine >= 4) DisplayScore();      // Lorsque la course est finie
     }
@@ -118,9 +139,25 @@ public class RaceManager : MonoBehaviour
 
     }
 
+    public void CamTrackDog()
+    {
+        RaycastHit hit2;
+
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit2, ChienLayer)) // Quand la souris passe sur un chien
+        {
+
+            if (hit2.transform.GetComponent<DogMovement>() != null)
+            {
+                CameraF.Target = hit2.transform.gameObject;
+            }
+        }
+
+    }
+
     public void SetRank(DogMovement RankedDog)  // La liste des arrivants selon leur classement est générée
     {
 
+        Ranking.enabled = true;
         Ranking.text += "\n" + DogRank(RankedDog) + ". " + RankedDog.ThisDog.name;
 
         RankedDog.ThisDog.LatestRank = DogRank(RankedDog);
@@ -136,6 +173,7 @@ public class RaceManager : MonoBehaviour
         RankLine = 0;
 
         Bilan.SetActive(true);
+        RaceEnded = true;
 
         int Rank = chienSelected.GetComponent<DogMovement>().ThisDog.LatestRank;
         string Prefix = "eme";
@@ -154,6 +192,23 @@ public class RaceManager : MonoBehaviour
         Profit.text = "Gain : +" + ProfitAmount + "€";
 
 
+
+    }
+
+    void CheckLap()
+    {
+
+        int u = 0;
+
+        foreach (DogMovement chien in Chiens)
+        {
+
+            if (chien.LapsRemaining < PreviousLap) u++;
+            if (u >= Chiens.Length) PreviousLap = chien.LapsRemaining;
+
+        }
+
+        LapsText.text = PreviousLap + "/" + Laps;
 
     }
 
