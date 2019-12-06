@@ -24,7 +24,7 @@ public class DisplayMenu : MonoBehaviour {
     private bool _loadScreen = true;
     public Menus displayedMenu;
 
-    private void LoadScreen(GameObject prefab) {
+    public void LoadScreen(GameObject prefab) {
         Destroy(_loadedScreen);
         _loadedScreen = Instantiate(prefab, transform, false);
         _loadScreen = false;
@@ -44,6 +44,8 @@ public class DisplayMenu : MonoBehaviour {
         LoadScreen(kennelCanvasPrefab);
         LoadKennelView();
     }
+
+    
 
     // Update is called once per frame
     void Update()

@@ -16,7 +16,7 @@ public enum DayOfTraining {
 public class TrainingSlot : MonoBehaviour, IDropHandler
 {
     public DayOfTraining day;
-
+    public TrainingButton actualTraining;
     //public bool Monday, Tuesday, Wednesday, Thursday, Friday;
     [FormerlySerializedAs("TrainingManager")] public TrainingManager trainingManager;
 
@@ -49,7 +49,7 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
             eventData.pointerDrag.transform.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
             eventData.pointerDrag.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
 
-
+            actualTraining = eventData.pointerDrag.GetComponent<TrainingButton>();
 
             //GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             //eventData.pointerDrag.GetComponent<RectTransform>().position = new Vector3(0, 0, 0); UI incompréhensible, impossible de mettre 0,0,0 en position du TrainingButton
