@@ -14,6 +14,9 @@ public class TrainingManager : MonoBehaviour
     public Text SelectedDogTxt;
     public Image SelectedDogImg;
     public Dog SelectedDog;
+
+    public GameObject WarningScreen;
+
     //public Color RedEnergy, OrangeEnergy, GreenEnergy, EmptyEnergy;
 
     public List<Training> ConfirmedTrainings = new List<Training>();
@@ -79,8 +82,10 @@ public class TrainingManager : MonoBehaviour
             SelectedDog.AssignTrainings();
         }
 
-
+        WarningScreen.SetActive(false);
         print("Trainings confirmed!");
+
+        ConfirmedTrainings.Clear();
     }
 
     public void SetSelectedDog(Dog selected)
@@ -92,7 +97,6 @@ public class TrainingManager : MonoBehaviour
 
     private void Update()
     {
-        //jsp
         if (SelectedDog.TrainingsConfirmed)
         {
             FreezeScreen.SetActive(true);
@@ -108,6 +112,51 @@ public class TrainingManager : MonoBehaviour
     public void SetBinScreen()
     {
         BinScreen.SetActive(!BinScreen.activeSelf);
+    }
+
+    public void NextWeekButton()
+    {
+        foreach(StatsChien dog in GameManager.Instance.player.kennel.dogs)
+        {
+            if(dog.TrainingsConfirmed == false)
+            {
+                StopCoroutine("Warning");
+                StartCoroutine("Warning");
+                return;
+            }
+        }
+
+        print("next week >>");
+        
+
+        foreach (StatsChien dog in GameManager.Instance.player.kennel.dogs)
+        {
+            dog.ClearTraining();
+            dog.TrainingsConfirmed = false;
+        }
+
+        MenuManager.Instance.displayMenu.LoadScreen(MenuManager.Instance.displayMenu.trainingCanvasPrefab);
+
+        /*
+        BinScreen.SetActive(false);
+        foreach (TrainingSlot trainingSlot in trainingSlots)
+        {
+            if(trainingSlot.actualTraining != null)
+            {
+                Destroy(trainingSlot.actualTraining.gameObject); // reset le calendrier
+            }
+            trainingSlot.energyBar.EnergyBarsAvailable = 3;
+        }
+        */
+
+    }
+
+
+    IEnumerator Warning()
+    {
+        WarningScreen.SetActive(true);
+        yield return new WaitForSeconds(2);
+        WarningScreen.SetActive(false);
     }
 
 }
