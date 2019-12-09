@@ -46,7 +46,7 @@ public class RaceManager : MonoBehaviour
     private void Start()
     {
 
-        Laps = GameManager.Instance.turns;
+        if (GameManager.Instance != null) Laps = GameManager.Instance.turns;
 
         chienSelected = null;
         RankLine = 0;
