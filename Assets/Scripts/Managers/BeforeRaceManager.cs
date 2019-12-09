@@ -40,25 +40,8 @@ public class BeforeRaceManager : MonoBehaviour
         BeforeRacePopupC.SetActive(true);
     }
 
-    public void StartRace1()
-    {
-        GameManager.turns = 1;
-        SceneManager.LoadScene("Race");
+    public void StartRace(int laps) {
+        GameManager.turns = laps;
+        MenuManager.Instance.LoadMenu("RaceMenu");
     }
-    public void StartRace2()
-    {
-        GameManager.turns = 2;
-        SceneManager.LoadScene("Race");
-    }
-    public void StartRace3()
-    {
-        GameManager.turns = 3;
-        SceneManager.LoadScene("Race");
-    }
-
-    public void LoadRaceScene()
-    {
-        SceneManager.LoadScene("Race");
-    }
-
 }

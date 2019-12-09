@@ -116,6 +116,9 @@ public class MenuManager : MonoBehaviour {
             case EStateMenu.GamePlayMenu:
                 UnloadGameplayMenu();
                 break;
+            case EStateMenu.RaceMenu:
+                UnloadRaceMenu();
+                break;
         }
     }
     private void LoadMenu(EStateMenu newMenu, EStateMenu lastMenu) {
@@ -148,6 +151,10 @@ public class MenuManager : MonoBehaviour {
             case EStateMenu.GamePlayMenu:
                 LoadGameplayMenu();
                 UnloadMenu(lastMenu);
+                break;
+            case EStateMenu.RaceMenu:
+                LoadRaceMenu();
+                UnloadRaceMenu();
                 break;
         }
     }
@@ -218,7 +225,11 @@ public class MenuManager : MonoBehaviour {
         isGamePaused = true;
         options.SetActive(true);
     }
-    
-    private void UnloadRaceMenu() {}
-    private void LoadRaceMenu() {}
+
+    private void UnloadRaceMenu() {
+    }
+
+    private void LoadRaceMenu() {
+        SceneManager.LoadScene("Scenes/Race");
+    }
 }
