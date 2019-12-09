@@ -36,7 +36,6 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        //canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
         canvas = FindObjectOfType<Canvas>();
     }
 
@@ -44,48 +43,8 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     {
         trainingManager = GameObject.FindWithTag("TrainingManager").GetComponent<TrainingManager>();
         baseSize = GetComponent<RectTransform>().sizeDelta;
-        /*
-        //Fetch the Raycaster from the GameObject (the Canvas)
-        m_Raycaster = GetComponent<GraphicRaycaster>();
-        //Fetch the Event System from the Scene
-        m_EventSystem = GetComponent<EventSystem>();
-        */
     }
-    /*
-    public void OnMouseOver()
-    {
-        if(gameObject.name == "DogShowcaseBG")
-        {
-            print("ENTER HOVERING DOGSHOWCASE BG MOUSE OVER");
-        }
-        else
-        {
-            print(gameObject.name);
-        }
-    }
-    
-
-    public void OnPointerEnter(PointerEventData pointerEventData)
-    {
-        
-        Debug.Log("Cursor Entering " + name + " GameObject");
-        if(pointerEventData.pointerEnter.gameObject.name == "DogShowcaseBG")
-        {
-            print("ENTER HOVERING DOGSHOWCASE BG");
-        }
-    }
-    */
-    /*
-    public void OnPointerExit(PointerEventData pointerEventData)
-    {
-        //Output to console the GameObject's name and the following message
-        //Debug.Log("Cursor Entering " + name + " GameObject");
-        if (pointerEventData.pointerEnter.gameObject.name == "DogShowcaseBG")
-        {
-            print("EXIT HOVERING DOGSHOWCASE BG");
-        }
-    }
-    */
+ 
     public void OnBeginDrag(PointerEventData eventData)
     {
         GetComponent<RectTransform>().sizeDelta = baseSize;
@@ -100,7 +59,7 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
             }
             canvasGroup.blocksRaycasts = false;
             canvasGroup.alpha = 0.6f;
-            // canvasGroup.ignoreParentGroups = true;
+            //canvasGroup.ignoreParentGroups = true;
             //print("drag begin");
             initialParent = transform.parent;
             transform.SetParent(ParentWhileDrag); // SETPARENT MARCHE MAIS PAS DANS LINSPECTEUR MAIS VISUELLEMENT CELA CHANGE BIEN QUELQUE CHOSE
@@ -108,10 +67,6 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
             initialPos = transform.position;
             dropped = false;
             DefaultTrainingButton.CloneSpawned = false;
-        }
-        else
-        {
-
         }
 
         trainingManager.SetBinScreen();
@@ -134,7 +89,6 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
             canvasGroup.blocksRaycasts = true;
             canvasGroup.alpha = 1;
 
-
             //print("end drag");
             if (!dropped)
             {
@@ -149,8 +103,6 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
             }
         }
         trainingManager.SetBinScreen();
-
-
     }
 
     void Update()
@@ -164,27 +116,6 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
             CloneSpawned = true;
             TrainingButtonCS.DefaultTrainingButton = GetComponent<TrainingButton>();
         }
-        /*
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            //Set up the new Pointer Event
-            m_PointerEventData = new PointerEventData(m_EventSystem);
-            //Set the Pointer Event Position to that of the mouse position
-            m_PointerEventData.position = Input.mousePosition;
-
-            //Create a list of Raycast Results
-            List<RaycastResult> results = new List<RaycastResult>();
-
-            //Raycast using the Graphics Raycaster and mouse click position
-            m_Raycaster.Raycast(m_PointerEventData, results);
-
-            //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
-            foreach (RaycastResult result in results)
-            {
-                Debug.Log("Hit " + result.gameObject.name);
-            }
-        }
-        */
     }
 
     

@@ -5,8 +5,6 @@ using UnityEngine.Serialization;
 
 public class TrainingInventorySlot : MonoBehaviour, IDropHandler
 {
-
-    //public bool Monday, Tuesday, Wednesday, Thursday, Friday;
     [FormerlySerializedAs("TrainingManager")] public TrainingManager trainingManager;
     [FormerlySerializedAs("TrainingButton")] public TrainingButton trainingButton;
 

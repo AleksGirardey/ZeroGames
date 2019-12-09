@@ -17,7 +17,6 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
 {
     public DayOfTraining day;
     public TrainingButton actualTraining;
-    //public bool Monday, Tuesday, Wednesday, Thursday, Friday;
     [FormerlySerializedAs("TrainingManager")] public TrainingManager trainingManager;
 
     public Training training;
@@ -44,10 +43,11 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
             eventData.pointerDrag.GetComponent<TrainingButton>().TrainingSlot = this;
             eventData.pointerDrag.transform.SetParent(transform);
             eventData.pointerDrag.GetComponent<RectTransform>().sizeDelta = GetComponent<RectTransform>().sizeDelta;
-            eventData.pointerDrag.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = GetComponent<RectTransform>().sizeDelta;
+            eventData.pointerDrag.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
             eventData.pointerDrag.transform.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
             eventData.pointerDrag.transform.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
             eventData.pointerDrag.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+
 
             actualTraining = eventData.pointerDrag.GetComponent<TrainingButton>();
 
