@@ -62,6 +62,20 @@ public class TrainingManager : MonoBehaviour
         {
             SelectedDog.UpcomingTrainings.Clear();
         }
+
+        foreach (StatsChien dog in GameManager.Instance.world.AllDogs)
+        {
+            if (!dog.trainingsCleared)
+            {
+                dog.EnduranceTempo.Clear();
+                dog.VitesseMaxTempo.Clear();
+                dog.AccelerationTempo.Clear();
+                dog.EnduranceDef = 0;
+                dog.VitesseMaxDef = 0;
+                dog.AccelerationDef = 0;
+                dog.trainingsCleared = true;
+            }
+        }
     }
 
     public void ConfirmTrainings()
@@ -133,6 +147,11 @@ public class TrainingManager : MonoBehaviour
         {
             dog.ClearTraining();
             dog.TrainingsConfirmed = false;
+        }
+
+        foreach (StatsChien dog in GameManager.Instance.world.AllDogs)
+        {
+            dog.RandomTraining();
         }
 
         MenuManager.Instance.displayMenu.LoadScreen(MenuManager.Instance.displayMenu.trainingCanvasPrefab);
