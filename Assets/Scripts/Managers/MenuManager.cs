@@ -154,7 +154,7 @@ public class MenuManager : MonoBehaviour {
                 break;
             case EStateMenu.RaceMenu:
                 LoadRaceMenu();
-                UnloadRaceMenu();
+                UnloadMenu(lastMenu);
                 break;
         }
     }

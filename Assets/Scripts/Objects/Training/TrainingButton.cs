@@ -37,7 +37,7 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         //canvas = GameObject.FindWithTag("Canvas").GetComponent<Canvas>();
-        canvas = transform.parent.GetComponentInParent<Canvas>();
+        canvas = FindObjectOfType<Canvas>();
     }
 
     void Start()
