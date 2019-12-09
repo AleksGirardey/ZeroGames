@@ -8,10 +8,12 @@ public class StatsChange : MonoBehaviour
     public bool MaxSpeed;
     public bool Acceleration;
     public bool Stamina;
+    public bool Mental;
 
     public float _MaxSpeed;
     public float _Acceleration;
     public float _Stamina;
+    public float _Mental;
 
     public KennelManager KM;
 
@@ -21,6 +23,7 @@ public class StatsChange : MonoBehaviour
         _MaxSpeed = KM.SelectedDog.VitesseMax;
             _Acceleration = KM.SelectedDog.Acceleration;
         _Stamina = KM.SelectedDog.Endurance;
+        _Mental = KM.SelectedDog.Mental;
 
         if (MaxSpeed)
             {
@@ -33,6 +36,10 @@ public class StatsChange : MonoBehaviour
             else if (Stamina)
             {
                 StaminaSetUp();
+            }
+            else if (Stamina)
+            {
+                MentalSetUp();
             }
     }
 
@@ -154,6 +161,46 @@ public class StatsChange : MonoBehaviour
         else
         {
             GetComponent<Text>().text = "Stamina : A+";
+        }
+    }
+
+    void MentalSetUp()
+    {
+        if (_Mental < 250)
+        {
+            GetComponent<Text>().text = "Mental : C-";
+        }
+        else if (_Mental < 350)
+        {
+            GetComponent<Text>().text = "Mental : C";
+        }
+        else if (_Mental < 450)
+        {
+            GetComponent<Text>().text = "Mental : C+";
+        }
+        else if (_Mental < 550)
+        {
+            GetComponent<Text>().text = "Mental : B-";
+        }
+        else if (_Mental < 650)
+        {
+            GetComponent<Text>().text = "Mental : B";
+        }
+        else if (_Mental < 750)
+        {
+            GetComponent<Text>().text = "Mental : B+";
+        }
+        else if (_Mental < 850)
+        {
+            GetComponent<Text>().text = "Mental : A-";
+        }
+        else if (_Mental < 950)
+        {
+            GetComponent<Text>().text = "Mental : A";
+        }
+        else
+        {
+            GetComponent<Text>().text = "Mental : A+";
         }
     }
 

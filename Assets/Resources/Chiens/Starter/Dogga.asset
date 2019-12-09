@@ -12,24 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eefc64306074b578e35b984e08e74fe, type: 3}
   m_Name: Dogga
   m_EditorClassIdentifier: 
-  LatestRace: 
-  LatestRank: 0
-  Endurance: 500
-  Acceleration: 500
-  VitesseMax: 600
-  EnduranceDef: 0
-  AccelerationDef: 0
-  VitesseMaxDef: 0
   NatureKey: NatureCalm
   Wins: 0
   Looses: 0
   DescriptionKey: DescriptionDogA
   NumberRaceWon: 1
+  NumberRaceLost: 0
   MaxSpeedRun: 30
   MoneyEarned: 3000
+  LatestRace: 
+  LatestRank: 0
+  Endurance: 500
+  Acceleration: 500
+  VitesseMax: 600
+  Mental: 400
+  EnduranceDef: 0
+  AccelerationDef: 0
+  VitesseMaxDef: 0
   EnduranceTempo: []
   AccelerationTempo: []
   VitesseMaxTempo: []
+  dogSprite: {fileID: 0}
+  Name: 
   TrainingsConfirmed: 0
   UpcomingTrainings: []
   dogName: Dogga

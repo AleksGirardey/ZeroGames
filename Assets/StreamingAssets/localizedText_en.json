@@ -80,11 +80,11 @@
 		{ "key":"LangageSelection_French", "value":"French" },
         
         { "key":"DescriptionDogA",
-        "value":"Test\nTest2"},
+        "value":"Irish Greyhound\nGot a spark in his eyes\nSoft grey furr"},
         { "key":"DescriptionDogB",
-        "value":"Test2\nTest4"},
+        "value":"Irish Greyhound\nGot a playful look in his eyes\nDotted black and white furr"},
         { "key":"DescriptionDogC",
-        "value":"Test3\nTest5"},
+        "value":"Irish Greyhound\nGot a soul touching look in his eyes\nShort white furr"},
         
         { "key":"NatureCalm",
         "value":"Calm"},

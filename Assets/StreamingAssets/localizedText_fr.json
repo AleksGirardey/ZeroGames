@@ -81,11 +81,11 @@
 		{ "key":"LangageSelection_French", "value":"Français" },
         
         { "key":"DescriptionDogA",
-        "value":"TestF\nTest2"},
+        "value":"Levrier irlandais\nSes yeux ont de la vie en eux\nDouce fourrure grise"},
         { "key":"DescriptionDogB",
-        "value":"TestF2\nTest4"},
+        "value":"Levrier irlandais\nPosséde un regard joueur\nFourrure noire avec des taches blanches"},
         { "key":"DescriptionDogC",
-        "value":"TestF3\nTest5"},
+        "value":"Levrier irlandais\nSes yeux sont des plus touchants\nFourrure blanche courte"},
         
         { "key":"NatureCalm",
         "value":"Calme"},
