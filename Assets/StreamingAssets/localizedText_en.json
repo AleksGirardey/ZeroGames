@@ -2,13 +2,13 @@
 	"items": [
 		{ "key":"Global_Back", "value":"Back" },
 
-		{ "key":"MainMenu_Carrier", "value":"New Carrier" },
-		{ "key":"MainMenu_Load", "value":"Load Carrier" },
+		{ "key":"MainMenu_Carrier", "value":"New Career" },
+		{ "key":"MainMenu_Load", "value":"Load Career" },
 		{ "key":"MainMenu_Options", "value":"Options" },
 		{ "key":"MainMenu_Quit", "value":"Quit" },
 
-		{ "key":"EscMenu_Save", "value":"Save Carrier" },
-		{ "key":"EscMenu_Load", "value":"Load Carrier" },
+		{ "key":"EscMenu_Save", "value":"Save Career" },
+		{ "key":"EscMenu_Load", "value":"Load Career" },
 		{ "key":"EscMenu_Options", "value":"Options" },
 		{ "key":"EscMenu_Quit", "value":"Quit" },
 		
