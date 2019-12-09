@@ -45,6 +45,9 @@ public class RaceManager : MonoBehaviour
 
     private void Start()
     {
+
+        Laps = GameManager.Instance.turns;
+
         chienSelected = null;
         RankLine = 0;
 
@@ -191,7 +194,7 @@ public class RaceManager : MonoBehaviour
         BilanTxt.text = "Votre chien est arrive " + Rank + Prefix;
         Profit.text = "Gain : +" + ProfitAmount + "€";
 
-
+        Win();
 
     }
 
@@ -209,6 +212,13 @@ public class RaceManager : MonoBehaviour
         }
 
         LapsText.text = PreviousLap + "/" + Laps;
+
+    }
+
+    public void Win()
+    {
+
+        //
 
     }
 
