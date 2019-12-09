@@ -24,6 +24,7 @@ public class MenuManager : MonoBehaviour {
 
     [Header("Main Menu GameObjects")]
     public GameObject mainMenu;
+    public GameObject mainMenuDogTrack;
     
     [Header("Main Menu - New Carrier GameObjects")]
     public GameObject mainMenuCarrier;
