@@ -34,6 +34,7 @@ public class StatsChien : ScriptableObject
     public float Endurance;
     public float Acceleration;
     public float VitesseMax;
+    public float Mental;
 
     public float EnduranceDef;
     public float AccelerationDef;
