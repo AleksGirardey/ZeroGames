@@ -29,15 +29,17 @@ MonoBehaviour:
   EnduranceDef: 0
   AccelerationDef: 0
   VitesseMaxDef: 0
+  Mood: 
   EnduranceTempo: []
   AccelerationTempo: []
   VitesseMaxTempo: []
-  dogSprite: {fileID: 21300000, guid: b1acf740fc99ad946869cb0484f16695, type: 3}
-  Name: 
+  dogSprite: {fileID: 21300000, guid: be0ae021267f7054a9e5c221f56fa02c, type: 3}
+  Name: Fog
   TrainingsConfirmed: 0
+  trainingsCleared: 0
   UpcomingTrainings: []
   dogName: Fog
   age: 3
   width: 1
   height: 1
-  avatar: {fileID: 21300000, guid: b1acf740fc99ad946869cb0484f16695, type: 3}
+  avatar: {fileID: 21300000, guid: be0ae021267f7054a9e5c221f56fa02c, type: 3}

@@ -52,6 +52,13 @@
 		{ "key":"GameplayMenu_Kennel_Nature", "value":"Nature" },
 		{ "key":"GameplayMenu_Kennel_Description", "value":"Description" },
 		{ "key":"GameplayMenu_Kennel_Informations", "value":"Informations" },
+
+		{ "key":"GameplayMenu_Kennel_Acceleration", "value":"Acceleration" },
+		{ "key":"GameplayMenu_Kennel_Endurance", "value":"Endurance" },
+		{ "key":"GameplayMenu_Kennel_MaxSpeed", "value":"Max. Speed" },
+		{ "key":"GameplayMenu_Kennel_Moral", "value":"Moral" },
+		{ "key":"GameplayMenu_Kennel_History", "value":"Won {0} races\nWent {1} miles per hour\nEarned you {2}$" },
+
 		{ "key":"GameplayMenu_Kennel_3DModel", "value":"3D Model" },
 		
 		

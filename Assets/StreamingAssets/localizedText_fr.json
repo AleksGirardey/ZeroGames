@@ -53,6 +53,12 @@
 		{ "key":"GameplayMenu_Kennel_Description", "value":"Description" },
 		{ "key":"GameplayMenu_Kennel_Informations", "value":"Informations" },
 		{ "key":"GameplayMenu_Kennel_3DModel", "value":"Model 3D" },
+
+		{ "key":"GameplayMenu_Kennel_Acceleration", "value":"Accélération" },
+		{ "key":"GameplayMenu_Kennel_Endurance", "value":"Endurance" },
+		{ "key":"GameplayMenu_Kennel_MaxSpeed", "value":"Vitesse Max." },
+		{ "key":"GameplayMenu_Kennel_Moral", "value":"Moral" },
+		{ "key":"GameplayMenu_Kennel_History", "value":"A gagné {0} courses\nA courru à {1} km par heure\n Vous a fait gagner {2}$" },
 		
 		{ "key":"GameplayMenu_Management", "value":"Gestion" },		
 		{ "key":"GameplayMenu_Management_Stats", "value":"Statistiques" },

@@ -139,6 +139,10 @@ public class StatsChien : ScriptableObject
         return "C-";
     }
 
+    public string GetMoralAsLetter() {
+        return GetStatAsLetter(Mental);
+    }
+    
     public string GetAccelerationAsLetter() {
         return GetStatAsLetter(GetAcceleration());
     }

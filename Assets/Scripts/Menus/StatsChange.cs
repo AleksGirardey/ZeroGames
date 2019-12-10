@@ -17,13 +17,13 @@ public class StatsChange : MonoBehaviour
 
     public KennelManager KM;
 
-
+/*
     private void Update()
     {
-        _MaxSpeed = KM.SelectedDog.VitesseMax;
-            _Acceleration = KM.SelectedDog.Acceleration;
-        _Stamina = KM.SelectedDog.Endurance;
-        _Mental = KM.SelectedDog.Mental;
+        _MaxSpeed = KM.selectedDog.VitesseMax;
+            _Acceleration = KM.selectedDog.Acceleration;
+        _Stamina = KM.selectedDog.Endurance;
+        _Mental = KM.selectedDog.Mental;
 
         if (MaxSpeed)
             {
@@ -203,5 +203,5 @@ public class StatsChange : MonoBehaviour
             GetComponent<Text>().text = "Mental : A+";
         }
     }
-
+*/
 }

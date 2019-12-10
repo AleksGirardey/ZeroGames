@@ -29,15 +29,17 @@ MonoBehaviour:
   EnduranceDef: 0
   AccelerationDef: 0
   VitesseMaxDef: 0
+  Mood: 
   EnduranceTempo: []
   AccelerationTempo: []
   VitesseMaxTempo: []
-  dogSprite: {fileID: 21300000, guid: 7136fb5dd97dcd540910d214d52a148e, type: 3}
+  dogSprite: {fileID: 21300000, guid: 06734205c419d2947b56e508eaeaa12d, type: 3}
   Name: PlanDog
   TrainingsConfirmed: 0
+  trainingsCleared: 0
   UpcomingTrainings: []
   dogName: PlanDog
   age: 3
   width: 1
   height: 1
-  avatar: {fileID: 21300000, guid: 7136fb5dd97dcd540910d214d52a148e, type: 3}
+  avatar: {fileID: 21300000, guid: 06734205c419d2947b56e508eaeaa12d, type: 3}
