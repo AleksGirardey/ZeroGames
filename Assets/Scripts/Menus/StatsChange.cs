@@ -37,7 +37,7 @@ public class StatsChange : MonoBehaviour
             {
                 StaminaSetUp();
             }
-            else if (Stamina)
+            else if (Mental)
             {
                 MentalSetUp();
             }

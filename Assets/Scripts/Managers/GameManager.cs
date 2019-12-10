@@ -49,6 +49,10 @@ public class GameManager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
         gameObject.tag = "GameManager";
+        foreach (StatsChien dog in GameManager.Instance.world.AllDogs)
+        {
+            dog.trainingsCleared = false;
+        }
     }
     
     private void Load() {

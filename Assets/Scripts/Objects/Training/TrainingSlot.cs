@@ -50,7 +50,6 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
             eventData.pointerDrag.transform.GetComponent<TrainingButton>().baseSize = GetComponent<RectTransform>().sizeDelta;
 
 
-
             actualTraining = eventData.pointerDrag.GetComponent<TrainingButton>();
 
             //GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);

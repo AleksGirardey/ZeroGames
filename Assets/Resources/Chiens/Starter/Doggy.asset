@@ -25,6 +25,7 @@ MonoBehaviour:
   Endurance: 440
   Acceleration: 540
   VitesseMax: 520
+  Mental: 500
   EnduranceDef: 0
   AccelerationDef: 0
   VitesseMaxDef: 0

@@ -87,6 +87,7 @@ public class DogMovement : MonoBehaviour
 
             if (LapsRemaining <= 0)
             {
+                LapsRemaining = 0;
                 RaceManager.SetRank(this);
                 _hasFinished = true;
             }
@@ -108,6 +109,7 @@ public class DogMovement : MonoBehaviour
         }
         else
         {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
             Vitesse = 0;
         }
     }
