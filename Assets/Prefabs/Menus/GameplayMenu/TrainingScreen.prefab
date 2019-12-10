@@ -3009,6 +3009,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &8662654559599684921 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6277432790180162959, guid: 1a292696f89a76747a761fb73042fd16,
+    type: 3}
+  m_PrefabInstance: {fileID: 3398535130141720758}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6917379906334284139 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8130543164142541277, guid: 1a292696f89a76747a761fb73042fd16,

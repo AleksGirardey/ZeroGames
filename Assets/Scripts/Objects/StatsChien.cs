@@ -40,6 +40,8 @@ public class StatsChien : ScriptableObject
     public float AccelerationDef;
     public float VitesseMaxDef;
 
+    public string Mood;
+    
     public List<Training> EnduranceTempo = new List<Training>();
     public List<Training> AccelerationTempo = new List<Training>();
     public List<Training> VitesseMaxTempo = new List<Training>();
@@ -50,9 +52,9 @@ public class StatsChien : ScriptableObject
     public string Name;
 
     public bool TrainingsConfirmed;
+    public bool trainingsCleared; // reset les trainings tempo & les valeurs Def quand on lance le jeu via TrainingManager.Start();
 
     public List<Training> UpcomingTrainings = new List<Training>();
-    
     public StatsChien(float Endu, float Accel, float Vmax, string lrace, int lrank)
     {
         Endurance = Endu;
@@ -61,7 +63,7 @@ public class StatsChien : ScriptableObject
         LatestRace = lrace;
         LatestRank = lrank;
     }
-    
+
     public float GetEndurance()
     {
         float enduranceTempo = 0;
@@ -185,5 +187,13 @@ public class StatsChien : ScriptableObject
         }
         UpcomingTrainings.Clear();
     }
+
+    public void RandomTraining()
+    {
+        int index = Random.Range(0, GameManager.Instance.trainings.Count);
+        UpcomingTrainings.Add(GameManager.Instance.trainings[index]);
+        AssignTrainings();
+    }
+
 
 }

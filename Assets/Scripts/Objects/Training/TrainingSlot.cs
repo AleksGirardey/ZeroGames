@@ -48,7 +48,6 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
             eventData.pointerDrag.transform.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
             eventData.pointerDrag.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
 
-
             actualTraining = eventData.pointerDrag.GetComponent<TrainingButton>();
 
             //GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
