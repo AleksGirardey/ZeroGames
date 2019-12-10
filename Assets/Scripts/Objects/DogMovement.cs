@@ -109,6 +109,7 @@ public class DogMovement : MonoBehaviour
         }
         else
         {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
             Vitesse = 0;
         }
     }

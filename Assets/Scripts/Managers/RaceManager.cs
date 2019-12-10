@@ -50,8 +50,8 @@ public class RaceManager : MonoBehaviour
 
         foreach (DogMovement dog in Chiens)
         {
-            dog.transform.position = StartPoint.position + new Vector3(_startDiff, 0, 0); // Mettre les chiens à pos. de départ et les écarter entre eux
-            _startDiff += 0.2f;
+            dog.transform.position = StartPoint.position + new Vector3(0, 0, _startDiff); // Mettre les chiens à pos. de départ et les écarter entre eux
+            _startDiff += 2f;
         }
 
         RankLine = 0;
@@ -248,7 +248,7 @@ public class RaceManager : MonoBehaviour
 
             if (chienDIsplayed != null)
             {
-                Name.text = chienDIsplayed.GetComponent<DogMovement>().name;
+                Name.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.name;
                 Endurance.text = "endurance : " + chienDIsplayed.GetComponent<DogMovement>().Endurance; // Actualisation des stats
                 VitesseMax.text = "vitesse max : " + chienDIsplayed.GetComponent<DogMovement>().VitesseMax;
                 Acceleration.text = "accélération : " + chienDIsplayed.GetComponent<DogMovement>().Acceleration;

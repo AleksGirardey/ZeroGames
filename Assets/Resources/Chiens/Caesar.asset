@@ -20,10 +20,10 @@ MonoBehaviour:
   NumberRaceLost: 0
   MaxSpeedRun: 0
   MoneyEarned: 0
-  LatestRace: 10/12/2019 09:29:30
+  LatestRace: 10/12/2019 10:09:22
   LatestRank: 1
-  Endurance: 95
-  Acceleration: 5
+  Endurance: 50
+  Acceleration: 7
   VitesseMax: 10
   EnduranceDef: 0
   AccelerationDef: 0
