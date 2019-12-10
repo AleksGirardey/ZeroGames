@@ -15,15 +15,26 @@ public class StatsChange : MonoBehaviour
     public float _Stamina;
     public float _Mental;
 
-    public KennelManager KM;
+    public GameObject KM;
 
 
     private void Update()
     {
-        _MaxSpeed = KM.SelectedDog.VitesseMax;
-            _Acceleration = KM.SelectedDog.Acceleration;
-        _Stamina = KM.SelectedDog.Endurance;
-        _Mental = KM.SelectedDog.Mental;
+        if (KM.GetComponent<KennelManager>())
+        {
+            _MaxSpeed = KM.GetComponent<KennelManager>().SelectedDog.VitesseMax;
+            _Acceleration = KM.GetComponent<KennelManager>().SelectedDog.Acceleration;
+            _Stamina = KM.GetComponent<KennelManager>().SelectedDog.Endurance;
+            _Mental = KM.GetComponent<KennelManager>().SelectedDog.Mental;
+        }
+        else if (KM.GetComponent<TrainingManager>())
+        {
+            _MaxSpeed = KM.GetComponent<TrainingManager>().SelectedDog.VitesseMax;
+            _Acceleration = KM.GetComponent<TrainingManager>().SelectedDog.Acceleration;
+            _Stamina = KM.GetComponent<TrainingManager>().SelectedDog.Endurance;
+            _Mental = KM.GetComponent<TrainingManager>().SelectedDog.Mental;
+        }
+
 
         if (MaxSpeed)
             {
