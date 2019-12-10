@@ -26,7 +26,7 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     EventSystem m_EventSystem;
     [FormerlySerializedAs("TrainingManager")] public TrainingManager trainingManager;
 
-    private Vector2 baseSize;
+    public Vector2 baseSize;
     public void SetName(string name)
     {
         Name.text = name;
