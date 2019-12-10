@@ -87,6 +87,7 @@ public class DogMovement : MonoBehaviour
 
             if (LapsRemaining <= 0)
             {
+                LapsRemaining = 0;
                 RaceManager.SetRank(this);
                 _hasFinished = true;
             }
