@@ -246,8 +246,7 @@ public class RaceManager : MonoBehaviour
         {
             chienDIsplayed = hit.transform;
 
-            if (chienDIsplayed != null)
-            {
+            if (chienDIsplayed != null && chienDIsplayed.GetComponent<DogMovement>()) {
                 Name.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.name;
                 Endurance.text = "endurance : " + chienDIsplayed.GetComponent<DogMovement>().Endurance; // Actualisation des stats
                 VitesseMax.text = "vitesse max : " + chienDIsplayed.GetComponent<DogMovement>().VitesseMax;
