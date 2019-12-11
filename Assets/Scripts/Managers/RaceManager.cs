@@ -28,6 +28,7 @@ public class RaceManager : MonoBehaviour
 
     public LayerMask ChienLayer;
 
+    Transform chienDIsplayed;
     Transform chienSelected;
 
     public GameObject Bilan;
@@ -192,6 +193,7 @@ public class RaceManager : MonoBehaviour
         }
 
         chienSelected = Chiens[0].transform;
+        chienDIsplayed = Chiens[0].transform;
         StartCoroutine(RaceCountdown());
 
     }
@@ -199,7 +201,7 @@ public class RaceManager : MonoBehaviour
     private void Update()
     {
 
-        if (RaceStarted && RankLine < 4)
+        if (RaceStarted && !RaceEnded)
         {
             Timet.text = Mathf.RoundToInt(Timer).ToString();
             Timer+= Time.deltaTime;
@@ -247,13 +249,12 @@ public class RaceManager : MonoBehaviour
     void DisplayChienStats()
     {
         RaycastHit hit;
-        Transform chienDIsplayed = null;
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, ChienLayer)) // Quand la souris passe sur un chien
         {
             chienDIsplayed = hit.transform;
 
-            if (chienDIsplayed != null)
+            if (chienDIsplayed.GetComponent<DogMovement>() != null)
             {
                 Name.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.name;
                 Endurance.text = "endurance : " + chienDIsplayed.GetComponent<DogMovement>().Endurance; // Actualisation des stats
