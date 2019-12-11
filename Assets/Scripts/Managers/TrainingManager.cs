@@ -29,6 +29,8 @@ public class TrainingManager : MonoBehaviour
 
     public GameObject FreezeScreen, BinScreen;
 
+    public List<Training> TrainingList;
+
     void Start()
     {
         EnergyBars previousDay = null;

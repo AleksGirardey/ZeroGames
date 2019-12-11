@@ -16,6 +16,6 @@ MonoBehaviour:
   AccelerationDef: 0
   VitesseMaxDef: 0
   EnduranceTempo: 0
-  AccelerationTempo: 3
+  AccelerationTempo: 45
   VitesseMaxTempo: 0
   WeekLeft: 1

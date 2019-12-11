@@ -56,6 +56,7 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
                 TrainingSlot.energyBar.UpdEnergy(TrainingSlot.energyBar.previousDay, TrainingSlot.energyBar.EnergyUsed);
                 TrainingSlot.actualTraining = null;
                 TrainingSlot.training = null;
+                trainingManager.TrainingList.Remove(Training);
             }
             canvasGroup.blocksRaycasts = false;
             canvasGroup.alpha = 0.6f;

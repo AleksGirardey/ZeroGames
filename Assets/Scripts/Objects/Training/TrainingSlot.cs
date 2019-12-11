@@ -22,6 +22,10 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
     public Training training;
     [FormerlySerializedAs("EnergyBar")] public EnergyBars energyBar;
 
+    public TrainingManager TM;
+
+
+
     public void Start() {
         trainingManager = GameObject.FindWithTag("TrainingManager").GetComponent<TrainingManager>();
         energyBar = transform.parent.parent.GetComponentInChildren<EnergyBars>();
@@ -49,6 +53,10 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
             eventData.pointerDrag.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
 
             actualTraining = eventData.pointerDrag.GetComponent<TrainingButton>();
+
+            trainingManager.TrainingList.Add(training);
+
+
 
             //GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             //eventData.pointerDrag.GetComponent<RectTransform>().position = new Vector3(0, 0, 0); UI incompréhensible, impossible de mettre 0,0,0 en position du TrainingButton
