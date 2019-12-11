@@ -141,7 +141,8 @@ public class TrainingManager : MonoBehaviour
         }
 
         print("next week >>");
-        
+
+        GameManager.Instance.player.money += 150;
 
         foreach (StatsChien dog in GameManager.Instance.player.kennel.dogs)
         {
