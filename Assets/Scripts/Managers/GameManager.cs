@@ -68,4 +68,6 @@ public class GameManager : MonoBehaviour {
         _game = (Game) game;
         Load();
     }
+
+
 }
