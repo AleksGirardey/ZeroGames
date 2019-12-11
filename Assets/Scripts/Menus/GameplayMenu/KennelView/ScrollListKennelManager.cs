@@ -16,10 +16,6 @@ public class ScrollListKennelManager : MonoBehaviour
             DogImgButton.transform.GetChild(0).GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
             DogImgButton.transform.GetChild(0).GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
             DogImgButton.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-
-
         }
-
     }
-
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class UiStatsRadarChart : MonoBehaviour {
     public KennelManager kennelManager;
@@ -9,7 +10,11 @@ public class UiStatsRadarChart : MonoBehaviour {
 
     private void Start() {
         _radarMeshCanvasRenderer = transform.Find("RadarMesh").GetComponent<CanvasRenderer>();
-        kennelManager.OnDogChanged += (sender, args) => UpdateStatsVisual();
+        //kennelManager.OnDogChanged += (sender, args) => UpdateStatsVisual();
+    }
+
+    private void Update() {
+        UpdateStatsVisual();
     }
 
     private Vector3 GetAngle(int index) {
