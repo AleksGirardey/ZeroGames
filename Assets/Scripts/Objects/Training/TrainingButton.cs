@@ -43,6 +43,19 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     {
         trainingManager = GameObject.FindWithTag("TrainingManager").GetComponent<TrainingManager>();
         baseSize = GetComponent<RectTransform>().sizeDelta;
+
+        if (Training.VitesseMaxDef != 0 || Training.VitesseMaxTempo != 0)
+        {
+            GetComponent<Image>().color = new Color32(175, 255, 255, 175);
+        }
+        else if (Training.EnduranceDef != 0 || Training.EnduranceTempo != 0)
+        {
+            GetComponent<Image>().color = new Color32(255, 175, 255, 175);
+        }
+        else if (Training.AccelerationDef != 0 || Training.AccelerationTempo != 0)
+        {
+            GetComponent<Image>().color = new Color32(255, 255, 175, 175);
+        }
     }
  
     public void OnBeginDrag(PointerEventData eventData)
@@ -117,6 +130,8 @@ public class TrainingButton : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
             CloneSpawned = true;
             TrainingButtonCS.DefaultTrainingButton = GetComponent<TrainingButton>();
         }
+
+        
     }
 
     

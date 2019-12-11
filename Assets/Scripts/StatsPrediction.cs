@@ -17,6 +17,8 @@ public class StatsPrediction : MonoBehaviour
     public float StatsBefore;
     public float StatsAfter;
 
+    public GameObject arrow;
+
 
 
     public List<Training> TrainList = new List<Training>();
@@ -61,7 +63,7 @@ public class StatsPrediction : MonoBehaviour
         {
             if ( TrainList[i].VitesseMaxDef != 0 || TrainList[i].VitesseMaxTempo != 0)
             {
-                Change = Change + TrainList[i].VitesseMaxDef + TrainList[i].VitesseMaxTempo;
+                Change += TrainList[i].VitesseMaxDef + TrainList[i].VitesseMaxTempo;
             }
         }
 
@@ -80,7 +82,7 @@ public class StatsPrediction : MonoBehaviour
         {
             if (TrainList[i].AccelerationDef != 0 || TrainList[i].AccelerationTempo != 0)
             {
-                Change = Change + TrainList[i].VitesseMaxDef + TrainList[i].VitesseMaxTempo;
+                Change += TrainList[i].AccelerationDef + TrainList[i].AccelerationTempo;
             }
         }
 
@@ -98,7 +100,7 @@ public class StatsPrediction : MonoBehaviour
         {
             if (TrainList[i].EnduranceDef != 0 || TrainList[i].EnduranceTempo != 0)
             {
-                Change = Change + TrainList[i].VitesseMaxDef + TrainList[i].VitesseMaxTempo;
+                Change += TrainList[i].EnduranceDef + TrainList[i].EnduranceTempo;
             }
         }
 
@@ -124,6 +126,7 @@ public class StatsPrediction : MonoBehaviour
         StatsAfter = StatsBefore + Change;
         Letter(StatsAfter);
         Change = 0;
+        
     }*/
 
 
@@ -165,5 +168,15 @@ public class StatsPrediction : MonoBehaviour
         {
             GetComponent<Text>().text = "A+";
         }
+
+        if (StatsBefore < StatsAfter)
+        {
+            arrow.GetComponent<Image>().color = new Color32(120, 255, 120, 255);
+        }
+        else
+        {
+            arrow.GetComponent<Image>().color = new Color32(250, 253, 250, 255);
+        }
+
     }
 }

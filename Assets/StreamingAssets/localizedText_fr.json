@@ -119,6 +119,8 @@
         { "key":"Friday",
         "value":"Vendredi"},
         { "key":"Confirm",
-        "value":"Valider"}
+        "value":"Valider"},
+        { "key":"Cost",
+        "value":"Coût :"}
 	]
 }

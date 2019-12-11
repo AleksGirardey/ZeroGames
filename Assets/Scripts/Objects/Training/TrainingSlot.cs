@@ -29,6 +29,8 @@ public class TrainingSlot : MonoBehaviour, IDropHandler
     public void Start() {
         trainingManager = GameObject.FindWithTag("TrainingManager").GetComponent<TrainingManager>();
         energyBar = transform.parent.parent.GetComponentInChildren<EnergyBars>();
+
+        trainingManager.TrainingList.Clear();
     }
 
     public void OnDrop(PointerEventData eventData)

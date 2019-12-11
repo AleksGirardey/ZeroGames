@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnduranceDef: 0
   AccelerationDef: 0
-  VitesseMaxDef: 20
+  VitesseMaxDef: 8
   EnduranceTempo: 0
   AccelerationTempo: 0
   VitesseMaxTempo: 0

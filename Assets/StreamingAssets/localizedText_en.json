@@ -118,6 +118,8 @@
         { "key":"Friday",
         "value":"Friday"},        
         { "key":"Confirm",
-        "value":"Confirm"}
+        "value":"Confirm"},
+        { "key":"Cost",
+        "value":"Cost :"}
 	]
 }
