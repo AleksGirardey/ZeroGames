@@ -28,6 +28,7 @@ public class RaceManager : MonoBehaviour
 
     public LayerMask ChienLayer;
 
+    Transform chienDIsplayed;
     Transform chienSelected;
 
     public GameObject Bilan;
@@ -71,36 +72,42 @@ public class RaceManager : MonoBehaviour
             if (Laps == 1) // 2 CHIENS AVEC GROSSE ACCEL
             {
                 i1 = Random.Range(0, ListeDesChiens.Length);
+                Chiens[1].ThisDog = ListeDesChiens[i1];
                 Chiens[1].Endurance = ListeDesChiens[i1].GetEndurance();
                 Chiens[1].VitesseMax = ListeDesChiens[i1].GetVitesseMax();
                 Chiens[1].Acceleration = ListeDesChiens[i1].GetAcceleration();
                 while (Chiens[1].Acceleration < 21)
                 {
                     i1 = Random.Range(0, ListeDesChiens.Length);
+                    Chiens[1].ThisDog = ListeDesChiens[i1];
                     Chiens[1].Endurance = ListeDesChiens[i1].GetEndurance();
                     Chiens[1].VitesseMax = ListeDesChiens[i1].GetVitesseMax();
                     Chiens[1].Acceleration = ListeDesChiens[i1].GetAcceleration();
                 }
 
                 i2 = Random.Range(0, ListeDesChiens.Length);
+                Chiens[2].ThisDog = ListeDesChiens[i2];
                 Chiens[2].Endurance = ListeDesChiens[i2].GetEndurance();
                 Chiens[2].VitesseMax = ListeDesChiens[i2].GetVitesseMax();
                 Chiens[2].Acceleration = ListeDesChiens[i2].GetAcceleration();
                 while (Chiens[2].Acceleration < 21 || i2 == i1)
                 {
                     i2 = Random.Range(0, ListeDesChiens.Length);
+                    Chiens[2].ThisDog = ListeDesChiens[i2];
                     Chiens[2].Endurance = ListeDesChiens[i2].GetEndurance();
                     Chiens[2].VitesseMax = ListeDesChiens[i2].GetVitesseMax();
                     Chiens[2].Acceleration = ListeDesChiens[i2].GetAcceleration();
                 }
 
                 i3 = Random.Range(0, ListeDesChiens.Length);
+                Chiens[3].ThisDog = ListeDesChiens[i3];
                 Chiens[3].Endurance = ListeDesChiens[i3].GetEndurance();
                 Chiens[3].VitesseMax = ListeDesChiens[i3].GetVitesseMax();
                 Chiens[3].Acceleration = ListeDesChiens[i3].GetAcceleration();
                 while (i3 == i2 || i3 == i1)// 1 CHIEN RANDOM
                 {
                     i3 = Random.Range(0, ListeDesChiens.Length);
+                    Chiens[3].ThisDog = ListeDesChiens[i3];
                     Chiens[3].Endurance = ListeDesChiens[i3].GetEndurance();
                     Chiens[3].VitesseMax = ListeDesChiens[i3].GetVitesseMax();
                     Chiens[3].Acceleration = ListeDesChiens[i3].GetAcceleration();
@@ -186,6 +193,7 @@ public class RaceManager : MonoBehaviour
         }
 
         chienSelected = Chiens[0].transform;
+        chienDIsplayed = Chiens[0].transform;
         StartCoroutine(RaceCountdown());
 
     }
@@ -193,7 +201,7 @@ public class RaceManager : MonoBehaviour
     private void Update()
     {
 
-        if (RaceStarted && RankLine < 4)
+        if (RaceStarted && !RaceEnded)
         {
             Timet.text = Mathf.RoundToInt(Timer).ToString();
             Timer+= Time.deltaTime;
@@ -202,8 +210,9 @@ public class RaceManager : MonoBehaviour
         CheckLap();
         CamTrackDog();
         DisplayChienStats();
+        FindActiveDogs();
 
-        if (RankLine >= 4) DisplayScore();      // Lorsque la course est finie
+        if (RankLine >= 4 && !RaceEnded) DisplayScore();      // Lorsque la course est finie
     }
 
     public int DogRank(DogMovement RankedDog)   // Retourne le classement du chien RankedDog
@@ -240,13 +249,12 @@ public class RaceManager : MonoBehaviour
     void DisplayChienStats()
     {
         RaycastHit hit;
-        Transform chienDIsplayed = null;
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, ChienLayer)) // Quand la souris passe sur un chien
         {
             chienDIsplayed = hit.transform;
 
-            if (chienDIsplayed != null && chienDIsplayed.GetComponent<DogMovement>()) {
+            if (chienDIsplayed.GetComponent<DogMovement>() != null && chienDIsplayed.GetComponent<DogMovement>()) {
                 Name.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.name;
                 Endurance.text = "endurance : " + chienDIsplayed.GetComponent<DogMovement>().Endurance; // Actualisation des stats
                 VitesseMax.text = "vitesse max : " + chienDIsplayed.GetComponent<DogMovement>().VitesseMax;
@@ -282,20 +290,35 @@ public class RaceManager : MonoBehaviour
         int Rank = chienSelected.GetComponent<DogMovement>().ThisDog.LatestRank;
         string Prefix = "eme";
 
-        float ProfitAmount = 0;
+        int ProfitAmount = 0;
+
+        switch (Rank)
+        {
+            case 1:
+                ProfitAmount = 500;
+                break;
+            case 2:
+                ProfitAmount = 200;
+                break;
+            case 3:
+                ProfitAmount = 100;
+                break;
+            case 4:
+                ProfitAmount = 50;
+                break;
+        }
+
+        GameManager.Instance.player.money += ProfitAmount;
 
         if (Rank == 1)
         {
             Prefix = "er";
-            ProfitAmount = 1000;
             BilanTxt.color = Color.green;
             Profit.color = Color.green;
         }
 
         BilanTxt.text = "Votre chien est arrive " + Rank + Prefix;
         Profit.text = "Gain : +" + ProfitAmount + "€";
-
-        Win();
 
     }
 
@@ -313,13 +336,6 @@ public class RaceManager : MonoBehaviour
         }
 
         LapsText.text = PreviousLap + "/" + Laps;
-
-    }
-
-    public void Win()
-    {
-
-        //
 
     }
 
@@ -341,13 +357,27 @@ public class RaceManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Countdown.text = "";
 
-
-
     }
 
     public void LoadMenuScene()
     {
         SceneManager.LoadScene("GamePlayMenu");
+    }
+
+    public void FindActiveDogs()
+    {
+        if (CameraF.Target.GetComponent<DogMovement>()._hasFinished)
+        {
+
+            foreach (DogMovement dog in Chiens)
+            {
+                if (!dog._hasFinished)
+                {
+                    CameraF.Target = dog.gameObject;
+                    return;
+                }
+            }
+        }
     }
 
 }

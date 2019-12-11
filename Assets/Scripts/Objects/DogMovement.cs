@@ -7,10 +7,10 @@ public class DogMovement : MonoBehaviour
     [SerializeField]
     public Transform[] Routes;
     public float SpeedModifier;
-        public float Endurance;
-        public float Acceleration;
-        public float VitesseMax;
-        public float VitesseMin;
+    public float Endurance;
+    public float Acceleration;
+    public float VitesseMax;
+    public float VitesseMin;
     public float Vitesse;
     public float VitesseMoyenne;
     public RaceManager RaceManager;
@@ -24,7 +24,7 @@ public class DogMovement : MonoBehaviour
     public int LapsRemaining;
 
     private float _tParam;
-    private Vector3 _dogPosition;
+    public Vector3 _dogPosition;
 
     public StatsChien ThisDog;
 
@@ -80,7 +80,7 @@ public class DogMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Finish") && RaceManager.RaceStarted) {         // Quand le chien finit sa course
+        if (other.CompareTag("Finish") && RaceManager.RaceStarted) {         // Quand le chien finit son tour
 
 
             LapsRemaining--;
@@ -122,29 +122,29 @@ public class DogMovement : MonoBehaviour
         Vector3 p2 = Routes[routeNumber].GetChild(2).position;
         Vector3 p3 = Routes[routeNumber].GetChild(3).position;
 
-            while (_tParam < 1)
+        while (_tParam < 1)
+        {
+            if ((_dogPosition - transform.position).magnitude < SpeedModifier * 6f) // CHECK SI LE CHIEN A VRAIMENT ATTEINT LE POINT
             {
-                if ((_dogPosition - transform.position).magnitude < SpeedModifier * 6f) // CHECK SI LE CHIEN A VRAIMENT ATTEINT LE POINT
-                {
                 _tParam += Time.fixedDeltaTime * SpeedModifier; // SI OUI, ON AUGMENTE TPARAM DONC DOGPOSITION CALCULE LE NEXT POINT
-                }
-
-                var dir = _dogPosition - transform.position;
-
-                // CALCUL DU NEXT POINT
-                _dogPosition = Mathf.Pow(1 - _tParam, 3) * p0 +
-                3 * Mathf.Pow(1 - _tParam, 2) * _tParam * p1 +
-                3 * (1 - _tParam) * Mathf.Pow(_tParam, 2) * p2 +
-                Mathf.Pow(_tParam, 3) * p3;
-
-                // AJOUT DE LA FORCE AU CHIEN
-                _dogPhysics.AddForce(dir * Vitesse * 2f);
-
-                // Rotation du chien
-                transform.rotation = Quaternion.LookRotation(Vector3.up, dir) * Quaternion.Euler(90, 0, 0);
-
-                yield return new WaitForEndOfFrame();
             }
+
+            var dir = _dogPosition - transform.position;
+
+            // CALCUL DU NEXT POINT
+            _dogPosition = Mathf.Pow(1 - _tParam, 3) * p0 +
+            3 * Mathf.Pow(1 - _tParam, 2) * _tParam * p1 +
+            3 * (1 - _tParam) * Mathf.Pow(_tParam, 2) * p2 +
+            Mathf.Pow(_tParam, 3) * p3;
+
+            // AJOUT DE LA FORCE AU CHIEN
+            _dogPhysics.AddForce(dir * Vitesse * 2f);
+
+            // Rotation du chien
+            transform.rotation = Quaternion.LookRotation(Vector3.up, dir) * Quaternion.Euler(90, 0, 0);
+
+            yield return new WaitForEndOfFrame();
+        }
         _tParam = 0f;
 
         // SWITCH DE BEZIER CURVE
