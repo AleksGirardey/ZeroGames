@@ -36,7 +36,7 @@ public class UIStatsRadarChart : MonoBehaviour {
         int[] triangles = new int[15];
 
         
-        float radarChartSize = 150.0f;
+        float radarChartSize = 207.0f;
 
         Vector3 averageSpeedVertex = radarChartSize * averageSpeed * GetAngle(0);
         Vector3 accelerationVertex = acceleration * radarChartSize * GetAngle(1);
