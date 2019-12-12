@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class UiStatsRadarChart : MonoBehaviour {
+public class UIStatsRadarChart : MonoBehaviour {
     public KennelManager kennelManager;
     private CanvasRenderer _radarMeshCanvasRenderer;
 
