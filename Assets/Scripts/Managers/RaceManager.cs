@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class RaceManager : MonoBehaviour
 {
@@ -64,9 +66,7 @@ public class RaceManager : MonoBehaviour
 
         Countdown.text = "";
 
-        if (GameManager.Instance != null)
-        {  // CHIEN DU JOUEUR
-
+        if (GameManager.Instance != null) {  // CHIEN DU JOUEUR
             Laps = GameManager.Instance.turns;
 
             Chiens[0].ThisDog = GameManager.Instance.player.kennel.dogs[0];
@@ -75,15 +75,42 @@ public class RaceManager : MonoBehaviour
             Chiens[0].Acceleration = GameManager.Instance.player.kennel.dogs[0].GetAcceleration();
 
 
-            if (Laps == 1) // 2 CHIENS AVEC GROSSE ACCEL
-            {
+            Random.InitState((int) DateTime.Now.TimeOfDay.TotalMilliseconds);
+            List<Dog> currentLaps = new List<Dog>();
+            List<Dog> others = new List<Dog>();
+            int randomIndex;
+            
+            foreach (Dog d in ListeDesChiens) {
+                if (d.lapsPreference == Laps) currentLaps.Add(d);
+                else others.Add(d);
+            }
+
+            randomIndex = Random.Range(0, currentLaps.Count);
+            Chiens[1].ThisDog = currentLaps[randomIndex];
+            Chiens[1].Endurance = currentLaps[randomIndex].GetEndurance();
+            Chiens[1].VitesseMax = currentLaps[randomIndex].GetVitesseMax();
+            Chiens[1].Acceleration = currentLaps[randomIndex].GetAcceleration();
+            currentLaps.RemoveAt(randomIndex);
+
+            randomIndex = Random.Range(0, currentLaps.Count);
+            Chiens[2].ThisDog = currentLaps[randomIndex];
+            Chiens[2].Endurance = currentLaps[randomIndex].GetEndurance();
+            Chiens[2].VitesseMax = currentLaps[randomIndex].GetVitesseMax();
+            Chiens[2].Acceleration = currentLaps[randomIndex].GetAcceleration();
+            
+            randomIndex = Random.Range(0, others.Count);
+            Chiens[3].ThisDog = others[randomIndex];
+            Chiens[3].Endurance = others[randomIndex].GetEndurance();
+            Chiens[3].VitesseMax = others[randomIndex].GetVitesseMax();
+            Chiens[3].Acceleration = others[randomIndex].GetAcceleration();
+/*
+            if (Laps == 1) {
                 i1 = Random.Range(0, ListeDesChiens.Length);
                 Chiens[1].ThisDog = ListeDesChiens[i1];
                 Chiens[1].Endurance = ListeDesChiens[i1].GetEndurance();
                 Chiens[1].VitesseMax = ListeDesChiens[i1].GetVitesseMax();
                 Chiens[1].Acceleration = ListeDesChiens[i1].GetAcceleration();
-                while (Chiens[1].Acceleration < 21)
-                {
+                while (Chiens[1].Acceleration < 21) {
                     i1 = Random.Range(0, ListeDesChiens.Length);
                     Chiens[1].ThisDog = ListeDesChiens[i1];
                     Chiens[1].Endurance = ListeDesChiens[i1].GetEndurance();
@@ -194,7 +221,7 @@ public class RaceManager : MonoBehaviour
                     Chiens[3].VitesseMax = ListeDesChiens[i3].GetVitesseMax();
                     Chiens[3].Acceleration = ListeDesChiens[i3].GetAcceleration();
                 }
-            }
+            }*/
 
         }
 
