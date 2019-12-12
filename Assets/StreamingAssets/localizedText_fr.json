@@ -58,6 +58,7 @@
 		{ "key":"GameplayMenu_Kennel_Endurance", "value":"Endurance" },
 		{ "key":"GameplayMenu_Kennel_MaxSpeed", "value":"Vitesse Max." },
 		{ "key":"GameplayMenu_Kennel_Moral", "value":"Moral" },
+		{ "key":"GameplayMenu_Kennel_AverageSpeed", "value":"Vitesse Moyenne" },
 		{ "key":"GameplayMenu_Kennel_History", "value":"A gagné {0} courses\nA courru à {1} km par heure\n Vous a fait gagner {2}$" },
 		
 		{ "key":"GameplayMenu_Management", "value":"Gestion" },		

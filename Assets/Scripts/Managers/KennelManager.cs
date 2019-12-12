@@ -18,6 +18,7 @@ public class KennelManager : MonoBehaviour
     public Text enduranceLetter;
     public Text maxSpeedLetter;
     public Text moralLetter;
+    public Text averageSpeedValue;
 
     public Text nature;
 
@@ -28,6 +29,12 @@ public class KennelManager : MonoBehaviour
     private void Start() {
         FillDogListContainer();
         if (selectedDog == null) SetSelectedDog(GameManager.Instance.player.kennel.dogs[0]);
+    }
+
+    private void Update() {
+        nature.text = LocalizationManager.Instance.GetLocalizedValue(selectedDog.NatureKey);
+        description.text = LocalizationManager.Instance.GetLocalizedValue(selectedDog.DescriptionKey);
+        DefineHistory();
     }
 
     private void FillDogListContainer() {
@@ -50,9 +57,7 @@ public class KennelManager : MonoBehaviour
         enduranceLetter.text = selectedDog.GetStaminaAsLetter();
         maxSpeedLetter.text = selectedDog.GetMaxSpeedAsLetter();
         moralLetter.text = selectedDog.GetMoralAsLetter();
-        nature.text = LocalizationManager.Instance.GetLocalizedValue(selectedDog.NatureKey);
-        description.text = LocalizationManager.Instance.GetLocalizedValue(selectedDog.DescriptionKey);
-        DefineHistory();
+        averageSpeedValue.text = "" + selectedDog.MaxSpeedRun;
     }
 
     private void DefineHistory() {
