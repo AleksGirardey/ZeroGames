@@ -14,6 +14,7 @@ public class CameraFollow : MonoBehaviour
     public GameObject Target;
 
     public Vector3 Offset;
+    public float Zoom = 80f;
 
     int CameraIndex = 3;
 
@@ -21,6 +22,9 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
+
+        Zoomin();
+
         if (!RM.CountdownStarted)
         {
 
@@ -119,6 +123,16 @@ public class CameraFollow : MonoBehaviour
 
         transform.position = Vector3.Lerp(transform.position, EndCamTransform.position, Time.deltaTime * 7f);
         transform.rotation = Quaternion.Slerp(transform.rotation, EndCamTransform.rotation, Time.deltaTime * 7f);
+
+    }
+
+    void Zoomin()
+    {
+
+        Zoom -= Input.GetAxis("Mouse ScrollWheel") * 30f;
+        Zoom = Mathf.Clamp(Zoom, 20, 80);
+
+        GetComponent<Camera>().fieldOfView = Zoom;
 
     }
 

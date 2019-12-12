@@ -138,7 +138,7 @@ public class DogMovement : MonoBehaviour
             Mathf.Pow(_tParam, 3) * p3;
 
             // AJOUT DE LA FORCE AU CHIEN
-            _dogPhysics.AddForce(dir * Vitesse * 2f);
+            _dogPhysics.AddForce(dir * Vitesse * 1f);
 
             // Rotation du chien
             transform.rotation = Quaternion.LookRotation(Vector3.up, dir) * Quaternion.Euler(90, 0, 0);
@@ -158,7 +158,7 @@ public class DogMovement : MonoBehaviour
     void UpdateAnimation()
     {
 
-        DogAnimator.SetFloat("Speed", Vitesse / 10f);
+        DogAnimator.SetFloat("Speed", Vitesse / 23f);
         DogAnimator.SetBool("IsMoving", !(!RaceManager.RaceStarted || _hasFinished));
 
     }
@@ -166,7 +166,7 @@ public class DogMovement : MonoBehaviour
     void UpdateMapLocation()
     {
 
-        DogOnMap.GetComponent<RectTransform>().anchoredPosition = new Vector3(-transform.position.z * 2.6f, transform.position.x * 2.6f, 0);
+        DogOnMap.GetComponent<RectTransform>().anchoredPosition = new Vector3(-transform.position.z * 3f, transform.position.x * 2.7f, 0);
 
     }
 
