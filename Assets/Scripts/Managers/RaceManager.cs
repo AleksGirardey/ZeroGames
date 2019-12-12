@@ -199,6 +199,20 @@ public class RaceManager : MonoBehaviour
 
         chienSelected = Chiens[0].transform;
         chienDIsplayed = Chiens[0].transform;
+
+        // Divise par 10 les stats des chiens
+
+        foreach (DogMovement dog in Chiens)
+        {
+
+            dog.Endurance /= 10;
+            dog.Acceleration /= 10;
+            dog.VitesseMax /= 10;
+          //  dog.Mental /= 10;
+
+        }
+
+
         StartCoroutine(RaceCountdown());
 
     }
@@ -259,13 +273,15 @@ public class RaceManager : MonoBehaviour
         {
             chienDIsplayed = hit.transform;
 
-            if (chienDIsplayed.GetComponent<DogMovement>() != null && chienDIsplayed.GetComponent<DogMovement>()) {
+            if (chienDIsplayed.GetComponent<DogMovement>()) {
+
                 Name.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.name;
-                Endurance.text = "endurance : " + chienDIsplayed.GetComponent<DogMovement>().Endurance; // Actualisation des stats
-                VitesseMax.text = "vitesse max : " + chienDIsplayed.GetComponent<DogMovement>().VitesseMax;
-                Acceleration.text = "accélération : " + chienDIsplayed.GetComponent<DogMovement>().Acceleration;
-                VitesseMoyenne.text = "vitesse moyenne: " + chienDIsplayed.GetComponent<DogMovement>().VitesseMoyenne;
+                Endurance.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetStaminaAsLetter(); // Actualisation des stats
+                VitesseMax.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetMaxSpeedAsLetter();
+                Acceleration.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetAccelerationAsLetter();
+                VitesseMoyenne.text = chienDIsplayed.GetComponent<DogMovement>().VitesseMoyenne.ToString();
                 LapsText.text = chienDIsplayed.GetComponent<DogMovement>().LapsRemaining + "/" + Laps;
+
             }
 
         }
@@ -274,7 +290,6 @@ public class RaceManager : MonoBehaviour
     public void SetRank(DogMovement RankedDog)  // La liste des arrivants selon leur classement est générée
     {
 
-        Ranking.enabled = true;
         Ranking.text += "\n" + DogRank(RankedDog) + ". " + RankedDog.ThisDog.name;
 
         RankedDog.ThisDog.LatestRank = DogRank(RankedDog);
@@ -293,7 +308,6 @@ public class RaceManager : MonoBehaviour
         RaceEnded = true;
 
         int Rank = chienSelected.GetComponent<DogMovement>().ThisDog.LatestRank;
-        string Prefix = "eme";
 
         int ProfitAmount = 0;
 
@@ -317,13 +331,12 @@ public class RaceManager : MonoBehaviour
 
         if (Rank == 1)
         {
-            Prefix = "er";
             BilanTxt.color = Color.green;
             Profit.color = Color.green;
         }
 
-        BilanTxt.text = "Votre chien est arrive " + Rank + Prefix;
-        Profit.text = "Gain : +" + ProfitAmount + "€";
+        BilanTxt.text = Rank.ToString();
+        Profit.text = "+" + ProfitAmount + "€";
 
     }
 
