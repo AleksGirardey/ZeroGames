@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eefc64306074b578e35b984e08e74fe, type: 3}
+  m_Name: Paf
+  m_EditorClassIdentifier: 
+  NatureKey: NatureShy
+  Wins: 0
+  Looses: 0
+  DescriptionKey: DescriptionDogC
+  NumberRaceWon: 3
+  NumberRaceLost: 0
+  MaxSpeedRun: 40
+  MoneyEarned: 4000
+  LatestRace: 
+  LatestRank: 0
+  Endurance: 48
+  Acceleration: 58
+  VitesseMax: 40
+  EnduranceDef: 0
+  AccelerationDef: 0
+  VitesseMaxDef: 0
+  EnduranceTempo: []
+  AccelerationTempo: []
+  VitesseMaxTempo: []
+  dogSprite: {fileID: 0}
+  Name: 
+  TrainingsConfirmed: 0
+  UpcomingTrainings: []
+  dogName: Paf
+  age: 3
+  width: 1
+  height: 1
+  avatar: {fileID: 21300000, guid: 7136fb5dd97dcd540910d214d52a148e, type: 3}
