@@ -231,6 +231,7 @@ public class MenuManager : MonoBehaviour {
     }
 
     private void LoadRaceMenu() {
-        SceneManager.LoadScene("Scenes/Race");
+        //SceneManager.LoadScene("Scenes/Race");
+        Debug.Log("Test");
     }
 }

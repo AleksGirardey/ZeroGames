@@ -64,7 +64,7 @@
 		
 		
 		{ "key":"GameplayMenu_Management", "value":"Management" },		
-		{ "key":"GameplayMenu_Management_Stats", "value":"Statistiques" },
+		{ "key":"GameplayMenu_Management_Stats", "value":"Win/Lose" },
 		{ "key":"GameplayMenu_Management_StockExchange", "value":"Stock exchange" },
 		{ "key":"GameplayMenu_Management_History", "value":"History" },
 		

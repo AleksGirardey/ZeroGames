@@ -62,7 +62,7 @@
 		{ "key":"GameplayMenu_Kennel_History", "value":"A gagné {0} courses\nA courru à {1} km par heure\n Vous a fait gagner {2}$" },
 		
 		{ "key":"GameplayMenu_Management", "value":"Gestion" },		
-		{ "key":"GameplayMenu_Management_Stats", "value":"Statistiques" },
+		{ "key":"GameplayMenu_Management_Stats", "value":"Victoire/Defaite" },
 		{ "key":"GameplayMenu_Management_StockExchange", "value":"Bourse" },
 		{ "key":"GameplayMenu_Management_History", "value":"Historique" },
 		
