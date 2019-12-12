@@ -33,7 +33,7 @@ public class Statistic_Result : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _text.text  = DogName + " : " + WinAmount + " / " + LoseAmount;
+        _text.text  = DogName + "\n" + WinAmount + " / " + LoseAmount;
     }
 
     public void SetSelectedDog(Dog dog)
