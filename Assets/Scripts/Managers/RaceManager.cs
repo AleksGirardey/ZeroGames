@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class RaceManager : MonoBehaviour
 {
-    public StatsChien[] ListeDesChiens = new StatsChien[20];
+    public Dog[] ListeDesChiens = new Dog[20];
 
     public DogMovement[] Chiens = new DogMovement[4];
 
@@ -361,7 +361,7 @@ public class RaceManager : MonoBehaviour
 
     public void LoadMenuScene()
     {
-        SceneManager.LoadScene("GamePlayMenu");
+        MenuManager.Instance.Back();
     }
 
     public void FindActiveDogs()

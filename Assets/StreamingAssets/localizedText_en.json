@@ -122,6 +122,15 @@
         "value":"Bets"},
         { "key":"Championship",
         "value":"Championship"},
+		
+		{ "key":"Race_Dog_Endurance", "value":"Endurance" },
+		{ "key":"Race_Dog_MaxSpeed", "value":"Max Speed" },
+		{ "key":"Race_Dog_Acceleration", "value":"Acceleration" },
+		{ "key":"Race_Dog_Speed", "value":"Average speed" },
+		{ "key":"Race_Dog_Ranking", "value":"Ranking" },
+		{ "key":"Race_Result", "value":"Your dog's ranking : " },
+		{ "key":"Race_Player_Earning", "value":"Earnings : " },
+		{ "key":"Race_Menu_BackToDogTrack", "value":"Back to menu" },
         
         { "key":"Monday",
         "value":"Monday"},

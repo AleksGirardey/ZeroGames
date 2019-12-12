@@ -26,7 +26,7 @@ public class DogMovement : MonoBehaviour
     private float _tParam;
     public Vector3 _dogPosition;
 
-    public StatsChien ThisDog;
+    public Dog ThisDog;
 
     public Image DogOnMap;
 

@@ -123,6 +123,15 @@
         { "key":"Championship",
         "value":"Championat"},
         
+		{ "key":"Race_Dog_Endurance", "value":"Endurance" },
+		{ "key":"Race_Dog_MaxSpeed", "value":"Vitesse max" },
+		{ "key":"Race_Dog_Acceleration", "value":"Accéleration" },
+		{ "key":"Race_Dog_Speed", "value":"Vitesse moyenne" },
+		{ "key":"Race_Dog_Ranking", "value":"Classement" },
+		{ "key":"Race_Result", "value":"Classement de votre chien : " },
+		{ "key":"Race_Player_Earning", "value":"Gains : " },
+		{ "key":"Race_Menu_BackToDogTrack", "value":"Retour aux courses" },
+		
         { "key":"Monday",
         "value":"Lundi"},
         { "key":"Tuesday",
