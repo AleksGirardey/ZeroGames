@@ -22,21 +22,25 @@ MonoBehaviour:
   MoneyEarned: 3500
   LatestRace: 
   LatestRank: 0
-  Endurance: 45
-  Acceleration: 54
-  VitesseMax: 56
+  Endurance: 540
+  Acceleration: 560
+  VitesseMax: 480
+  Mental: 460
   EnduranceDef: 0
   AccelerationDef: 0
   VitesseMaxDef: 0
+  Mood: 
   EnduranceTempo: []
   AccelerationTempo: []
   VitesseMaxTempo: []
   dogSprite: {fileID: 0}
   Name: 
   TrainingsConfirmed: 0
+  trainingsCleared: 0
   UpcomingTrainings: []
   dogName: Lewis
   age: 3
   width: 1
   height: 1
   avatar: {fileID: 21300000, guid: 7136fb5dd97dcd540910d214d52a148e, type: 3}
+  lapsPreference: 1

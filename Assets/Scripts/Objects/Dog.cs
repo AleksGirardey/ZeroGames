@@ -10,6 +10,8 @@ public class Dog : StatsChien {
     [FormerlySerializedAs("Height")] public float height;
 
     public Sprite avatar;
+
+    public int lapsPreference;
     
     public Dog(float endu, float accel, float vmax, string lrace, int lrank, string name) :
         base(endu, accel, vmax, lrace, lrank) {

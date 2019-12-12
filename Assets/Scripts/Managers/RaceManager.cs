@@ -69,6 +69,7 @@ public class RaceManager : MonoBehaviour
 
             Laps = GameManager.Instance.turns;
 
+            Chiens[0].ThisDog = GameManager.Instance.player.kennel.dogs[0];
             Chiens[0].Endurance = GameManager.Instance.player.kennel.dogs[0].GetEndurance();
             Chiens[0].VitesseMax = GameManager.Instance.player.kennel.dogs[0].GetVitesseMax();
             Chiens[0].Acceleration = GameManager.Instance.player.kennel.dogs[0].GetAcceleration();

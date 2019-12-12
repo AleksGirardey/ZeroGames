@@ -22,21 +22,25 @@ MonoBehaviour:
   MoneyEarned: 4000
   LatestRace: 
   LatestRank: 0
-  Endurance: 54
-  Acceleration: 46
-  VitesseMax: 54
+  Endurance: 460
+  Acceleration: 540
+  VitesseMax: 600
+  Mental: 520
   EnduranceDef: 0
   AccelerationDef: 0
   VitesseMaxDef: 0
+  Mood: 
   EnduranceTempo: []
   AccelerationTempo: []
   VitesseMaxTempo: []
   dogSprite: {fileID: 0}
   Name: 
   TrainingsConfirmed: 0
+  trainingsCleared: 0
   UpcomingTrainings: []
   dogName: Jazzy
   age: 3
   width: 1
   height: 1
   avatar: {fileID: 21300000, guid: 7136fb5dd97dcd540910d214d52a148e, type: 3}
+  lapsPreference: 1
