@@ -80,6 +80,14 @@
 		{ "key":"GameplayMenu_Training_Lands", "value":"Owned lands" },
 		{ "key":"GameplayMenu_Training_Location", "value":"Location" },
 		{ "key":"GameplayMenu_Training_Progression", "value":"Progression" },
+		{ "key":"GameplayMenu_Training_NextWeek", "value":"Next Week" },
+		{ "key":"GameplayMenu_Training_Acceleration", "value":"Acceleration" },
+		{ "key":"GameplayMenu_Training_Endurance", "value":"Endurance" },
+		{ "key":"GameplayMenu_Training_MaxSpeed", "value":"Max. Speed" },
+		{ "key":"GameplayMenu_Training_Moral", "value":"Mental" },
+		{ "key":"GameplayMenu_Training_Confirm", "value":"Confirm" },
+		{ "key":"GameplayMenu_Training_Cost", "value":"Cost :" },
+		{ "key":"GameplayMenu_Training_TrainingConfirmed", "value":"Training Confirmed" },
 
 		{ "key":"GameplayMenu_GoToRace", "value":"Go to race"},
 		
@@ -125,6 +133,8 @@
         { "key":"Friday",
         "value":"Friday"},        
         { "key":"Confirm",
-        "value":"Confirm"}
+        "value":"Confirm"},
+        { "key":"Cost",
+        "value":"Cost :"}
 	]
 }

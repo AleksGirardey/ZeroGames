@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35934de32ecc9146bf5acd0a99bfeb8, type: 3}
   m_Name: TrainingEnduranceDef
   m_EditorClassIdentifier: 
-  EnduranceDef: 1
+  EnduranceDef: 8
   AccelerationDef: 0
   VitesseMaxDef: 0
   EnduranceTempo: 0

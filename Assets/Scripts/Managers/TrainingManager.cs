@@ -2,49 +2,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class TrainingManager : MonoBehaviour
-{
+public class TrainingManager : MonoBehaviour {
     public GameObject prefabDay;
-    public GameObject Calendar;
+    [FormerlySerializedAs("Calendar")] public GameObject calendar;
+    public GameObject dogListContainer;
+    public GameObject dogButtonPrefab;
+    
+    private void FillDogListContainer() {
+        Dog[] list = GameManager.Instance.player.kennel.dogs.ToArray();
+        GameObject button;
+
+        for (int i = 0; i < list.Length; i++) {
+            button = Instantiate(dogButtonPrefab, dogListContainer.transform);
+            button.transform.Find("DogName").GetComponent<Text>().text = list[i].dogName;
+            button.transform.Find("DogImage").GetComponent<Image>().sprite = list[i].avatar;
+            var i1 = i;
+            button.GetComponent<Button>().onClick.AddListener(() => SetSelectedDog(list[i1]));
+        }
+    }
 
     public List<TrainingSlot> trainingSlots;
 
-    public Text SelectedDogTxt;
-    public Image SelectedDogImg;
-    public Dog SelectedDog;
+    [FormerlySerializedAs("SelectedDogTxt")] public Text selectedDogTxt;
+    [FormerlySerializedAs("SelectedDogImg")] public Image selectedDogImg;
+    [FormerlySerializedAs("SelectedDog")] public Dog selectedDog;
 
-    public GameObject WarningScreen;
+    [FormerlySerializedAs("WarningScreen")] public GameObject warningScreen;
+    
+    [FormerlySerializedAs("ConfirmedTrainings")] public List<Training> confirmedTrainings = new List<Training>();
 
-    //public Color RedEnergy, OrangeEnergy, GreenEnergy, EmptyEnergy;
+    [FormerlySerializedAs("FreezeScreen")] public GameObject freezeScreen;
+    [FormerlySerializedAs("BinScreen")] public GameObject binScreen;
 
-    public List<Training> ConfirmedTrainings = new List<Training>();
-    //public int Monday, Tuesday, Wednesday, Thursday, Friday;
-    //public int MondayEnergy, TuesdayEnergy, WednesdayEnergy, ThursdayEnergy, FridayEnergy;
+    [FormerlySerializedAs("TrainingList")] public List<Training> trainingList;
 
-    //public Image[] MondayEnergyImg, TuesdayEnergyImg, WednesdayEnergyImg, ThursdayEnergyImg, FridayEnergyImg;
-
-    // Start is called before the first frame update
-
-    public GameObject FreezeScreen, BinScreen;
-
-    void Start()
-    {
+    void Start() {
         EnergyBars previousDay = null;
-        EnergyBars nextDay = null;
         EnergyBars previousEnergyBar = null;
 
         foreach (DayOfTraining dot in Enum.GetValues(typeof(DayOfTraining))) {
-            GameObject day = Instantiate(prefabDay, Calendar.transform, true);
+            GameObject day = Instantiate(prefabDay, calendar.transform, true);
             day.transform.localScale = new Vector3(1, 1, 1);
             day.GetComponent<TrainingDay>().dayOfWeek = dot;
             trainingSlots.AddRange(day.GetComponent<TrainingDay>().SetTrainingSlots());
             day.GetComponentInChildren<EnergyBars>().previousDay = previousDay;
             previousDay = day.GetComponentInChildren<EnergyBars>();
 
-            //day.GetComponentInChildren<EnergyBars>().nextDay = previousDay;
-            //previousDay = day.GetComponentInChildren<EnergyBars>();
             if(previousEnergyBar != null)
             {
                 previousEnergyBar.nextDay = day.GetComponentInChildren<EnergyBars>();
@@ -53,14 +59,16 @@ public class TrainingManager : MonoBehaviour
             previousEnergyBar = day.GetComponentInChildren<EnergyBars>();
         }
         
-        if(SelectedDog == null)
+        FillDogListContainer();
+        
+        if(selectedDog == null)
         {
             SetSelectedDog(GameManager.Instance.player.kennel.dogs[0]);
         }
 
-        if (SelectedDog.TrainingsConfirmed == false)
+        if (selectedDog.TrainingsConfirmed == false)
         {
-            SelectedDog.UpcomingTrainings.Clear();
+            selectedDog.UpcomingTrainings.Clear();
         }
 
         foreach (StatsChien dog in GameManager.Instance.world.AllDogs)
@@ -78,46 +86,49 @@ public class TrainingManager : MonoBehaviour
         }
     }
 
-    public void ConfirmTrainings()
-    {
+    public void ConfirmTrainings() {
+        int cost = confirmedTrainings.Count * 50;
+
+        if (GameManager.Instance.player.money < cost) return;
         
-        if (!SelectedDog.TrainingsConfirmed)
+        if (!selectedDog.TrainingsConfirmed)
         {
             foreach (TrainingSlot ts in trainingSlots)
             {
-                if (ts.training != null) ConfirmedTrainings.Add(ts.training);
+                if (ts.training != null) confirmedTrainings.Add(ts.training);
             }
 
-            for (int i = 0; i < ConfirmedTrainings.Count; i++)
+            for (int i = 0; i < confirmedTrainings.Count; i++)
             {
-                SelectedDog.UpcomingTrainings.Add(ConfirmedTrainings[i]);
+                selectedDog.UpcomingTrainings.Add(confirmedTrainings[i]);
             }
-            SelectedDog.TrainingsConfirmed = true;
-            SelectedDog.AssignTrainings();
+            selectedDog.TrainingsConfirmed = true;
+            selectedDog.AssignTrainings();
         }
 
-        WarningScreen.SetActive(false);
+        GameManager.Instance.player.money -= (confirmedTrainings.Count * 50);
+        warningScreen.SetActive(false);
         print("Trainings confirmed!");
 
-        ConfirmedTrainings.Clear();
+        confirmedTrainings.Clear();
     }
 
     public void SetSelectedDog(Dog selected)
     {
-        SelectedDog = selected;
-        SelectedDogTxt.text = selected.dogName;
-        SelectedDogImg.sprite = selected.avatar;
+        selectedDog = selected;
+        selectedDogTxt.text = selected.dogName;
+        selectedDogImg.sprite = selected.avatar;
     }
 
     private void Update()
     {
-        if (SelectedDog.TrainingsConfirmed)
+        if (selectedDog.TrainingsConfirmed)
         {
-            FreezeScreen.SetActive(true);
+            freezeScreen.SetActive(true);
         }
         else
         {
-            FreezeScreen.SetActive(false);
+            freezeScreen.SetActive(false);
         }
         
     }
@@ -125,7 +136,7 @@ public class TrainingManager : MonoBehaviour
 
     public void SetBinScreen()
     {
-        BinScreen.SetActive(!BinScreen.activeSelf);
+        binScreen.SetActive(!binScreen.activeSelf);
     }
 
     public void NextWeekButton()
@@ -139,8 +150,6 @@ public class TrainingManager : MonoBehaviour
                 return;
             }
         }
-
-        print("next week >>");
 
         GameManager.Instance.player.money += 150;
 
@@ -156,27 +165,14 @@ public class TrainingManager : MonoBehaviour
         }
 
         MenuManager.Instance.displayMenu.LoadScreen(MenuManager.Instance.displayMenu.trainingCanvasPrefab);
-
-        /*
-        BinScreen.SetActive(false);
-        foreach (TrainingSlot trainingSlot in trainingSlots)
-        {
-            if(trainingSlot.actualTraining != null)
-            {
-                Destroy(trainingSlot.actualTraining.gameObject); // reset le calendrier
-            }
-            trainingSlot.energyBar.EnergyBarsAvailable = 3;
-        }
-        */
-
     }
 
 
     IEnumerator Warning()
     {
-        WarningScreen.SetActive(true);
+        warningScreen.SetActive(true);
         yield return new WaitForSeconds(2);
-        WarningScreen.SetActive(false);
+        warningScreen.SetActive(false);
     }
 
 }

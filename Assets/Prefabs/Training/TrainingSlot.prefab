@@ -51,9 +51,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   day: 0
+  actualTraining: {fileID: 0}
   trainingManager: {fileID: 0}
   training: {fileID: 0}
   energyBar: {fileID: 0}
+  TM: {fileID: 8103813271033162146, guid: cfb4e3ef72869ee4ba21cc09d57d4077, type: 3}
 --- !u!222 &1684571777791855622
 CanvasRenderer:
   m_ObjectHideFlags: 0

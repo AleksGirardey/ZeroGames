@@ -131,7 +131,7 @@ public class StatsChien : ScriptableObject
         VitesseMaxTempo = newList;
     }
 
-    private string GetStatAsLetter(float value) {
+    public static string GetStatAsLetter(float value) {
         foreach (var key in statLetters.Keys.Where(key => (value <= key))) {
             return statLetters[key];
         }
