@@ -34,7 +34,7 @@ MonoBehaviour:
   AccelerationTempo: []
   VitesseMaxTempo: []
   dogSprite: {fileID: 0}
-  Name: 
+  Name: Bailey
   TrainingsConfirmed: 0
   trainingsCleared: 0
   UpcomingTrainings: []

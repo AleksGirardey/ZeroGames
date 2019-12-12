@@ -276,7 +276,7 @@ public class RaceManager : MonoBehaviour
 
             if (chienDIsplayed.GetComponent<DogMovement>()) {
 
-                NameTxt.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.Name;
+                NameTxt.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.dogName;
                 Endurance.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetStaminaAsLetter(); // Actualisation des stats
                 VitesseMax.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetMaxSpeedAsLetter();
                 Acceleration.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetAccelerationAsLetter();
@@ -291,7 +291,7 @@ public class RaceManager : MonoBehaviour
     public void SetRank(DogMovement RankedDog)  // La liste des arrivants selon leur classement est générée
     {
 
-        Ranking.text += "\n" + DogRank(RankedDog) + ". " + RankedDog.ThisDog.Name;
+        Ranking.text += "\n" + DogRank(RankedDog) + ". " + RankedDog.ThisDog.dogName;
 
         RankedDog.ThisDog.LatestRank = DogRank(RankedDog);
         RankedDog.ThisDog.LatestRace = System.DateTime.Now.ToString();
