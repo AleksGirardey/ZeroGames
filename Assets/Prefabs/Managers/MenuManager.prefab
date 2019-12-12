@@ -3542,9 +3542,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dogsAvailable:
-  - {fileID: 11400000, guid: ef19ae44982f2134c818cc1fea66845b, type: 2}
-  - {fileID: 11400000, guid: 7531bf00f261ff8479bff53722f78914, type: 2}
-  - {fileID: 11400000, guid: 9e13414716ca91e4196eec187e32952f, type: 2}
+  - {fileID: 11400000, guid: e88d8ad297444734aa682af8549a8a6f, type: 2}
+  - {fileID: 11400000, guid: f7f171a4f3206fd42b3c48e806ebd21e, type: 2}
+  - {fileID: 11400000, guid: 0a7056ef5d2381a4c914dde167040dc2, type: 2}
 --- !u!222 &2372504928137309330
 CanvasRenderer:
   m_ObjectHideFlags: 0

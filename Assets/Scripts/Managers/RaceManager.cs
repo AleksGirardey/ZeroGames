@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class RaceManager : MonoBehaviour
 {
-    public Dog[] ListeDesChiens = new Dog[20];
+    private Dog[] ListeDesChiens;
 
     public DogMovement[] Chiens = new DogMovement[4];
 
@@ -48,7 +48,12 @@ public class RaceManager : MonoBehaviour
 
     private void Start()
     {
+        List<Dog> list = new List<Dog>();
 
+        foreach (Dog d in Resources.LoadAll<Dog>("Chiens/Race/")) list.Add(d);
+
+        ListeDesChiens = list.ToArray();
+        
         foreach (DogMovement dog in Chiens)
         {
             dog.transform.position = StartPoint.position + new Vector3(0, 0, _startDiff); // Mettre les chiens à pos. de départ et les écarter entre eux

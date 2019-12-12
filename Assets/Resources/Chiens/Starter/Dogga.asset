@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eefc64306074b578e35b984e08e74fe, type: 3}
+  m_Name: Dogga
+  m_EditorClassIdentifier: 
+  NatureKey: NatureCalm
+  Wins: 0
+  Looses: 0
+  DescriptionKey: DescriptionDogA
+  NumberRaceWon: 1
+  NumberRaceLost: 0
+  MaxSpeedRun: 30
+  MoneyEarned: 3000
+  LatestRace: 
+  LatestRank: 0
+  Endurance: 540
+  Acceleration: 560
+  VitesseMax: 480
+  Mental: 500
+  EnduranceDef: 0
+  AccelerationDef: 0
+  VitesseMaxDef: 0
+  Mood: 
+  EnduranceTempo: []
+  AccelerationTempo: []
+  VitesseMaxTempo: []
+  dogSprite: {fileID: 21300000, guid: 06734205c419d2947b56e508eaeaa12d, type: 3}
+  Name: PlanDog
+  TrainingsConfirmed: 0
+  trainingsCleared: 0
+  UpcomingTrainings: []
+  dogName: PlanDog
+  age: 3
+  width: 1
+  height: 1
+  avatar: {fileID: 21300000, guid: 06734205c419d2947b56e508eaeaa12d, type: 3}
