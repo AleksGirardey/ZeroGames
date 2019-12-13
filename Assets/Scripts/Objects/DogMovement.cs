@@ -50,7 +50,7 @@ public class DogMovement : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (_coroutineAllowed) {
             StartCoroutine(GoByTheRoute(_routeToGo));
@@ -97,7 +97,7 @@ public class DogMovement : MonoBehaviour
 
     void PhaseAcceleration()
     {
-        Vitesse += Time.deltaTime * Acceleration;
+        Vitesse += Time.fixedDeltaTime * Acceleration;
     }
 
     void PhaseDeceleration()
