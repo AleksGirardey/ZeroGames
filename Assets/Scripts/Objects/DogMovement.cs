@@ -48,6 +48,8 @@ public class DogMovement : MonoBehaviour
         VitesseMoyenne = VitesseMax / 2f;
         VitesseMin = VitesseMoyenne;
 
+        LapsRemaining = RaceManager.Laps;
+
     }
 
     void FixedUpdate()

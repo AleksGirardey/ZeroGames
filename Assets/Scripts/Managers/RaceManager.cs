@@ -24,8 +24,7 @@ public class RaceManager : MonoBehaviour
 
     public CameraFollow CameraF;
 
-    public int Laps = 3;
-    int PreviousLap = 3;
+    public int Laps;
     public Text LapsText;
 
     public LayerMask ChienLayer;
@@ -253,8 +252,7 @@ public class RaceManager : MonoBehaviour
             Timet.text = Mathf.RoundToInt(Timer).ToString();
             Timer+= Time.deltaTime;
         }
-
-        CheckLap();
+        
         CamTrackDog();
         DisplayChienStats();
         FindActiveDogs();
@@ -300,17 +298,17 @@ public class RaceManager : MonoBehaviour
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, ChienLayer)) // Quand la souris passe sur un chien
         {
             chienDIsplayed = hit.transform;
+        }
 
-            if (chienDIsplayed.GetComponent<DogMovement>()) {
+        if (chienDIsplayed.GetComponent<DogMovement>())
+        {
 
-                NameTxt.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.dogName;
-                Endurance.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetStaminaAsLetter(); // Actualisation des stats
-                VitesseMax.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetMaxSpeedAsLetter();
-                Acceleration.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetAccelerationAsLetter();
-                VitesseMoyenne.text = chienDIsplayed.GetComponent<DogMovement>().VitesseMoyenne.ToString();
-                LapsText.text = chienDIsplayed.GetComponent<DogMovement>().LapsRemaining + "/" + Laps;
-
-            }
+            NameTxt.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.dogName;
+            Endurance.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetStaminaAsLetter(); // Actualisation des stats
+            VitesseMax.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetMaxSpeedAsLetter();
+            Acceleration.text = chienDIsplayed.GetComponent<DogMovement>().ThisDog.GetAccelerationAsLetter();
+            VitesseMoyenne.text = chienDIsplayed.GetComponent<DogMovement>().VitesseMoyenne.ToString();
+            LapsText.text = Laps - chienDIsplayed.GetComponent<DogMovement>().LapsRemaining + "/" + Laps;
 
         }
     }
@@ -365,23 +363,6 @@ public class RaceManager : MonoBehaviour
 
         BilanTxt.text = Rank.ToString();
         Profit.text = "+" + ProfitAmount + "€";
-
-    }
-
-    void CheckLap()
-    {
-
-        int u = 0;
-
-        foreach (DogMovement chien in Chiens)
-        {
-
-            if (chien.LapsRemaining < PreviousLap) u++;
-            if (u >= Chiens.Length) PreviousLap = chien.LapsRemaining;
-
-        }
-
-        LapsText.text = PreviousLap + "/" + Laps;
 
     }
 
