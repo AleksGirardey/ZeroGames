@@ -72,7 +72,7 @@ public class StatsChien : ScriptableObject
             enduranceTempo += training.EnduranceTempo;
         }
 
-        return Endurance + EnduranceDef + enduranceTempo;
+        return Mathf.Clamp(Endurance + EnduranceDef + enduranceTempo, 0, 1000);
     }
 
     public float GetAcceleration()
@@ -83,7 +83,7 @@ public class StatsChien : ScriptableObject
             accelerationTempo += training.AccelerationTempo;
         }
 
-        return Acceleration + AccelerationDef + accelerationTempo;
+        return Mathf.Clamp(Acceleration + AccelerationDef + accelerationTempo, 0, 1000);
     }
 
     public float GetVitesseMax()
@@ -94,7 +94,7 @@ public class StatsChien : ScriptableObject
             vitesseMaxTempo += training.VitesseMaxTempo;
         }
 
-        return VitesseMax + VitesseMaxDef + vitesseMaxTempo;
+        return Mathf.Clamp(VitesseMax + VitesseMaxDef + vitesseMaxTempo, 0, 1000);
     }
 
     public void ClearTraining()
@@ -157,8 +157,7 @@ public class StatsChien : ScriptableObject
     
     public void AssignTrainings()
     {
-        foreach(Training training in UpcomingTrainings)
-        {
+        foreach(Training training in UpcomingTrainings) {
             if(training.EnduranceTempo != 0)
             {
                 EnduranceTempo.Add(training);

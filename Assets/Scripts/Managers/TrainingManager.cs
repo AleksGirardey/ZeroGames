@@ -151,9 +151,13 @@ public class TrainingManager : MonoBehaviour {
             }
         }
 
-        GameManager.Instance.player.money += 150;
+        DateTime dateTime = DateTime.Parse(GameManager.Instance.date);
 
-        foreach (StatsChien dog in GameManager.Instance.player.kennel.dogs)
+        dateTime = dateTime.AddDays(7);
+
+        GameManager.Instance.date = $"{dateTime.Day}/{dateTime.Month}/{dateTime.Year}";
+
+        foreach (Dog dog in GameManager.Instance.player.kennel.dogs)
         {
             dog.ClearTraining();
             dog.TrainingsConfirmed = false;
